@@ -1,0 +1,45 @@
+body{margin:0px;background-color:#b3adeb;font-family:Arial,Helvetica,sans-serif;}
+body a{text-decoration:none;}
+.header_newindex1{width:100%;height:40px;padding:0px; 
+                 background-color:#ebadda;}
+.header_newindex1 .menu_xw1{list-style:none;float:right;padding:10px;margin:0px;}
+.header_newindex1 ul li{float:left;padding:0px;margin:0px;margin-right:20px;}
+.header_newindex1 ul li a{color:black;font-size:12px;font-weight:bold;padding:5px;}
+.header_newindex1 li a:hover{color:#d63031;}
+
+
+
+.header_newindex{position:relative;width:100%;height:50px;padding:0px 0px 60px 0px; /* 不支持线性的时候显示 */
+                 background-color:#b3adeb;
+                 background-image: linear-gradient(to right, rgba(246,215,215,1), rgba(238,237,163,1));}
+.header_newindex .menu_xw1{list-style:none;float:right;padding:15px;margin:0px;}
+.header_newindex ul li{float:left;padding:0px;margin:0px;margin-right:20px;}
+.header_newindex ul li a{color:black;font-size:14px;font-weight:bold;padding:10px;}
+.header_newindex li a:hover{color:#d63031;}
+.action_text{font-size:25px;color:#b74f4f;position:absolute;top:50px;left:350px;color:animation:myfirst 5s;
+	-webkit-animation:myfirst 500s; /* Safari and Chrome */
+	}
+
+@keyframes myfirst
+{
+	from {opacity:0.5;filter:Alpha(opacity=0); /* IE8 以及更早的浏览器 */}
+	to {opacity:1;filter:Alpha(opacity=1); /* IE8 以及更早的浏览器 */}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+	from {opacity:0.5;filter:Alpha(opacity=0); /* IE8 以及更早的浏览器 */}
+	to {opacity:1;filter:Alpha(opacity=1); /* IE8 以及更早的浏览器 */}
+}
+
+
+
+
+
+.xw_center{width:900px;background-color:white;margin:auto;}
+.block hr{margin:0px;height:5px;border:none;border-top:5px solid #ebadda ;}
+.block h5{margin:0px;padding:5px;color:black;background-color:yellow;}
+.block p{margin:0px;padding:5px;font-size:12px;}
+
+/**xw外的**/
+
