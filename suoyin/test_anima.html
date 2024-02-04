@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>XiaoWang主页</title>
+  <link href="./suoyincss/xiaowangnew.css" type="text/css" rel="stylesheet">
+<SCRIPT type="text/javascript" src="PrintSample10.js"></SCRIPT>
+
+ </head>
+ <body>
+
+<div class="body"><!--body开始-->
+ <div id ="animate"><a href="../myson_001.html">小旺001</a></div><!--动态浮动-->
+
+
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h1>小旺的主页(huaxieyueshen)</h1><img src="../images/xiaowang1.png">
+            </div>
+        </div><!--header结束-->
+
+
+        <div class="box menu_left"><!--left开始-->
+		   <a href="../index.html"><div class="menuitem">花谢悦神的主页</div></a>	  
+           <a href="./xiaowang_New.html"><div class="menuitem">小旺主页</div></a>
+        </div><!--left结束-->
+
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h2>小旺</h2>
+<img width="100%" src="../images/xiaowang2.png">
+           </div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_right"><!--right开始-->
+            <div class="right">
+<h2>小旺相关列表</h2>
+<table class="table_right">
+<tr>
+	<td> <a href="../myson_001.html">小旺001</a></td>
+</tr>
+<tr>
+	<td><a href="../xiaowang.html">小旺记录</a></td>
+</tr>
+<tr>
+	<td><a href="../shenghuo/sw_img1.html">小旺照片主页(返月度账单主页）</a></td>
+</tr>
+</table>
+            </div>
+        </div><!--right结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>花谢悦神（huaxieyueshen)，低权限</p>
+            </div>
+        </div><!--box_footer结束-->
+
+</div><!--body结束-->
+<script>
+window.onload=function(){
+	move1();
+};
+function move1(){
+  var elem = document.getElementById("animate");   
+  var flag = true;
+  //var pos1 = 0;
+  var pos2 = 0;
+  var id = setInterval(frame1, 10);
+  function frame1(){
+	   if(flag == true){
+        if(pos2>=100){
+               flag = false
+          }
+        pos2++; elem.style.top = pos2 + "px"; 
+	   }
+
+	  else if(flag == false){
+        if(pos2<=0){
+               flag = true
+          }
+          pos2--; elem.style.top = pos2 + "px"; 
+	   }
+  }
+
+};
+</script>
+
+ </body>
+</html>
