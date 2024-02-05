@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】提示Web打印服务CLodop未安装启动</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】提示Web打印服务CLodop未安装启动</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】提示Web打印服务CLodop未安装启动</h1>
+提示clodop未安装启动的可能原因及解决方法<br>
+<br>
+默认提示类似：提示Web打印服务CLodop未安装启动<br>
+旧版lodopFuncs.js也可能会是："CLodop云打印服务(localhost本地)未安装启动!"等<br>
+<br>
+若您是终端用户，可在您所使用的网站上找联系方式，找网站的技术或开发人员排查下。<br>
+<br>
+若您是开发人员，下面是一些可能原因及排查步骤：<br>
+<br>
+一.该电脑没安装c-lodop，或没启动c-lodop。<br>
+（1）没安装c-lodop，在该电脑上安装一下。<br>
+（2）已安装，却因一些原因没启动，可以重启下c-lodop。<br>
+<br>
+重启c-lodop方法：<br>
+<br>
+a.新版的lodopFuncs.js里提示是：“Web打印服务CLodop未安装启动，点击这里下载执行安装（若此前已安装过，可点这里直接再次启动），成功后请刷新本页面。”<br>
+可点击——点这里直接再次启动，进行再次启动。<br>
+<br>
+b.双击桌面上的c-lodop快捷方式，重启一下本机的c-lodop，重启c-lodop后刷新页面。<br>
+<br>
+c.桌面上的c-lodop快捷方式，右键以管理员权限安装（防止权限问题）。<br>
+<br>
+为什么安装后没有开机自启动，或c-lodop没启动了：<br>
+<br>
+可参考lodop官网的常见问答：参考http://www.c-lodop.com/faq/pp5.html<br>
+例如，防火墙禁用端口，杀毒软件阻挡，开机启动项等，并尽量用最新版c-lodop。<br>
+<br>
+二.已安装启动c-lodop，却提示未安装启动<br>
+<br>
+（1）C-Lodop本地服务端口号与lodopfunc.js文件中或web程序页面的服务端口号不一致<br>
+<br>
+如图，查看本机c-lodop启动的端口，最新版http双端，https一个端口：<br>
+http://localhost:8000/CLodopFuncs.js<br>
+http://localhost:18000/CLodopFuncs.js<br>
+https://localhost.lodop.net:8443/CLodopfuncs.js<br>
+<br>
+启动端口和JS里引用端口要一致。<br>
+http是双端口，8000和18000一个能用就行<br>
+https的如果8443占用，会加一变成8444，https的可增加备用端口8444,<br>
+<br>
+http://localhost:8000/CLodopFuncs.js?priority=1<br>
+参数Priority是服务优先级，数值越大优先级越高，可增加优先级低的备用端口，如果8443正常，8444报错不用管，当8443占用时会有用<br>
+<br>
+（2）注意防火墙禁用了对应端口，禁用相关端口也会访问不到<br>
+<br>
+（3） localhost无法访问导致<br>
+查看本机hosts文件，localhost是否是指向127.0.0.1的。<br>
+<br>
+首先确认localhost是指向127.0.0.1的；然后Ping 127.0.0.1，如果无法Ping通，则表明本地机TCP/IP协议不能正常工作。此时重新安装一下网卡的驱动应该就OK了（只要你的网卡没坏）<br>
+<br>
+（4）安装最新版c-lodop，浏览器或证书问题，如CORS阻挡，或证书问题，再下面排查步骤会描述该问题。<br>
+<br>
+三.排查具体问题：查看浏览器的JS报错信息<br>
+<br>
+（1）http网站，已安装提示未安装启动<br>
+<br>
+例如：报错clodopfunc.js的localhost8000端口，has been blocked by CORS policy: The request client is not a secure context and the resource is in more-private address space `local`s<br>
+<br>
+这是由于CORS阻挡了<br>
+<br>
+解决方法：<br>
+关于谷歌Chrome浏览器94版跨域问题的解决方案，参考http://www.c-lodop.com/blogs/Blog024.html<br>
+安装下载中心发行包里的最新版c-lodop，安装后重启浏览器再测试下<br>
+http://www.c-lodop.com/download.html<br>
+<br>
+如果是360极速X，安装最新版也有问题，可尝试直接修改该浏览器的安全设置：<br>
+地址栏输入：<br>
+chrome://flags/#block-insecure-private-network-requests<br>
+看到底色泛黄的“Block insecure...”项的 Default 值，改选成 Disabled<br>
+<br>
+（2）https网站，已安装提示未安装启动<br>
+<br>
+a.访问https://localhost.lodop.net:8443欢迎页面试试，如果提示不安全，<br>
+<br>
+查看是否是证书问题，旧版本的localhost.lodop.net是否到期了，安装最新版c-lodop带新日期的证书：<br>
+<br>
+参考http://www.c-lodop.com/blogs/Blog026.html<br>
+安装最新版c-lodop，更新最新的lodopFuncs.js<br>
+http://www.c-lodop.com/download.html<br>
+<br>
+建议安装最新版c-lodop，更新最新的lodopFuncs.js，永久解决该证书到期问题：<br>
+如果在更新LodopFuncs.js同时，客户端也安装C-Lodop6.566及后版本，则可以彻底省去SSL证书问题，<br>
+因为新版方案采用websocket方式，不再依赖SSL证书，以后年度就一劳永逸了。<br>
+<br>
+b.访问https://localhost.lodop.net:8443欢迎页面试试，访问不了<br>
+<br>
+localhost.lodop.net是一个指向127.0.0.1的本地特殊域名，与localhost等效<br>
+查看下是否开启了vpn代理，如果开启了代理，.lodop.net取消代理试试<br>
+<br>
+DNS有问题，修改本机hosts文件，localhost.lodop.net指向127.0.0.1本地试试，<br>
+Ping一下localhost.lodop.net试试，确保该地址能正常访问<br>
+<br>
+其他：网站用的旧版本旧地址，Chrome浏览器升级到84版，中通讯协议(有原来的TLS1.0或1.1)提高到TLS1.2强制改动，所以旧地址用不了，需要安装新版本新地址<br>
+原来的：https://localhost:8443/CLodopfuncs.js<br>
+改为：https://localhost.lodop.net:8443/CLodopfuncs.js<br>
+<br>
+汇总：<br>
+以上是部分提示未安装启动的可能原因<br>
+<br>
+排查方式：<br>
+查看浏览器的JS报错信息<br>
+1.如果是报错CLodopfuncs.js访问不到，可能是没安装启动。<br>
+2.如果http的报错是CORS阻挡相关，安装最新版，重启浏览器，或修改浏览器相关安全设置。<br>
+3.如果是https的报错证书问题，证书到期问题，安装最新版，并更新最新的lodopFuncs.js<br>
+<br>
+其他说明：<br>
+如果是提示打印控件未安装，这个默认是lodop插件方式提示，但高版本火狐谷歌等都不再支持np插件方式，所以建议升级到c-lodop方式。<br>
+<br>
+一些变化：<br>
+Chrome浏览器84版，原来的TLS1.0或1.1)提高到TLS1.2强制改动，<br>
+原来的：https://localhost:8443/CLodopfuncs.js<br>
+改为：https://localhost.lodop.net:8443/CLodopfuncs.js<br>
+<br>
+Chrome浏览器94版（也可能92版）：<br>
+Win10+Chrome94版阻断http页面访问localhost服务，http的报错CORS跨域问题，<br>
+安装最新版并重启浏览器<br>
+<br>
+（旧版的c-lodop）7月23号ssl证书到期：<br>
+安装最新版，并更新发行包里最新的lodopFuncs.js<br>
+<br>
+由于lodop在不断更新，该视频内容后期可能会过期，注意发布时间，仅供参考<br>
+<br>
+<p>&nbsp;</p>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>
