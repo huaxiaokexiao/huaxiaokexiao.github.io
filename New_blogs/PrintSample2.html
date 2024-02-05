@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WEB打印控件LODOP的样例二:打印当前页面的内容</title>
+
+<script language="javascript" src="LodopFuncs.js"></script>
+</head>
+<body>
+<p>1：若只打印《表单一》,看一下<a href="javascript:MyWritePort()">打印预览</a>, <br> 
+<p>1：若只打印《表单一》,看一下<a href="javascript:MyWriteCom()">设置端口参数</a>,  
+<script language="javascript" type="text/javascript">   
+        var LODOP; //声明为全局变量 
+	function MyWritePort() {	
+		LODOP=getLodop();  
+	        strData=String.fromCharCode(27)+','+String.fromCharCode(112)+','+String.fromCharCode(0)+','+String.fromCharCode(128)+','+String.fromCharCode(128);
+		if (LODOP.CVERSION) {
+			LODOP.On_Return=function(TaskID,Value){ if (Value) alert("写端口成功！"); else alert("写端口失败!"); };
+			LODOP.WRITE_PORT_DATA("USB001",strData);
+			return;
+		};
+		if (LODOP.WRITE_PORT_DATA("USB001",strData))
+		 alert("写端口成功！"); else alert("写端口失败!"); 	
+	};
+
+	function MyWriteCom() {	
+		LODOP=getLodop();  
+ 	        strConfig="mode com1:2400,n,8,1";
+		if (LODOP.CVERSION) {
+			LODOP.On_Return=function(TaskID,Value){ 
+				if (Value) alert("设置端口参数成功！"); else {
+					alert("设置端口参数失败"); 
+					LODOP.On_Return=function(TaskID,Value){alert("设置端口参数失败,LastErrorID:"+Value);};
+					LODOP.GET_SYSTEM_INFO("GetLastError");
+				};
+			};
+			LODOP.WRITE_PORT_DATA("LPT1",strConfig);
+			return;
+		};
+		if (LODOP.WRITE_PORT_DATA("LPT1",strConfig))
+		 alert("设置端口参数成功！"); else alert("设置端口参数失败,LastErrorID:"+LODOP.GET_SYSTEM_INFO("GetLastError")); 
+	
+	};	
+</script> 
+
+</body>
+</html>

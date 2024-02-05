@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>qa1</title>
+  <style>
+  #dd ul{margin:3px;padding:3px;font-size:12px;}
+  h5{margin:0px;background-color:yellow}
+  ul{list-style:none;}
+  a{text-decoration:none;}
+  </style>
+ </head>
+ <body>
+<div id="dd">
+<ul>
+  <li>
+<h5>常见问答简短链接</h5>
+提示"Printer selected is not valid"可能原因及操作失败异常分析,参考http://www.c-lodop.com/faq/pp1.html<br>
+  </li>
+  <li>
+<h5>官网样例简短链接</h5>
+提示"Printer selected is not valid"可能原因及操作失败异常分析,参考http://www.c-lodop.com/faq/pp1.html<br>
+测试参考一下官网样例http://www.c-lodop.com/LodopDemo.html
+  </li>
+  <li>
+<h5>测试问答</h5>
+提示"Printer selected is not valid"可能原因及操作失败异常分析,参考http://www.c-lodop.com/faq/pp1.html<br>
+测试参考一下官网样例http://www.c-lodop.com/LodopDemo.html
+  </li>
+  <li>
+<h5>组合问答（超文本）</h5>
+参考http://www.c-lodop.com/faq/pp21.html<br>
+高版本的火狐谷歌不再支持np插件，需要使用c-lodop，可参考官网样例混合部署http://www.c-lodop.com/LodopDemo.html<br>
+Lodop控件升级到C-Lodop云打印 参考http://www.c-lodop.com/faq/pp7.html<br>
+<br>
+查看lodop内部解析的html信息，见http://www.c-lodop.com/faq/pp8.html<br>
+分析差异点，因浏览器版本不同遵循的html标准不同，造成某些标签属性显示有差异，尽量避免使用有差异的属性，可以在ie下不同版本仿真情况下验证差异<br>
+排查样式，尽量使用使用各浏览器无歧义的通用的 html css js，不支持的样式可尝试用其他样式代替。<br>
+可尝试把ADD_PRINT_HTM 换成 ADD_PRINT_HTML（图形模式）试试，ADD_PRINT_HTML不如ADD_PRINT_HTM清晰，适合高精度的打印机，两者各有优势。<br>
+<br>
+查看lodop内部解析的html信息，见http://www.c-lodop.com/faq/pp8.html<br>
+通过做简单例子或删减代码等排查样式，定位到和那个样式有关。<br>
+  </li>
+  <li>
+<h5>组合问答（官网样例）</h5>
+参考样例35 http://www.c-lodop.com/demolist/PrintSample35.html<br>
+样例45的13 http://www.c-lodop.com/demolist/PrintSample45.html<br>
+样例35返回的“打印成功”实际仅是成功加入后台队列。<br>
+样例45的13 判断“JOB不在队列”就足可认定已经打印成功。<br>
+一般建议使用样例4，35方法简单判断打印成功，发送打印指令加入打印机队列算打印成功。<br>
+<br>
+参考样例45http://www.c-lodop.com/demolist/PrintSample45.html<br>
+获取打印状态，需要实际测试下，不同打印机状态码可能不同。<br>
+<br>
+c-lodop需要回调函数，参考c-lodop技术手册http://www.c-lodop.com/download.html<br>
+和一些含有回调函数的官网样例的源码，例如样例35http://www.c-lodop.com/demolist/PrintSample35.html，样例4等等。<br>
+  </li>
+</ul>
+</div>
+ </body>
+</html>
