@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>备用其他回答</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>LODOP超简短问答-备用其他回答</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>备用其他回答（研发人员回复等）</h1> 
+<span style="color:blue;font-weight:bold">云主机c-lodop卡死</span><br>
+服务器的各种维护界面尽量不要处于打开状态，避免卡死<br>
+例如AO服务器端管理界面不要处于打开状态。<br>
+<br>
+关闭管理维护界面后再测试下。<br>
+<br>
+AO服务器管理界面是否处于打开状态，一定要关闭<br>
+<br>
+<span style="color:blue;font-weight:bold">集成了lodop做的软件，可以申请专利吗</span><br>
+只要和lodop没有竞争关系，以lodop为基础的应用系统做出自己的特色，申请专利是没问题的<br>
+<br>
+<span style="color:blue;font-weight:bold">自己网站的https证书没有密码，后两种角色https方式</span><br>
+可以咨询你们的SSL证书提供商，让他们帮你加上密码<br>
+<br>
+<span style="color:blue;font-weight:bold">8443被占用，没有变成8444</span><br>
+卸载之后重新安装。通常是第一次安装才自动升到8444，一旦成功之后就锁定8443或8444。<br>
+之前8443安装成功过。<br>
+<br>
+<span style="color:blue;font-weight:bold">c-lodop在定时拿密码</span><br>
+c-lodop没有定时拿密码之说，也不存在这种功能。但c-lodop会按最新登录用户身份重启一个工作进程（切换登录用户时会自动切换，避免一个用户的弹窗预览在前一个用户的桌面上出现，那就抓瞎了），估计这个地方引起explorer.exe相关动作。<br>
+<br>
+没有用户登录时，启动c-lodop进程的用户是system这个特殊用户。<br>
+<br>
+<span style="color:blue;font-weight:bold">clodopFuncs.js</span><br>
+安装完c-lodop后，会在本地启动c-lodop打印服务， CLodopfuncs.js是c-lodop打印服务 在启动时生成的，在内存中，无实际文件，
+本地服务地址及端口默认：<br>
+http://localhost:8000/CLodopFuncs.js<br>
+ 或http://localhost:18000/CLodopFuncs.js<br>
+如果是https网站默认访问：https://localhost:8443/CLodopFuncs.js<br>
+<br>
+<span style="color:blue;font-weight:bold">状态码判断打印成功</span><br>
+打印状态代码先对2048取余数，再对照。<br>
+样例45 获取状态码不是精确的 需要打印驱动支持 以实际测试为准。 判断打印成功可以参考样例45的13，判断任务不在队列里了即可。更建议使用样例4, 35简单方式判断。<br>
+<br>
+<span style="color:blue;font-weight:bold">公司名顶级注册</span><br>
+公司名顶级注册，免费赠送一次带公司logo的定制安装程序。<br>
+如后续版本需要定做，需要付费定做，一次一千元，不是免费赠送的。<br>
+<br>
+<span style="color:blue;font-weight:bold">批量打印的重打</span><br>
+多个任务顺序执行的，中间一个漏打， 无法保证顺序了，循环执行中 无法加入新任务， 并且因为是异步的，得到的结果是滞后的<br>
+<br>
+TASKID 是 打印任务的序列号，也就是唯一的任务号<br>
+value 是该语句LODOP.PRINTA() 执行返回的结果值，非true，就是失败了<br>
+<br>
+<span style="color:blue;font-weight:bold">add_print_table的计算不是结果不行</span><br>
+是对 结果集 进行格式化，必须和 tdata 配合使用<br> 
+<br>
+<span style="color:blue;font-weight:bold">大图片加载慢</span><br>
+理论上没有限制，如果过大，浏览器加载可能过慢，或受浏览器系统网络等限制，尽量图片不要太大。<br>
+在本机ie里加载试试，LODOP用的本机ie引擎进行解析超文本的。<br>
+<br>
+<span style="color:blue;font-weight:bold">云主机超过访问数量，但是一个手机</span><br>
+同一个手机，动态配置ip地址，下次联网可能就不是该ip地址了，就变成新的客户端了，同一个手机访问一台云主机，也可能超出客户端限制。<br>
+<br>
+估计你的手机上网IP变了。服务端是按客户端IP来区分的（目前没有其它好办法区分）<br>
+<br>
+<span style="color:blue;font-weight:bold">定时重启，不清楚注册访问缓存</span><br>
+定时重启清理不了缓存记录信息，需要手动重启<br>
+超过服务器访问数量时，购买能满足需求访问数量的注册号就可以<br>
+<br>
+<span style="color:blue;font-weight:bold">访问不成功不计入</span><br>
+访问不成功，不会计入链接数量，设置密码和白名单 就是为了阻挡非法访问<br>
+<br>
+<span style="color:blue;font-weight:bold">授权</span><br>
+公司目前主要出售两种授权：<br>
+1. 通用的去水印注册授权:包含 域名、服务器ip地址、公司名称授权，主要是在客户端安装lodop 或c-lodop直接打印去除水印信息<br>
+2. C-Lodop云注册号： 单独一台机器 安装了c-lodop打印服务，其他机器所有打印任务都是发送到该机来集中处理或分发到AO打印机 AO端桥<br>
+<br>
+<span style="color:blue;font-weight:bold">模版变量赋值</span><br>
+5 JS语句组式模板赋值 <br>
+//指定变量名赋值 具体参考样例35 36<br>
+MyData=document.getElementById('data01').value;	<br>
+eval(document.getElementById('S1').value); 	<br>
+<br>
+//指定打印项类名赋值<br>
+eval(document.getElementById('S1').value);<br>
+LODOP.SET_PRINT_STYLEA("itemName","CONTENT", "张三"); <br>
+<br>
+6 文档式模板赋值 具体参考样例50<br>
+//指定打印项类名赋值<br>
+LODOP.ADD_PRINT_DATA("ProgramData",document.getElementById('S1').value); //装载模板<br>
+LODOP.SET_PRINT_STYLEA("itemName","CONTENT","张三");//通过类名设置模板里面的打印项数据<br>
+<br>
+<span style="color:blue;font-weight:bold">打印维护的打印项个数和顺序</span><br>
+注意：同一个打印模板，打印项的个数和顺序不能有变化，位置的记忆是根据打印项的输出顺序记忆的<br>
+看增加的顺序，后增加的没有问题，不要中间插入就行<br>
+<br>
+<span style="color:blue;font-weight:bold">分页粒度是什么</span><br>
+“TableRowThickNess”的值：整数，分页粒度值，默认是20(px)。所谓分页粒度，是指自动分页时在分页线附近进行的前后定位分割线的范围。如果这个范围设置太小，那么分页位置恰巧遇到较大单元格时，则找不到其前后表格线，此时控件会把td单元格切开；相反如果这个范围设置太大，那么原本想切开的大单元格会被大块地搬到下页，造成每页内容差别很大而参差不齐。<br>
+<br>
+<span style="color:blue;font-weight:bold">重打了</span><br>
+注意c-lodop是异步方式，所以页面程序要避免操作者多次点击触发打印事件，特别是直接打印语句，悄无声息的就重复了。<br>
+另外注意目标打印机的默认打印份数设置，建议用语句强制设置打印份数为1<br>
+你的日志确定没有重复js指令吗<br>
+打印内容里有标识打印次数的内容吗，譬如毫秒时间戳+计次的“打印时间”项<br>
+短期内没有针对这个问题的新版本，建议你加一个text语句内容带时间戳，先明确是否在页面层面造成的重打<br>
+<br>
+<span style="color:blue;font-weight:bold">winxp共享打印机找不到</span><br>
+建议更新安装所有的winxp的所有补丁包；重新安装网络打印机驱动；核查windows 的打印服务Print Spooler启动是否正常；  从上面三个方面处理一下<br>
+<br>
+<span style="color:blue;font-weight:bold">打印机没重新加载</span><br>
+clodop 的打印机信息是动态加载到clodopfuncs.js 中的；只要能页面能重新加载clodopfuncs.js 就可以<br>
+<br>
+<span style="color:blue;font-weight:bold">想本地的IE打开新窗口预览</span><br>
+强制所有浏览器用c-lodop<br>
+用_blank这个参数<br>
+<br>
+<span style="color:blue;font-weight:bold">不同操作系统，进入队列后，打印不出来等</span><br>
+lodop生成打印任务后就交给打印机管理程序管理；具体的打印由打印机管理程序完成；请参考打印机的技术手册解决上述问题；<br>
+<br>
+在不同操作系统，先测试官网样例，确定lodop 环境正常后，再测试对比自己的应用；http://www.c-lodop.com/LodopDemo.html<br>
+<br>
+<span style="color:blue;font-weight:bold">c-lodop错误：当前程序已使用Window管理器对象的系统允许的所有句柄</span><br>
+这种情况与浏览器缓存有关<br>
+ie 浏览器解析 超文本内容<br>
+<br>
+解析超文本时调用Windows底层引擎解析的，和ie引擎一致。调大一下 ie 缓存。<br>
+换成add_print_text等纯文本对比试试，这种不受浏览器引擎解析的影响。<br>
+<br>
+<span style="color:blue;font-weight:bold">超文本打印出问题</span><br>
+打印时单位全部使用公制的.1.强制指定纸张大小.2打印位置和尺寸都使用绝对数据,不要用百分比等相对数据.3.如果是解析html的,就排查所有可打印内容的设置.至少应排查以下:<br>
+1)style或者css里是否有相对数据,如百分比.<br>
+2)为每一个可打印内容设定格式,文字要有明确字体,大小,颜色等信息.线条\表格等要有粗细间距等等所有你能想到的,能制定的都给他指定起来.<br>
+3)因客户ie版本可能与你的不一致,因此需要注意一些html属性在ie不同版本之间是否通用,或者在某些版本上会失效.<br>
+<br>
+<span style="color:blue;font-weight:bold">clodop注册号机器没变，请求号变了</span><br>
+注意c-lodop最新版的注册号是支持网卡更换顺序的，也就是即便是请求号变了，原注册号仍有效，所以尽量用最新版本。目前注册机制比较局限（这也是价格与产品研发成本不匹配的原因），我们会积极探索新的注册机制，从而保证c-lodop长久发展。<br>
+<br>
+请求号的前几位是与bios序列号关联的，这个windows的api是很稳定的<br>
+<br>
+<span style="color:blue;font-weight:bold">批量打印超文本出问题</span><br>
+这是IE引擎的一个漏洞，目前没法解决，尽量用windows原生IE浏览器内核。或者采用lodop提供的纯文本方式。 c-lodop5.0会放弃IE内核<br>
+<br>
+windows内核漏洞不是顶层软件能解决的，只能规避<br>
+<br>
+这个问题我们推出很多应对方案，都不理想：改用纯文本；加定时自动重启；在推出更好更彻底版本之前没有办法了<br>
+<br>
+重启是在空闲时间里，不会丢单，<br>
+<br>
+自动重启不会丢单的，可以设置重启间隔短一点<br>
+<br>
+只要回调函数返回true的就不会丢；<br>
+<br>
+<span style="color:blue;font-weight:bold">CS架构调用，提示未注册类</span><br>
+安装lodop完成ocx注册 ，谁都可以调用，或直接调用我们的安装程序静默安装完成，或您自己的cs程序释放固定路径下，并在注册表注册ocx 文件，可以调用<br>
+<br>
+<span style="color:blue;font-weight:bold">c-lodop白名单</span><br>
+删除不能用通配符，网址白名单不适合*这种通配符，这里的白名单控制原则是其url包含“白名单字符串”就行。
+重启下c-lodop试试，删除白名单和guest的密码<br>
+<br>
+<span style="color:blue;font-weight:bold">edge浏览器的c-lodop问题</span><br>
+EDGE 解决websoket本地通讯的问题，用CMD管理员身份运行，就可以解决了。<br>
+<br>
+https://blog.csdn.net/azhangyi188/article/details/95313182<br>
+cmd管理员身份解决websokect<br>
+cmd执行台下代码。<br>
+CheckNetIsolation LoopbackExempt -a -n=Microsoft.MicrosoftEdge_8wekyb3d8bbwe<br>
+<br>
+<span style="color:blue;font-weight:bold">
+二维码打印模板设置长宽为95mm*60mm，打印机默认纸张是A4，打印预览的时候可以显示1页8个二维码（正常），但是如果在调打印控件的打印预览界面修改打印纸张为95mm*60mm，预览的时候就只能显示出4个二维码（正常应该有8页，每页1个二维码），必须在打印前把默认纸张设置为95mm*60mm，打印预览的时候才能显示8页8个二维码，这是个bug吧？
+很多客户都是一台电脑连2台打印机，每次要去修改默认打印机才能正确打印，很不方便</span><br>
+仔细看了你们的需求，按lodop的产品策略很可能将来不支持的。lodop定位为编程控件，其功能是越简单越基层越好，凡是js代码能实现的功能，lodop不会代劳，避免控件变成一个臃肿的怪物。所谓的“自动”和“智能”多是在业务层面的需求，譬如B4对应8个二维码，“智能”变成A4：4个，其实还有"A2:10" "A5:3"...几乎无限可能，毕竟纸张大小就是一个数字对，最终结果是lodop把原本属于你的js代码在内部又重复一遍，而满足的客户却很少。lodop的口号是“仅做页面js程序没法实现的功能”。另外事实上你充分利用对象百分比"%"计量单位（样例34），是可以让内容随纸张大小而“自动”变化的。<br>
+<br>
+<span style="color:blue;font-weight:bold">打印机设置新的纸张大小后，预览就正确了，但在预览界面切换纸张大小就不正确，说明点击打印预览和预览界面切换时，执行的程序逻辑不一样。</span><br>
+按理说，你点击打印预览，读取了打印机的纸张大小设置，做出了正确的预览。<br>
+在预览界面切换纸张大小，执行同样的逻辑，做出正确的预览就可以了，这个从业务上是一个场景，却出现了两种不同的结果？<br>
+<br>
+对于超文本内容对象来说，预览打印分两步：第一步先在一个默认的容器(你视频里的A4)里进行解析(比较耗时)；然后第二步把解析后的布局画面套在输出纸张上进行分页。视频里预览界面选择其它纸张时，仅执行了第二步，没执行第一步。如果你的内容在不同容器里解析有差异时，会有这个困惑。这种情况不适宜二次选择纸张，要避免这种困惑，只能优化html内容使其不要受容器影响。lodop借用html作为展现指令是一种伟大创新，但其实html是一种动态展现语言，有很多特征是不适合固定布局打印的，页面程序员要有所择选。<br>
+<br>
+<span style="color:blue;font-weight:bold">样例31的表格  format="#,##0.000000000"  小数后精度超过6位就不计算了</span><br>
+浮点数的最大的小数是6位，如果不是科学研究，这个长度足已，多了没有现实意义了。<br>
+群25说的这个问题  一般是税率计算涉及的数据<br>
+这个问题此前曾经遇到研究过，也好奇为啥delphi的浮点小数仅6位，后来发现小数再多，对32位长度的数值计算结果几乎没影响，反而会影响浮点数的最大值，也算是个平衡吧。再进一步的需求只能用64位大数，那样内存开销很大，更因为很多函数(例如format)要自行开发，非常不值得。例如税额是金额，业务要求仅元角分，最多2位小数，只要最大值固定，那么中间计算值无论是6位小数还是60位小数，影响不到角分这个位置的结果。<br>
+<br>
+<span style="color:blue;font-weight:bold">批量打印超文本，功能实现效果不好，可以退款么</span><br>
+不能退的，这是固定功能软件的商用授权，不是定制开发项目。原则上你们应该测试满意之后才购买，授权不涉及功能和性能问题。<br>
+<br>
+实际上提供性能要从多个方面努力<br>
+<br>
+虚拟打印机就是辅助性能测试的专门工具<br>
+<br>
+lodop提供了直接语句、超文本htm语句和pdf文档三大类打印命令来源，它们各有优势，事实上直接语句的效果堪比cs软件；而htm需要借助本地解析引擎二次加工，性能稍低但使用简单。<br>
+<br>
+影响性能的另外一些因素很可能有异常网络地址，排查内容元素是否有无谓的网络访问，特别是慢的无法忍受时。<br>
+<br>
+你抛给lodop的htm内容是要交给本地系统的浏览器引擎进行下载和解析的，当然涉及网络访问<br>
+<br>
+<span style="color:blue;font-weight:bold">打印本子时，旋转90打印，打印不全会是什么问题</span><br>
+1、对比 打印预览，预览效果与实际打印是否一样   2、参考样例5 ，排查是否是超出纸张大小<br>
+<br>
+1、更换其他打印机打印对比，排查是否是不同打印的原因    2、参考样例5  设置纸张纵向或横向，变通实现上述的目的，排查是否是旋转造成的问题，进一步理解纵向及横向参考http://www.c-lodop.com/blogs/Blog010.html   3、从官网下载安装最新版本，排查是否是版本的原因<br>
+<br>
+<span style="color:blue;font-weight:bold">获取本地文件权限的勾选框, 为什么勾选了总允许, 还是每次都弹出这个提示</span><br>
+网址和文件名都一致才行<br>
+<br>
+<span style="color:blue;font-weight:bold">第三种角色广域网的怎么收费</span><br>
+按广域网主机收费，最多600元，一次性无时间限制,端桥不限<br>
+端桥是链接打印机的那些电脑，也就是角色三模式里的打印输出环节<br>
+<br>
+<span style="color:blue;font-weight:bold">打印url，ie浏览器能正常访问，lodop打印不出来找不到网页或提示https证书问题</span><br>
+没有其它好办法，url方式的特征决定的<br>
+<br>
+<span style="color:blue;font-weight:bold">导出excel打开时提示格式不对</span><br>
+Microsoft Office EXCEL 2007文档的扩展名.xlsx是Office2007使用的，是用新的基于XML的压缩文件格式取代了其目前专有的默认文件格式，在传统的文件名扩展名后面添加了字母x（即.docx取代.doc、.xlsx取代.xls，等等），使其占用空间更小。<br>
+xls格式的文件所有OFFICE程序都能打开，但.xlsx只有OFFICE2007或者更新的版本才能打开。<br>
+LODOP.SAVE_TO_FILE("新文件名.xls"); 不会控制格式， 即设置xls导出可能是xlsx。出现扩展名不正确可以手动更新下扩展名<br>
+<br>
+<span style="color:blue;font-weight:bold">批量打印出问题</span><br>
+没有其它好办法，url方式的特征决定的<br>这样说还很难判断是c-lodop的问题、windows打印服务问题  还是某个厂商的打印驱动问题，它们是一个流程的三个环节。如果是c-lodop的问题，那么不实际打印也能测试出来的，可以直接海量测试的；如果是后面俩环节会表现为真实打印才出故障，要先排查是某个打印驱动的问题，先升级对应的打印驱动；如果相同的业务仅有个别电脑出问题，要怀疑是windows打印服务问题了。<br>
+<br>
+<span style="color:blue;font-weight:bold">提示rpc服务器不可用</span><br>
+print spooler打印机服务依赖于RPC服务，RPC服务没启动的话是无法打印的<br>
+<br>
+<span style="color:blue;font-weight:bold">批量打印超文本，打印过多的时候后来很慢，或有问题</span><br>
+lodop是没有限制的，关键看客户端机器性能、网络通讯速度、及客户程序读取及加载数据的速度<br>
+纯文本项是没有问题 ，不受浏览器影响，例如：ADD_PRINT_TEXT();ADD_PRINT_TEXTA();等<br>
+如果是超文本项，是受浏览器解析影响的，缓存有时不释放或释放的慢，有这方面问题，是ie深层的bug，目前还未解决。超文本语句：ADD_PRINT_HTM、ADD_PRINT_HTML、ADD_PRINT_TABLE等<br>
+所以输出量比较大的批量打印建议用纯文本方式， 内容划线等完成<br>
+每次重启会释放驻留缓存，为此c-lodop有定时重启的设置，也是权益之计<br>
+<br>
+<span style="color:blue;font-weight:bold">不同电脑，超文本样式不同</span><br>
+不管用什么浏览器，lodop解析超文本时调用Windows底层引擎解析的，和ie引擎一致。<br>
+查看lodop内部解析的html信息，见http://www.c-lodop.com/lodop/faq/p1.html<br>
+分析差异点，因浏览器版本不同遵循的html标准不同，造成某些标签属性显示有差异，尽量避免使用有差异的属性，可以在ie下不同版本仿真情况下验证找出差异<br>
+<br>
+就是相同 操作系统及IE版本，由于windows 的补丁包不同，可能也有细微的差距<br>
+使用html,尽量多测试对比一下，使用通用的html脚本<br>
+<br>
+<span style="color:blue;font-weight:bold">同样代码，不同打印机条码宽度不同</span><br>
+理论上没要求，但打印机要完全符合windows规范才好。事实上完全符合的很少，开发打印软件，其实就是在和这些不规范做斗争。<br>
+原则上你用lodop的功能，要有对应的基础知识，至少要有打印机常识，譬如打印机纸张的真实含义，再譬如打印条码，要了解各种条码的概念和基本特征。<br>
+lodop是一个轻量级的控件，限于安装程序的体积，仅包含常见的条码输出，不能完全实现所有条码种类或条码的每一种版本。<br>
+<br>
+<span style="color:blue;font-weight:bold">为什么不能用字体别名</span><br>
+每一个操作系统对应一个字体会起一个别名，例如“标楷体”在windows下别名“DFKai-SB”，在Mac下叫“BiauKai”，其实它们用真名也能用，所以我感觉用别名没啥好处。<br>
+<br>
+lodop调用字体时，会把你写的字体名直接发给windows，实际上windows底层并不认识别名，都是有外壳程序提前对照反应真名的。此前这个累活是浏览器干的，现在需要lodop去干，但lodop出于性能考虑，就没干这活，事实上字体别名这个事有很多说道。<br>
+<br>
+因为字体别名属于web领域的行业习惯，不属于国际规范，事实上非常乱，所以lodop没有把别名对照功能加进去，真加入也是出力不讨好，特别是lodop目前面对的国家语言非常多，是个很复杂的体力活。lodop需要完善的功能点太多了，只能抓关键的。<br>
+<br>
+<span style="color:blue;font-weight:bold">clodopFuncs.js</span><br>
+安装完c-lodop后，会在本地启动c-lodop打印服务， CLodopfuncs.js是c-lodop打印服务 在启动时生成的，在内存中，无实际文件，<br>
+本地服务地址及端口默认：<br>
+http://localhost:8000/CLodopFuncs.js<br>
+或http://localhost:18000/CLodopFuncs.js<br>
+如果是https网站默认访问：https://localhost:8443/CLodopFuncs.js<br>
+<br>
+<span style="color:blue;font-weight:bold">只有一个人电脑有问题，卡慢</span><br>
+如果其他人没有问题，应该与您的电脑或网络有关了，电脑的运行速度或网络数据的读取速度都会影响。<br>
+<br>
+<span style="color:blue;font-weight:bold">两个钱箱的语句都打不开</span><br>
+如果我们给您的两个例子语句 打不开，就需要咨询一下打印机厂家了<br>
+两个例子语句也是其他朋友测试后 能打开的 给我们的，需要自己联系打印机厂商 再验证摸索一下。<br>
+<br>
+<span style="color:blue;font-weight:bold">word能打，lodop有问题</span><br>
+某些标准的功能引起了打印机驱动的故障，而word没有用到这些功能。<br>
+删减下语句排查下是哪些LODOP功能引起的。。<br>
+<br>
+<span style="color:blue;font-weight:bold">集中打印到一台电脑慢</span><br>
+打印队列 是Windows操作系统打印服务 处理机制， 链接的打印机太多了<br>
+打印服务就一个 print_spool线程池 也是该服务来管理的<br>
+对于打印速度 lodop是没有限制的， 每个客户端访问 c-lodop 打印服务都是单独的线程<br>
+先分析一下打印慢的原因，是否网络原因或数据原因等，1台 是什么情况、5台、10台是什么情况，20台的情况等，是否某台的慢 就影响了 整个的慢，排查一下。<br>
+单独发送打印指令的效率不一定比Windows打印服务处理的效率高。<br>
+<br>
+<span style="color:blue;font-weight:bold">打印机纸张来源</span><br>
+纸张来源的代码不是很统一，各种打印机不一样<br>
+在打印机首选项里选择一种纸张来源后，在样例7了获取其代码值<br>
+都获取后，然后用样例6的方式对应设置。<br>
+<br>
+<span style="color:blue;font-weight:bold">用云打印插件（插件安装在本机）会出现打印好几十兆的文件，这是要设置那个参数吗？</span><br>
+如果你的打印没有包含大量图片，或较多文档，即打印内容没有包含大量图片或较多文档，即打印内容本身的数据不是很大。这时候，打印管理程序显示较大的文件，往往与打印机的驱动有关，更换一台打印机对比一下。<br>
+<br>
+<span style="color:blue;font-weight:bold">预览有问题，但是打印出来的东西没事，怎么会回事？</span><br>
+预览界面是打印机驱动自带的，可以读取到是正常的<br>
+预览是打印的反显，所见即所得，打印机驱动有问题，重装一下打印驱动。<br>
+<br>
+<span style="color:blue;font-weight:bold">在一台打印显示表格线，另外一台不显示，何解？</span><br>
+打印精度不同，可能线比较细，虚拟打印机测试一下试试。<br>
+<br>
+<span style="color:blue;font-weight:bold">提示“cannot creat file’c\program\files\mounttaisoftware\lodop…….lodop.ocx’拒绝访问”。</span><br>
+操作系统可能有事情ie死进程，注销一下当前windows用户，或重启计算机。<br>
+<br>
+<span style="color:blue;font-weight:bold">C-Lodop服务安装启动成功，无法加载CLodopfuncs.js，无法访问http://localhost:8000，怎么办？</span><br>
+localhost无法访问导致<br>
+（1）先确认localhost是指向127.0.0.1的<br>
+（2）然后Ping 127.0.0.1，如果无法Ping通，则表名本地TCP/IP协议不能正常工作。此时重新安装一下网卡的驱动应该就OK了（只要你的网卡没坏）<br>
+<br>
+localhost无法访问导致<br>
+localhost是个域名类似www.baidu.com，不是ip地址，它可以被配置为任意IP地址<br>
+　　通常情况host文件都指向127.0.0,1(ipv4)和[::1](ipv6)<br>
+在windows中，这个域名是预定义的，从hosts文件中可以看出;<br>
+#localhost name resolution is handled within DNS itself.<br>
+# 127.0.0.1 localhost<br>
+注意这个值是可修改的，比如我把它改成<br>
+192.068.206.1 localhost<br>
+然后再去ping localhost,提示就变成了<br>
+PING locahost(193.068.206.1)56(84) bytes of data.<br>
+<br>
+所以先确认localhost是指向127.0.0.1的<br>
+<br>
+然后Ping 127.0.0.1，如果无法Ping通，则表名本地TCP/IP协议不能正常工作。<br>
+此时重新安装一下网卡的驱动应该就OK了（只要你的网卡没坏）<br>
+<br>
+<span style="color:blue;font-weight:bold">lodop在预览或者打印的时候，系统内存会随之增加，该如何处理？</span><br>
+内存增长属于正常的 打印缓存消耗，消耗的多少与打印机也有关系，有的打印机解析的任务小，有的打印<br>
+<br>
+机解析的打印任务大。<br>
+减少消耗的方法： 减少单个任务的输出数据量，如果是打印页数量大，<br>
+<br>
+可以参考样例 26 http://www.c-lodop.com/demolist/PrintSample26.html，多任务输出的处理。<br>
+正常情况下 ，打印结束后自动释放缓存。<br>
+<br>
+<span style="color:blue;font-weight:bold">其他链接</span><br>
+文档兼容性定义，使ie按指定的版本解析  https://www.cnblogs.com/EdwinChan/p/6542963.html<br>
+IE11下报堆栈溢出的暂时办法https://blog.csdn.net/zhao20100631/article/details/52457390<br>
+参考通过js获得：https://blog.csdn.net/woshinia/article/details/18795757<br>
+字号pt px inch cm的关系_号数、点数制对照表http://www.cnprint.org/bbs/thread/73/67855/?tdsourcetag=s_pcqq_aiomsg<br>
+CSS长度单位：px和pt的区别https://www.cnblogs.com/chinhr/archive/2008/01/23/1049576.html?tdsourcetag=s_pcqq_aiomsg<br>
+<br>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>
