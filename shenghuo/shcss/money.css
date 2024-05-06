@@ -1,0 +1,91 @@
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;display:inline-block;margin-top:27px;}
+h2{font-size:1.375em;}
+img{float:left; vertical-align:middle;}
+.box{float:left;}
+.header_box {width:100%;background-color:#fef8e7;}
+.header{padding:1%;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#fef8e7;
+    font-size:0.625em;
+}
+
+.main table{margin:auto;width:90%;border-width: 1px;border-style:solid;border-color: #a9c6c9;border-collapse: collapse;
+font-family: verdana,arial,sans-serif;font-size:11px;}
+.main td,th{border-width: 1px;border-style: solid;border-color: #a9c6c9;}
+.a1{background-Color:'#d4e3e5';}
+.xj{color:blue;}
+.fg{background-color:#a9c6c9;}
+.ye{color:green;}
+
+.linkk{display:block;width:100%;height:20px;background-color:#ffccff;line-height:20px;text-align:center;letter-spacing:20px;color:blue;font-weight:bold;}
+
+/**moneylifeindex的按钮开始**/
+  .mainindex{margin-top:10px;}
+  .mainindex ul{list-style-type:none;margin:0px;}
+  .mainindex li{width:100px;padding:5px;line-height:20px;float:left;display:block;height:20px;background:#d8b1b1;margin-left:10px;margin-top:10px;text-align:center;border:#7f9db9 1px solid;}
+  .mainindex p{margin:0px;}
+  .mainindex a{text-decoration:none;font-weight:bold;}
+   .clearFloat{clear:both;} 
+
+   .mainindex .input1{ margin-left:50px;width:68px;height:21px;color:#054ea8;font-size:12px;background:#d9eefd;border:#7f9db9 1px solid; margin:0;padding:0;}
+
+/**moneylifeindex的按钮结束**/
+
+
+/**PC，superQAs开始**/
+.menu ul{list-style-type: none;margin: 0; padding: 0;overflow: hidden;background-color:#0059b3;}
+.menu li {float: left;border-right:1px solid #ffffc8;}
+.menu a {display: block;color:#ffffc8;text-align: center;padding: 8px 16px;text-decoration: none;}
+.menu li:last-child {border-right: none;}
+.menu li a active{color:#ffcccc;}
+.main a:hover {color:blue;}
+
+.odd{background-color:#fffff9;}
+.even{background-color:#fff0ff;}
+
+/**PC，superQAs结束**/
+
+
+
+
+/**moneyindex的导航**/
+.manue{background-color:#e88383;}
+.manue ul{list-style-type:none;margin:0px;margin-top:10px;padding-left:50px;}/**40+10+5**/
+.manue li{background-color:#e88383;float:left;display:block;border-right:1px solid #ffffc8;height:40px;line-height:40px;}
+.manue a{display:block;background-color:#e88383;text-align:center;padding:0px 20px;text-decoration:none;height:40px;line-height:40px;color:#ffffe3;overflow:hidden;font-size:14px;font-weight:bold;}
+
+/**moneylist的下方废弃，目前是wujia里的**/
+.crc {}
+.crc_content{padding-left:20px;width:100%;}
+.crc ul{list-style-type:none;margin:0px;margin-top:10px;padding-left:20px;}
+.crc li{float:left;display:block;margin-left:20px;margin-bottom:40px;}
+.crc img{border-radius:50%;}
+.crc_content a{display:block;padding:10px;background-color:#ffff00;border:1px solid #ff99cc;}
+
+/**moneylist的下方,废弃
+.crc{background-color:gray;}
+.crc table{width:90%;margin:auto;padding:20px;}
+.crc table,td{border-collapse:collapse;text-align:center;}
+.crc img{border-radius:50%;}
+.content_table{padding-top:20px;padding-bottom:20px;}**/
+
+/**moneylist的下方
+.crc{height:500px;background-color:gray;color:white;clear:both;position:relative;}
+.crc table{width:700px;height:400px;margin:auto;padding:20px;}
+.crc table,td{border-collapse:collapse;text-align:center;}
+.crc img{border-radius:50%;}
+.content_table{padding-top:50px;}**/
+
+.table_right td{border-bottom:1px solid #a32f2f;}
+
+@media only screen and (max-width: 500px) {
+    .box { margin-right:0; float:left; }
+}
