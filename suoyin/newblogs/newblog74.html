@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】打印维护位置错乱（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】打印维护位置错乱（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】打印维护位置错乱（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p><br />打印维护（PRINT_SETUP语句）功能是提供给客户端单个电脑微调用的，为了让微调结果永久有效，Lodop会在本地为该过程对应生成一个ini配置文件，文件路径和文件名类似如下： 系统盘符:\Program Files (x86)\MountTaiSoftware\Lodop\PrintSetups_打印任务名.ini</p>
+<p>用打印维护针对每个客户端微调，可以解决一些打印机本身的偏移问题，比如打印机初始位置有问题，有挡板，挡板不是在初始位置等。</p>
+<p>但注意打印维护记录调整后的位置是根据打印项序号调整的，如果维护的模板，和实际代码里的打印代码打印项个数不一致，就会造成错乱。</p>
+<p>此问题5年前我自己测试过，这个是当时的博文：<br />https://www.cnblogs.com/huaxie/p/11698573.html</p>
+<p>（图）</p>
+<p>当时的起因是一个客户表示维护打印项位置乱跑，后来发现客户打印维护的代码，和页面的代码是不一样的。<br />客户的理由是页面上有打印项不需要，所以删除了打印项，但维护没有删除。<br />结果就是调整了某个打印项，但另一个打印项却跑到了该位置。<br />自己用四个打印项做了个简单例子测试了下，可以还原这个问题。</p>
+<p><br />此后，又遇到过几次，但次数并不多，需要注意事项和情况：</p>
+<p>情况1：模板写好了，模板维护的按钮也写好，但实际在页面上使用，有些客户需要这个打印项，有些不需要，干脆写个判断吧，需要该客户的走这个打印项，不需要的不走这个打印项。</p>
+<p>造成的结果1：不需要走这个打印项的，因为判断，该任务走的打印项个数和维护的模板不同，造成打印项错乱，不能这样使用。</p>
+<p>情况2：模板写好了，客户觉得模板太死了，但自己又不想一种格式一种模板，干脆让客户设计，返回客户设计的代码进行模板修改，客户用自己修改的模板打印。</p>
+<p>造成的结果2：客户有的需要很少打印项，删了很多，又用打印项很多的原始模板进行维护，结果就是打印项位置错乱。</p>
+<p>情况3：之前的程序员离职了，新来的程序员看到代码，怎么打印代码里这么多空值的打印项，空值的又不显示，有什么必要，这不是多余的代码吗，删了吧。</p>
+<p>造成的结果3：只修改了打印代码，打印维护的还是维护的原来模板的代码，打印项个数不同，维护后造成打印项错乱。</p>
+<p>解决方法：<br />1.针对不同客户端需要的打印项个数不同。<br />方法（1）：不同打印项设置不同的模板，客户用哪个选哪个模板<br />方法（2）：:不需要的打印项，可以传空值，空值的打印项不会在打印时显示，但是这个打印项是存在的，还是和原来的模板序号一致，不会影响原来的序号。</p>
+<p>2.想删除某些打印项，打印项不需要了<br />方法（1）：删除模板中某个打印项，注意打印维护那个按钮里的模板方法，也删除掉打印项，让页面代码和维护的<br />代码打印项个数一致。<br />之前的维护生成的ini文件删除掉，或打印维护里点恢复整体缺省，重新维护新的。<br />方法（2）：不需要的打印项传空值，原来的维护模板代码不用改，可以保证还是原来的打印项序号。</p>
+<p>注意：维护模板，和使用的模板打印项个数需要一致，会根据序号记录调整的位置。<br />不一致就会造成异常，维护一个打印项，跑的却是另一个打印项，打印项位置错乱。</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>
