@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】批量打印漏打和重打(及c-lodop日志）（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】批量打印漏打和重打(及c-lodop日志）（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】批量打印漏打和重打(及c-lodop日志）（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>首先确认是最新版c-lodop，以管理员权限安装最新版c-lodop测试下http://www.c-lodop.com/download.html</p>
+<p>c-lodop出现过一些中间的测试版，出现过重打漏打问题，当时的版本出现大量反馈， 后续版本就修复了。<br />此外，新版本对旧版本优化较多，出现问题，可先用最新版对比测试。</p>
+<p>c-lodop版本变更记录：http://www.c-lodop.com/c-lodopsteprec.html</p>
+<p>2.0.6.8<br />修正: 样例26出现漏打问题；</p>
+<p>2.0.9.0<br />修正: 彻底解决chrome浏览器丢单问题；</p>
+<p>3.0.9.3<br />修正: 解决重复打印问题；</p>
+<p>......</p>
+<p>通过日志排查：</p>
+<p>旧版本有个日志功能，为了排查当时大量出现的重复打印问题，后续重打问题在3093修正：</p>
+<p>3.0.9.3<br />增加: 日志功能，在端口设置界面的右键菜单里勾选 Run Logs<br />       日志存放目录: MountTaiSoftware/CLodop32/Logs，保留最新7天日志，每天不超过200k（约2千条）<br />       日志有对话REQUEST类和打印PRINTED类两类成功日志(暂无失败日志)，<br />       前者保存了请求目的、对方IP、对话协议、对话端口和对话时间;<br />       后者保存了打印机名、打印标题、打印任务页数、打印份数、打印时间；</p>
+<p>PS：这个日志新版本已经没有了，新版本不再有这个日志，而是另一种</p>
+<p>c-lodop日志功能，在端口设置界面的右键菜单里勾选 RunLog Status<br />web地址查看：http://localhost:8000/c_sysmessage?subopt=acrc</p>
+<p><br />新版的日志是web地址查看方式：http://localhost:8000/c_sysmessage?subopt=acrc<br />打印的时间，打印的语句，打印来源</p>
+<p>例如（一个预览打印，一个直接打印）日志：<br />（图）</p>
+<p>新版日志的条数限制:<br />日志有条数限制，最新的500个事件，超过500个前面的会消失</p>
+<p><br />（1）任务数量不对，漏任务（漏的任务没有规律），或重打，重打无规律<br />漏打排查：<br />1.调试下JS，排查下代码，是否执行了足够数量的PRINT语句。<br />2.用最新版试试http://www.c-lodop.com/download.html<br />3.打印机脱机查看下打印机队列的任务数量是否正常<br />4.判断print的返回值，参考样例4.http://www.c-lodop.com/demolist/PrintSample4.html，返回值判断的是是否加入队列<br />5.安装最新版c-lodop试试http://www.c-lodop.com/download.html<br />开启日志功能，查看下日志是否正常。<br />（新版的日志是web地址查看方式：http://localhost:8000/c_sysmessage?subopt=acrc）</p>
+<p><br />第3条打印机脱机排查：<br />3.打印机脱机查看下打印机队列的任务数量是否正常<br />每个任务名后面加一个自然数，这样在队列里就可以观察是第几个任务出现情况。</p>
+<p>有模板，打印维护根据模板调整，，不想修改任务名，又想在队列里显示不同的名字便于排查</p>
+<p>参考样例26：不修改任务名的情况下，可以加这个为每个队列的名字设置不同的名字，后面加序号，可以方便排查。<br />LODOP.SET_PRINT_MODE("CUSTOM_TASK_NAME","中文学位证书打印"+i);//为每个打印单独设置任务名	</p>
+<p><br />第4条的判断print的返回值<br />4.判断print的返回值，参考样例4.http://www.c-lodop.com/demolist/PrintSample4.html，返回值判断的是是否加入队列<br />注意：<br />批量打印，如果是c-lodop批量打印，则需要LODOP.On_Return_Remain=true;将回调结果保留，c-lodop任务可通过TaskID区分。<br />例如：<br />把taskid和Value赋值给一个文本框，在文本框中输出全部的日志，观察输出的日志情况<br />（图）</p>
+<p>第5条日志排查：<br />c-lodop日志功能，在端口设置界面的右键菜单里勾选 RunLog Status<br />web地址查看：http://localhost:8000/c_sysmessage?subopt=acrc<br />日志有条数限制，最新的500个事件</p>
+<p><br />（2）有内容日志吗，任务数量正常，但偶尔打印是空白的，漏内容？<br />偶然漏内容，内容空白，任务数量正常，原因很多，调试JS和多次测试观察现象和规律：</p>
+<p>#调试JS，排查是否有任务输出了空白的内容，例如赋值时，赋的是空值，数据传输有问题，值没获取到等。</p>
+<p>#批量打印，每个任务没加初始化语句INIT或INITA，<br />这个初始化会清空之前的语句，如果不加，会造成一些偶然或一些奇怪的现象<br />（包括数据内容重复，空白，打印机偶然走的不是指定的打印机等）</p>
+<p>#打印量太大，操作系统windwos打印服务崩溃，打印机驱动崩溃</p>
+<p>#打印内容包含大量的htm超文本和图片，超文本经过浏览器解析，大量打印，相当于大量调用底层解析引擎，底层解析引擎出现问题，大量打印后出现问题（一般表现为后面的任务是空白的，打印多少之后突然后面都是空白了）</p>
+<p>其他排查：<br />1.排查打印机或打印机驱动有关，还是代码有关</p>
+<p>用xps或pdf虚拟打印机测试下，<br />win7以后系统自带Microsoft XPS Document Writer虚拟打印机或者 下载安装群文件里的Doro PDF Writer虚拟打印机</p>
+<p>如果虚拟打印机无法还原问题，且其他打印机也无法还原，一般是打印机或打印机驱动问题。<br />例如打印机故障，打印机驱动存在问题，某些打印机会输出重复的任务等。<br />可更新下该打印机最新的打印机驱动测试下。</p>
+<p>2.该用纯文本输出对比，避免大量打印超文本造成的问题：</p>
+<p>快递单，小票，标签，票据等，建议用ADD_PRINT_TEXT等纯文本和画线等进行设计，不受浏览器解析的影响。<br />参考http://www.c-lodop.com/demolist/PrintSample4.html<br />参考http://www.lodop.net/demolist/PrintSample18.html<br />画线输出表格，参考http://www.c-lodop.com/demolist/PrintSampleA1.html</p>
+<p>里面包含图片怎么办？<br />（有两种不需要浏览器解析的图片输出方式）<br />安装最新版c-lodop，不加img标签，不经过浏览器解析<br />ADD_PRINT_IMAGE直接输出http的URL方式测试下，不加img标签。<br />例如：<br />LODOP.ADD_PRINT_IMAGE(0,0,"210mm","296.99mm","http://www.c-lodop.com/demolist/PrintSample8.jpg");<br />或参考样例38，直接输出base64码，不加img标签，不经过浏览器解<br />析,http://www.c-lodop.com/demolist/PrintSample38.html</p>
+<p>里面有条码二维码怎么办？<br />lodop语句输出条码二维码，参考样例11 http://www.c-lodop.com/demolist/PrintSample11.html<br />这种也不经过浏览器解析。</p>
+<p>3.任务打印过快，相同的任务名，造成后一个任务把前一个任务(还未生成）清除掉，<br />（一般出现与标签等，内容特别少，打印速度很快，后面的追上前面的任务）<br />解决方法：任务名加一个自然数或时间戳等，让每个任务名不同，用来测试。<br />分组打印，一个任务一个标签如果过快，可以一个任务打印十个标签等，分页分组打印。<br />把一个任务打印一张，修改为 一个任务打印多张(分页打印）。</p>
+<p>4.有规律的出现漏打，或重打<br />必现问题，虚拟打印机也可以还原，每次都会漏打固定位置的任务。<br />这种一般和代码程序写法等有关，排查循环的格式是否正常，是否有任务数据异常等。</p>
+<p>5.无规律异常，重打，漏打，内容空白，内容缺失，内容缩放偏移，打印机偶尔不是指定的打印机等<br />排查每个任务是否加了初始化语句INIT或INITA，未加初始化，会造成一些奇怪的异常。<br />初始化是每个任务开始的标志，打印任务中必须添加初始化语句。</p>
+<p>总结：<br />1.确保用最新版c-lodop,优化较多<br />2.量较大，尽量用纯文本和画线输出（不用超文本）<br />3.出现问题，调试JS，并可通过日志，用虚拟打印机和其他打印机电脑等对比，确定问题出现的原因，是否和打印机驱动有关，或电脑或代码本身存在异常。<br />4.每个任务是否加了初始化语句INIT或INITA。</p>
+<p><br />漏打重打问题，如果是偶尔出现，因为原因很多且无法复现，不好排查，只能后续继续观察调试，排查和什么原因有关。<br />有些是打印机故障引起的，有些是程序代码本身有问题，有些是操作系统打印服务出现问题，打印机驱动版本过旧等。</p>
+<p>上面是一些情况，和辅助排查方式。<br />自己本身每月月初也会打对公回单，也会遇到一次回单机故障，出现一张有内容一张空白，打印机和系统的一体机也会出现问题，更何况是各式各样的打印机，和各种系统下造成的问题。</p>
+<p>一般情况下，客户端本地打印，办公，仓库等，一般客户下班会关电脑等，不再打印，不会是批量连续的。<br />出现漏打和重打等，且偶尔出现，大量打印只有少量出现问题等，原因很多，理论上软件和操作系统和打印机驱动没有限制，但受硬件等影响，大批量打印且中途不停顿等，可能会造成一些问题。<br />或在JS等记录下打印情况，然后补打对应的任务。</p>
+<p><br />出现这个问题，要么是代码有问题：<br />1.最常见的是没加初始化语句INIT或INITA。<br />2.数据问题，有数据传的空值，可以通过JS排查调试内容数据<br />3.大批量打印超文本，导致一些崩溃或问题。<br />4.打印机驱动和windows打印服务处理问题，一些异常导致的故障，这种不好排查，首先可用虚拟打印机测试，排查是否和打印机有关，排除打印机问题。</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>
