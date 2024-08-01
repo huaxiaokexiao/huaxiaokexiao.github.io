@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>关键词点击显示lodop问答</title>
+  <!--<link href="../../css/divstyle1.css" rel="stylesheet">-->
+   <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#a1").click(function(){
+    $(".Ans").hide();
+  });
+  $("#key1").click(function(){
+    $("#an1").show();
+  });
+  $("#key2").click(function(){
+    $("#an2").show();
+  });
+});
+</script>
+<style>
+div.zy a{text-decoration:none;background-color:#ffffcc;}
+
+div.outset {
+padding:10px;
+border-style:solid;
+border-width:5px;
+border-style:outset;
+
+border-top-color:#74f3f3;
+border-right-color:#3333ff;
+border-bottom-color:#ffa6d2;
+border-left-color:#ff9d9d;
+}
+
+.Ans{margin-top:10px;
+padding:10px;
+border-style:solid;
+border-width:5px;
+/**border-style:outset;**/
+
+border-top-color:#33cccc;
+border-right-color:#ffccff;
+border-bottom-color:#33cccc;
+border-left-color:#ffccff;
+display:hidden;
+}
+
+#key1,#key2{
+margin:5px;
+padding:10px;
+border-style:solid;
+border-width:5px;
+background-color:#ffff66;
+text-decoration:none;
+display:block;
+}
+#an1{border-style:dotted;}
+
+.kk{border-color:#33cccc;}
+.a1{color:red;}
+
+</style>
+ </head>
+ <body>
+ <div class="outset zy"><a href="#">返回扩选lodop问答主页</a>&nbsp;&nbsp;&nbsp;&nbsp;<a id="a1" href="#">隐藏全部细节内容</a></div>
+
+
+<a id="key1"  style="width:150px;" href="#">如何打印表格</a>
+<a id="key2"  style="width:150px;" href="#">次页偏移</a>
+
+  <div id="an1" class="Ans" style="display:hidden;">
+打印表格带页头页尾 参考样例15 http://www.c-lodop.com/demolist/PrintSample15.html<br>
+分页打印综合表格 参考样例43 http://www.c-lodop.com/demolist/PrintSample43.html<br>
+超文本表格传入css样式，参考样例10 http://www.c-lodop.com/demolist/PrintSample10.html<br>
+纯文本+线，画线输出表格，参考http://www.c-lodop.com/demolist/PrintSampleA1.html<br>
+</div>
+  <div id="an2" class="Ans">
+可以设置次页偏移，超文本自动分页后，次页开始的位置不再是初始位置，而是偏移后的位置。<br>
+例如：LODOP.SET_PRINT_STYLEA(0,"Offset2Top",-140);//设置次页向上偏移140 <br>
+</div>
+ </body>
+</html>

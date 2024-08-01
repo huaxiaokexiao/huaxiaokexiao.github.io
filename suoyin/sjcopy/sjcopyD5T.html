@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>关键词点击显示lodop问答</title>
+  <!--<link href="../../css/divstyle1.css" rel="stylesheet">-->
+   <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+   <script src="./JQJSCSS/JQ3.js"></script>
+   <link href="./JQJSCSS/JQ3.css" type="text/css" rel="stylesheet">
+ </head>
+ <body>
+ <div class="outset zy"><a href="./sjcopylist.html">返回手机扩选lodop问答主页</a>&nbsp;&nbsp;&nbsp;&nbsp;</div><!--<a id="a1" href="#">隐藏全部细节内容</a>-->
+
+<div class="jq_table">
+<table>
+<tr>
+	<th><a id="a1" href="#">点此隐藏全部细节内容</a>后点关键词进入</th>
+</tr>
+<tr>
+	<td><a id="key1" href="#">页眉页脚</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a id="key2"  style="width:180px;" href="#">页眉页脚样例</a>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+</tr>
+<tr>
+	<td><a id="key3"  style="width:320px;" href="#">打印任务第几页到第几页</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a id="key4"  style="width:480px;" href="#">打印任务第几页到第几页样例</a>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+</tr>
+<tr>
+	<td><a id="key5" href="#">可重选的打印预览样例</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a id="key6"  style="width:260px;" href="#">可重选的打印预览</a>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+</tr>
+<tr>
+	<td><a id="key7" href="#">字体设置方法</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a id="key8"  style="width:260px;" href="#">纯文本字体加粗</a>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+</tr>
+<tr>
+	<td><a id="key9" href="#">赋值方法</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a id="key10"  style="width:260px;" href="#">同一个任务发送到不同的打印机</a>&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+</tr>
+</table>
+</div>
+  <div id="an1" class="Ans">
+需要每页输出的打印项设置为页眉页脚项<br>
+LODOP.SET_PRINT_STYLEA(0,"ItemType",1);//设置上面的为页眉页脚，每页固定位置输出<br>
+</div>
+  <div id="an2" class="Ans">
+参考http://www.c-lodop.com/demolist/PrintSample43.html<br>
+带颜色的div分别作为它们的页眉页脚。<br>
+http://www.c-lodop.com/demolist/PrintSample6.html<br>
+里的自动居中的标题，也被设置了页眉页脚，每页输出。<br>
+</div>
+ <div id="an3" class="Ans">
+打印一个任务的第几页到第几页，参考例如：<br>
+LODOP.SET_PRINT_MODE ("PRINT_START_PAGE",2);//设置从第2页开始打印<br>
+LODOP.SET_PRINT_MODE ("PRINT_END_PAGE",3);//设置从第3页结束打印<br>
+</div>
+ <div id="an4" class="Ans">
+参考http://www.c-lodop.com/demolist/PrintSample22.html，右键查看源码，打印一个任务的第几页到第几页。<br>
+</div>
+ <div id="an5" class="Ans">
+参考样例7 http://www.c-lodop.com/demolist/PrintSample7.html，步骤7，可重选的打印预览。<br>
+</div>
+ <div id="an6" class="Ans">
+使用SET_PRINT_MODE("RESELECT_XXX",true);语句可允许操作者在预览界面重选这些设置。<br>
+用如下语句，让这些信息可以在预览界面重新指定：<br>
+LODOP.SET_PRINT_MODE("RESELECT_PRINTER",true); 允许重选打印机<br>
+LODOP.SET_PRINT_MODE("RESELECT_ORIENT",true); 允许重选纸张方向<br>
+LODOP.SET_PRINT_MODE("RESELECT_PAGESIZE",true); 允许重选纸张<br>
+LODOP.SET_PRINT_MODE("RESELECT_COPIES",true); 允许重选份数<br>
+</div>
+ <div id="an7" class="Ans">
+字体设置方法：<br>
+一、整体设置（针对文本项），打印初始化后、增加打印项之前调用本函数<br>
+LODOP.SET_PRINT_STYLE("FontSize",11);<br>
+二、单个打印项（针对文本项）进行字体设置，例如：<br>
+LODOP.SET_PRINT_STYLEA(3,"FontName","隶书");<br>
+设置第3个内容项的字体为隶书。<br>
+LODOP.SET_PRINT_STYLEA(3,"FontSize",15);<br>
+设置第3个内容项字体为15号字体<br>
+单独设置某个打印项的字体，可以参考样例3。<br>
+一、二、是对所有内容字体的设置，只对文本项起作用，超文本不起作用。css样式参见样例<br>10，http://www.c-lodop.com/demolist/PrintSample10.html<br>
+</div>
+ <div id="an8" class="Ans">
+设置字体加粗：<br>
+LODOP.SET_PRINT_STYLEA(0,"Bold",1);<br>
+</div>
+ <div id="an9" class="Ans">
+1.按变量形式赋值，参考样例35；<br>
+2.按顺序赋值 ，参考样例36<br>
+LODOP.SET_PRINT_STYLEA(x,"Content",”赋值内容”);//第一个参数x-给第几个输出打印项赋值，<br>
+Content-关键字，第三个参数：输出内容<br>
+例如：赋值第1、2、3项内容赋值<br>
+LODOP.SET_PRINT_STYLEA(1,"Content","学生证");<br>
+LODOP.SET_PRINT_STYLEA(2,"Content","张三");<br>
+LODOP.SET_PRINT_STYLEA(3,"Content","王五");<br>
+3.按项目类名赋值,项目类型是aa：<br>
+LODOP.SET_PRINT_STYLEA(‘aa’,"Content","学生证");//项目类名是aa的所有打印项内容被替换<br>
+</div>
+ <div id="an10" class="Ans">
+同一个任务同时发送到不同的打印机打印，<br>
+参考样例44，第3步<br>
+例如：<br>
+LODOP. SET_PRINT_MODE("NOCLEAR_AFTER_PRINT",true);//设置打印完毕不清理打印信息<br>
+LODOP. SET_PRINTER_INDEXA("SG");//设置打印机SG<br>
+LODOP.PRINT();//打印<br>
+LODOP. SET_PRINTER_INDEXA("HY");//设置打印机HY<br>
+LODOP.PRINT();//打印<br>
+</div>
+ </body>
+</html>
