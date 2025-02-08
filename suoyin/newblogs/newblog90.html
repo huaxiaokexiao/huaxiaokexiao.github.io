@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】AO端桥模式打印不了，端桥打印机任务出不来（newblog90）（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】AO端桥模式打印不了，端桥打印机任务出不来（newblog90）（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】AO端桥模式打印不了，端桥打印机任务出不来（newblog90）（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>1.首先确认下AO服务器上的c-lodop是否处于启动状态，或端口是否被阻挡</p>
+<p>AO服务器上的c-lodop如果没启动，或启动了处于异常状态卡死等，或AO服务器上有什么阻挡了端口等，无法访问AO服务器，也就无法调用到AO服务器上您的c-lodop。</p>
+<p>如何确认是否被阻挡，还是没启动？</p>
+<p>（当是http的时候）<br />访问下http://[C-Lodop服务所在主机ip或域名]:[C-Lodop端口]/c_aobridge欢迎页面</p>
+<p>（当是https的时候）<br />访问下https://[C-Lodop服务所在域名]:[C-Lodop端口]/c_aobridge欢迎页面<br />注：<br />（1）证书是颁发给域名的，所以https的只能用域名方式<br />（2）http端口是8000和1000，https的是8443端口</p>
+<p>如果欢迎页面访问不了，说明AO服务器上的c-lodop没处于启动状态，或网络有问题，或端口被阻挡了<br />ping一下域名或ip，排查网络是否正常。<br />如果网络正常，排查端口是否被阻挡了</p>
+<p>网络是通的情况下，一般是端口问题，AO服务器上的防火墙问题：<br />图文详解AO打印（端桥模式） 参考http://www.c-lodop.com/blogs/Blog014.html<br />注意AO服务的默认端口是9200，测试和管理(访问)端口是8000(备用端口18000），服务器开启防火墙的话，要开通这三个端口访问权。</p>
+<p>ping一下访问的地址，排查两个电脑是网络是否连通<br />排查端口是否放开，8000,18000,9200，如果是https，还要放开8443端口</p>
+<p>2.AO服务器上的c-lodop是启动的，端口也正常，有的客户能访问并打印，有的客户不能。（超出了访问端数量个数的情况）</p>
+<p>测试方法：<br />还是先访问欢迎页面确认问题：<br />访问下http://[C-Lodop服务所在主机ip或域名]:[C-Lodop端口]/c_aobridge欢迎页面<br />有的客户能访问到欢迎页面，有的客户访问出现了&ldquo;超出5个限制&rdquo;的提示页面<br />（图）</p>
+<p>参考：关于购买梦泰尔软件授权的注意事项<br />http://www.c-lodop.com/Lodop_note.html</p>
+<p>这个是c-lodop的提示页面，提示当前访问的用户已经超出5个限制，这个访问数量是累计的，接入一个算一个，当累计超出5个时，第6个以及往后的访问端访问时，就无法访问对应的clodopFuncs.js，加载不上也就调用不了远程的c-lodop。</p>
+<p>当前还是测试阶段，还没购买，超出5个不能用了怎么办？<br />重启AO服务器上的c-lodop可以重新计数，可以继续测试。</p>
+<p>如果不限访问端？购买D注册去除AO端桥角色的访问端限制，D注册不限访问端。绑定AO服务器机器硬件。</p>
+<p>提示的不是超出5个，是超出10个是怎么回事？<br />之前AO服务器注册过A注册，B注册，C注册等，这种也是扩充访问端，但也有限制，超出注册等级的限制后，也会提示超出一定个数。</p>
+<p>此问题表现为一部分客户可以正常访问AO服务器和打印，一部分（超出访问限制的）打印不了。</p>
+<p>怎么判断是否是这个超出问题？<br />找一台有问题的访问不了的访问端，访问这个欢迎页面http://[C-Lodop服务所在主机ip或域名]:[C-Lodop端口]/c_aobridge，如果访问出来是一个超出XX个的提示页面，说明该客户访问不了的原因就是这个。</p>
+<p>3.端桥不在线情况<br />测试方法：<br />还是先访问欢迎页面确认问题：<br />访问下http://[C-Lodop服务所在主机ip或域名]:[C-Lodop端口]/c_aobridge欢迎页面</p>
+<p>欢迎页面可以正常访问，能获取到很多端桥，但端桥的列表里没有自己指定的端桥，测试下其他端桥，其他端桥都能正常打印 。</p>
+<p>需要的端桥不在线的可能原因：<br />（1）端桥真的不在线，端桥端电脑已经关机，端桥端电脑的c-lodop取消了端桥的指向链接设置。<br />（2）端桥端电脑的c-lodop指向了AO服务器的c-lodop，但连接出现问题。</p>
+<p>如图，端桥指向后，下方有个状态栏可以显示当前是否连上，如果连不上，可能会显示尝试链接等其他提示<br />(图）</p>
+<p>端桥时有时没有，有时候能打，有时候不能打？<br />端桥端电脑网络不稳定，因为链接AO端桥需要网络，属于远程打印，网络不稳定会导致端桥有时候有，有时没有。</p>
+<p>4.端桥在线，某端桥下所有打印机都打印不出来<br />访问下http://[C-Lodop服务所在主机ip或域名]:[C-Lodop端口]/c_aobridge欢迎页面，</p>
+<p>直接在欢迎页面测试，排除指定端桥时指定错误等，导致发送给了其他端桥。<br />排查该端桥端是否有共享打印机，删除所有共享打印机后再测试下（个别共享打印机故障会导致一些问题）</p>
+<p>5.端桥在线，某端桥下的某个打印机打印不出来<br />访问下http://[C-Lodop服务所在主机ip或域名]:[C-Lodop端口]/c_aobridge欢迎页面，<br />如果该端桥下的所有打印机列表，只有个别打印机出现问题，可能和该打印机或打印机驱动有关，重装该有问题的打印机驱动试试。<br />并排查该端桥端是否有共享打印机，删除所有共享打印机后再测试下（个别共享打印机故障会导致一些问题）<br />如果需要该共享打印机，删除后，重新添加，重新共享下，</p>
+<p><br />6.其他端桥正常，只有一个端桥有问题，显示不出端桥下的打印机列表</p>
+<p>其他端桥正常，某一个端桥有问题，可以判断AO服务器等正常，出问题的地方在端桥那一边，具体是什么问题，需要在该端桥上排查下。<br />常见的：<br />1、排查系统打印服务(Print Spooler)是否开启了，<br />端桥属于打印端，借助该端桥端的windows打印服务，如果这个服务有问题，该端桥打印和获取打印机会有问题</p>
+<p>2.操作系统windows打印机列表不存在打印机。<br />不存在打印机获取的打印机列表就是空的，选不到打印机。</p>
+<p>3.端桥端存在有问题的共享打印机，<br />测试方法：删除所有共享打印机后再测试下</p>
+<p>自己指定的不是共享打印机，为什么要删除共享打印机?<br />个别共享打印机故障也会导致一些问题，即使不是您当前指定的打印机，如果不好判断是哪个共享打印机故障，测试方法就是删除所有共享打印机。</p>
+<p>7.所有端桥都有问题，欢迎页面也可以访问，就是所有端桥都打印不了。<br />重启下AO服务器上的c-lodop，如果重启后正常了，说明AO服务器出现了异常，例如卡死或c-lodop启动异常。<br />AO服务器上以管理员权限安装最新版c-lodop测试下http://www.c-lodop.com/download.html</p>
+<p>下面这个版本对远程打印有优化，安装这个版本及其后的版本，可直接在官网下载最新版<br />6.6.1.1<br />修正：解决内嵌预览内的同步打印偶尔引起的死锁问题;<br />修正：重启失败是因为原端口没有释放时，增加20秒的强化杀原进程过程;</p>
+<p>c-lodop默认有个凌晨定时重启，凌晨三点定时重启，管理员权限正常是可以重启成功，一些情况下会导致重启失败，新版对该重启失败问题的有优化。</p>
+<p>AO端桥模式属于远程打印，多个访问端客户同时点打印预览，远程预览窗口，可能或造成一些卡死，这个最新版也有优化。</p>
+<p>8.出了前面7提到的远程多个预览同时偶尔引起的卡死问题，凌晨重启失败问题，<br />还有可能的就是：<br />（1）AO服务器上的AO服务器管理界面处于打开状态，需要关闭，不要一直开着。<br />（2）AO服务器上的c-lodop安装时没勾选云服务器工作模式，打到了服务器上的虚拟打印机上，虚拟打印机出现了弹窗。</p>
+<p>9.端桥打印机出不来，但是加入了队列，加入队列就交给windows打印服务了，就是打印机脱机，打印机和电脑连线等端桥本机的问题。</p>
+<p><br />端桥打印不了，排查的一些步骤：<br />（1）AO服务器问题？端桥问题？<br />先确定是AO服务器出了问题，还是端桥端出了问题。</p>
+<p>（2）端桥问题？打印机问题？<br />如果是端桥出了问题，再排查是该端桥下所有打印机都无法打印，还是该端桥下只有一个打印机有问题，排查是端桥问题，还是打印机问题。</p>
+<p>（3）AO服务器端口？AO服务器c-lodop出现故障？<br />如果确认所有端桥都有问题，大概率问题在AO服务器上</p>
+<p>1，访问下http://[C-Lodop服务所在主机ip或域名]:[C-Lodop端口]/c_aobridge欢迎页面<br />排查AO服务器上的c-lodop是否处于启动状态，网络是否连通，端口等是否放开能正常访问，</p>
+<p>情况：欢迎页面可以访问<br />http://[C-Lodop服务所在主机ip或域名]:[C-Lodop端口]/c_aobridge<br />测试下不同的端桥，测试是否是只有这一个端桥无法打印。</p>
+<p>情况：其他端桥都正常，只有这一个端桥打印不了。<br />（如果该端桥下有多个打印机）测试下该端桥下不同的打印机，排查是否只有这一个打印机有问题。</p>
+<p>-----其他端桥正常，该端桥下所有打印机都打印不了，问题应该是在该端桥上，<br />该端桥上的c-lodop是否有问题：重启c-lodop或重新安装最新版c-lodop<br />以管理员权限安装最新版c-lodop测试下http://www.c-lodop.com/download.html</p>
+<p>c-lodop重装后也有问题，排查该有问题的端桥端是否有共享打印机，删除所有共享打印机再测试下。</p>
+<p>该端桥时而可以，时而不可以，排查网络是否正常，端桥是否稳定在线。</p>
+<p>2.访问下http://[C-Lodop服务所在主机ip或域名]:[C-Lodop端口]/c_aobridge欢迎页面<br />欢迎页面访问不了</p>
+<p>情况：AO服务器上的c-lodop出现问题，没启动，卡死等<br />重启AO服务器上的c-lodop或重新安装最新版c-lodop<br />以管理员权限安装最新版c-lodop测试下http://www.c-lodop.com/download.html</p>
+<p>情况：访问AO服务器上的c-lodop时，被防火墙阻挡端口，或网络出现问题<br />图文详解AO打印（端桥模式） 参考http://www.c-lodop.com/blogs/Blog014.html<br />注意AO服务的默认端口是9200，测试和管理(访问)端口是8000(备用端口18000），服务器开启防火墙的话，要开通这三个端口访问权。</p>
+<p>AO服务经常卡死，或没启动，重启AO服务器上的c-lodop后又正常了</p>
+<p>多个访问端客户同时点打印预览，远程预览窗口偶尔卡死，凌晨重启失败等<br />以管理员权限安装最新版c-lodop测试下http://www.c-lodop.com/download.html<br />最新版有优化</p>
+<p><br />总结：<br />某个端桥打印机任务出不来，怎么回事？<br />访问下http://[C-Lodop服务所在主机ip或域名]:[C-Lodop端口]/c_aobridge欢迎页面</p>
+<p>1.先确定问题在AO服务器上，还是在端桥端。<br />2.确定AO服务器有问题，重装AO服务器上的c-lodop，排查端口，网络，防火墙等。<br />3.确定端桥端问题，重装端桥端上的c-lodop，打印机驱动，共享打印机，端桥端网络不稳定，端桥端widnows打印服务Print Spooler等</p>
+<p>目前只有一个端桥怎么测试，这个端桥打印不出来，怎么办？</p>
+<p>官网有个端桥的测试地址：<br />http://121.196.197.102:8000/c_aobridge<br />http://demo.c-lodop.com:8000/c_aobridge</p>
+<p>可以尝试该端桥指向官网测试的AO服务器，如果指向后，可以远程在该端桥打印。问题出在您的AO服务器上。<br />如果官网的这个测试地址指向后，也选不到该端桥下的打印机等，问题在该端桥端上。</p>
+<p>ps：<br />后续补充：<br />除了打开AO管理界面导致AO服务器上c-lodop卡死外，已经虚拟打印机在服务器上弹窗，还有一种情况：<br />10.集中打印或AO服务器上打开了预览窗口。<br />由于集中打印和AO端桥模式中，集中打印或AO服务器不承担打印任务，实际使用中用户也不会在服务器上操作打开预览窗口等，这种情况一般发生在开发人员的测试阶段。</p>
+<p>例如：开发人员弄了一台win电脑作为集中打印或AO服务器，然后让其他成员作为访问端测试，但自己在这台win电脑上点了打印预览等，这种情况，其他访问端打开的远程预览窗口都是空的，是无法进行预览的。</p>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>

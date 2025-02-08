@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】操作失败...canvas does not allow drawing（newblog83）（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】操作失败...canvas does not allow drawing（newblog83）（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】操作失败...canvas does not allow drawing（newblog83）（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>参考http://www.c-lodop.com/faq/pp1.html<br />排查链接里的操作失败的条目</p>
+<p>操作失败是windows抛出的错误，除了链接里的条目，还可以排查下是否指定了导出为wps pdf这个pdf虚拟打印机。</p>
+<p>原因1：选择了导出为wps pdf虚拟打印机</p>
+<p>选择打印机，参考样例5、7<br />http://www.c-lodop.com/demolist/PrintSample5.html<br />http://www.c-lodop.com/demolist/PrintSample7.html<br />选择其他打印机测试下，<br />排查是否选择了导出为wps pdf，选择不是这个导出为wps pdf 的其他打印机试试</p>
+<p><br />如果测试发现只有这个导出为wps pdf有问题，但自己需要导出pdf，怎么办？<br />只有这个导出为wps pdf有问题，不要选择这个打印机，尽量不用带&ldquo;导出&rdquo;字样的虚拟打印机</p>
+<p>例如：Doro PDF Writer虚拟打印机，Bullzip PDF Printer等</p>
+<p>没指定打印机，但报错这个，指定了某个真实打印机不报错了，怎么回事？</p>
+<p>打印机优先级，参考http://www.c-lodop.com/blogs/Blog002.html<br />如果代码不指定打印机，会根据优先级走<br />如果根据优先级，刚好走的是导出为wps pdf，也会出现问题</p>
+<p>原因：其他<br />这个是操作系统抛出的错误，如果不是导出为wps pdf问题，则需要排查一下系统错误。<br />（1）删除所有共享打印机测试对比下，<br />某个共享打印机故障也会导致一些问题。<br />如果需要用到共享打印机，删除测试确认正常后重新共享下。</p>
+<p>（2）删除set_print_pagesize语句测试<br />set_print_pagesize语句，这个是自定义纸张语句，个别打印机支持有问题，会报错。<br />可通过删除该语句排查是否和该语句有关。</p>
+<p>（3）操作系统的系统打印服务(Print Spooler)，打印机驱动等问题</p>
+<p>（4）本机底层IE出现问题，重置IE，升级IE</p>
+<p>（5）lodop或c-lodop版本较低。安装最新版测试</p>
+<p>（6）如果是刚刚添加打印机出现该问题，建议重新启动电脑（个别驱动程序要求系统重启打印服务）<br />重启电脑再测试下</p>
+<p>（7）电脑病毒，系统故障，权限问题，打印机驱动故障等<br />更新后续操作系统补丁，删除所有打印机重新安装等。</p>
+<p>测试相关：<br />1.是否和打印机有关，选择不同的打印机测试（不选导出为wps pdf虚拟打印机）<br />2.删除所有共享打印机（c-lodop会获取所有打印机，即使当前不是选的故障的共享打印机，也会有问题）<br />这两个是最常见的。</p>
+<p>3.删除set_print_pagesize语句测试，重置IE，重启电脑，用不同电脑测试，系统故障，电脑权限问题，病毒，打印机驱动故障等其他个别电脑存在的系统问题</p>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>

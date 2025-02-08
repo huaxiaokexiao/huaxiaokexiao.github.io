@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】linux桌面版的lodop7凌晨定时重启去掉弹窗（newblog89）（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】linux桌面版的lodop7凌晨定时重启去掉弹窗（newblog89）（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】linux桌面版的lodop7凌晨定时重启去掉弹窗（newblog89）（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>windows下的c-lodop，和linux桌面版（国产操作系统）下的lodop7，都有凌晨定时重启功能，用来确保lodop进程的进一步的启动</p>
+<p>重启时间是凌晨三点，由于大部分软件和系统都是办公等用的，一般凌晨都自动关机了，第二天再开机自启动，所以遇到凌晨定时重启的，一般是一些其他业务。<br />例如集中打印或AO打印的服务器，服务器并不关机，处于一直启动状态，或一些业务繁忙等凌晨也不关机需要一直打印，这种时候会在凌晨三点也在运行打印状态，可能会出现一些问题。</p>
+<p>lodop7凌晨定时重启失败怎么？<br />用最新版lodop7，截止视频发布时间，新版本对凌晨定时重启有优化。<br />lodop7变更记录：<br />http://www.c-lodop.com/lodopsteprec-L.html</p>
+<p>7.0.9.9<br />修正：强化凌晨重启的可靠退出和启动成功率;</p>
+<p>用新版本可以提高凌晨自动重启的成功率。</p>
+<p>凌晨定时重启成功了，但是弹出了安装启动成功的弹窗，可以去掉这个吗？<br />（图）</p>
+<p>是否弹窗与当前的守护进程的参数有关，<br />出现这个弹窗，说明当前是setup启动的，桌面快捷方式和安装后第一次启动都会有这个弹窗。</p>
+<p>如果您不是第一次安装启动，进入电脑后，点击过桌面的的c-lodop自动重启，由于人为操作过自动重启，所以后续会用setup启动，之后的手动重启和自动重启会带setup，凌晨定时重启，或用来测试的一段时间间隔自动重启等，也会出现这个安装启动成功的弹窗。</p>
+<p>如何改成自动重启不弹出这个启动成功的弹窗呢？</p>
+<p>lodop7快捷方式&mdash;&mdash;右键&mdash;&mdash;打开方式&mdash;&mdash;文本编辑器。<br />用文本打开后，可以编辑里面的内容，里面有个setup的参数，如图：<br />（图）</p>
+<p>把这个setup参数去掉，就可以变成不弹出弹窗的重启。<br />（图）</p>
+<p>修改后，点击一下这个快捷方式，用这个快捷方式重启下，点过一次后，之后的自动重启也会用这个方式启动，凌晨定时重启以及其他测试用定时重启，都会是不弹窗的形式。</p>
+<p>不过，有个问题，那就是，改了这个快捷方式后，手动重启，自动重启都不弹窗，有时候自己想测试都不知道启动了没有，怎么办？</p>
+<p>复制一个快捷方式，一个用默认的那个快捷方式带setup的，一个用修改后的不带setup的。<br />（图）</p>
+<p>为了区分，可以和原来的快捷方式取不同的名字：<br />（图）</p>
+<p>当自己不想后续的重启出现弹窗时，点那个不带setup的。<br />当自己想调试查看启动成功情况等，需要弹窗时，点一下那个带setup的。<br />点击一次后，后续的自动重启等就会按照之前点的这个弹窗或不弹窗进行自动重启。</p>
+<p>这个凌晨定时重启可以关闭吗？会导致一些问题：<br />http://localhost:8000/c_options 设置显示选项(需注册)<br />D注册号，可以关闭云主机的凌晨定时重启。</p>
+<p>在没有D注册的情况下，这个凌晨定时重启选项是不可用状态，是取消不了的。<br />但即使有D注册，也不建议取消这个，这个凌晨定时重启就是为了进一步确保启动，清理可能网络访问对话引起的垃圾资源堆积等。</p>
+<p>因此不建议用关闭凌晨定时重启方式，如果不想弹窗，可参考上面修改一个不带setup的快捷方式，然后点击下，之后的重启则不会再弹出弹窗。</p>
+<p>这个定时重启，这个可以设置的很短吗，确保lodop7的启动？<br />（图）<br />自动定时重启是一个临时调试功能，后续最终版本会去掉的，所以藏在端口右键菜单里。<br />目前lodop7很稳定，不需要设置这个自动重启很短的功能，还会造成一些问题，不要设置这个定时重启很短。</p>
+<p>这个有个定时重启48小时，凌晨定时重启是24小时，那么设置了这个会怎么重启？<br />定时重启48小时后，凌晨三点的定时重启不会重启，而是48小时后重启，因此设置定时48小时，可以相当于设置了凌晨三点不重启了。</p>
+<p>设置了定时重启某个，没重启，是怎么回事？<br />浏览器不访问的时候（没有对话）不会无谓的重启，只有曾经有对话才会触发各种重启。<br />当进入电脑，没有任务访问c-lodop调用等，不会自动重启，当开始访问调用c-lodop或lodop7时，才会重启。</p>
+<p>总结：去掉自动重启弹窗步骤:<br />（1）复制一个快捷方式<br />（2）复制的快捷方式，右键，用记事本打开，去掉里面的setup参数<br />Exec=/usr/share/mounttaisoftware/lodop7/lodop setup，去掉后面这个setup<br />再修个名字，和默认的快捷方式区分：<br />Name[zh_CN]=Lodop 静默重启，例如，改成这个名字<br />（2）点击一下这个新的去掉setup的快捷方式。<br />后续自动重启就会是不弹窗的了。</p>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>
