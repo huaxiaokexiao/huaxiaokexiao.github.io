@@ -96,6 +96,23 @@ base64位码输出直接通过本地lodop程序解析，无需经过浏览器引
 <br>
 换用base64码输出，不加img标签，lodop直接输出base64码，参考样例38http://www.c-lodop.com/demolist/PrintSample38.html<br>
 <br>
+<span style="color:blue;font-weight:bold">不加img标签方式（常用）</span><br>
+<br>
+ADD_PRINT_IMAGE直接输出http的URL方式测试下，不加img标签。<br>
+例如：<br>
+LODOP.ADD_PRINT_IMAGE(0,0,"210mm","296.99mm","http://www.c-lodop.com/demolist/PrintSample8.jpg");<br>
+或参考样例38，直接输出base64码，不加img标签，不经过浏览器解析,http://www.c-lodop.com/demolist/PrintSample38.html<br>
+或换成这两种方式，不加img标签，不经过浏览器解析<br>
+<br>
+<span style="color:blue;font-weight:bold">大量打印图片，图片空白</span><br>
+<br>
+img图片需要经过浏览器解析，如果较多较大，可能会有问题，<br>
+（2）显示空白或者图片缺失等问题，加延迟试试：<br>
+LODOP.SET_PRINT_STYLEA(0,"HtmWaitMilSecs",1000)//设置上一项延迟超文本下载1000毫秒<br>
+或拆分下任务，每个任务输出少量图片，或不加img标签方式<br>
+<br>
+并排查版本是否是最新版，以管理员权限安装最新版c-lodop测试下http://www.c-lodop.com/download.html<br>
+<br>
 <span style="color:blue;font-weight:bold">换用直接输出链接方式，换用base64方式试试</span><br>
 <br>
 1.安装最新版c-lodop，试试不加img标签，直接输出图片地址方式<br>
@@ -183,6 +200,29 @@ lodop本身没有解析超文本的引擎，带img标签的属于超文本，排
 和样例8,http://www.c-lodop.com/demolist/PrintSample8.html<br>
 用lodop语句缩放<br>
 <br>
+<span style="color:blue;font-weight:bold">windows11 24H2，图片预览正常，点打印消失</span><br>
+<br>
+是否是htm内部的img图片<br>
+操作系统是否是win11 24H2<br>
+<br>
+目前win11 24H2是有这个问题，后续版本会处理<br>
+<br>
+htm内部的img图片,目前win11 24H2是有这个问题，后续版本会处理<br>
+可以先用样例8单独输出iimg片方式，<br>
+或不加img标签的下面两种方式<br>
+ADD_PRINT_IMAGE直接输出http的URL方式测试下，不加img标签。<br>
+例如：<br>
+LODOP.ADD_PRINT_IMAGE(0,0,"210mm","296.99mm","http://www.c-lodop.com/demolist/PrintSample8.jpg");<br>
+或参考样例38，直接输出base64码，不加img标签，不经过浏览器解<br>析,http://www.c-lodop.com/demolist/PrintSample38.html<br>
+或换成这两种方式，不加img标签，不经过浏览器解析<br>
+<br>
+<span style="color:blue;font-weight:bold">（客户未回复是否是这两个现象时）进一步询问，windows11 24H2，图片预览正常，点打印消失</span><br>
+<br>
+1.是否是htm内部的img图片<br>
+2.操作系统是否是win11 24H2<br>
+是否是上面两条这种情况，预览显示图片，点打印图片消失，win11 24H2系统<br>
+<br>
+
 
 
 
