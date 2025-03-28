@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】打印图片显示不出来（newblog91）（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】打印图片显示不出来（newblog91）（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】打印图片显示不出来（newblog91）（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>其他内容可以显示，图片显示不出来，<br />分一下两种情况：<br />一种是所有客户端都显示不出图片 ，一种是有的客户端可以显示，有的客户端显示不了。</p>
+<p>1.个别客户图片不显示的第一种情况，本机IE存在问题：<br />图片显示叉号，叉号是浏览器解析的结果<br />lodop本身没有解析超文本的引擎，调用每个客户端本机windows底层引擎，与底层IE一致</p>
+<p>查看lodop内部解析的html信息，见http://www.c-lodop.com/faq/pp8.html<br />Lodop是基于本机windows底层引擎进行渲染解析的，与ie调用的引擎一致。在样式有问题所在电脑上，尝试重置ie，升级ie，</p>
+<p>在本机IE里测试下内部的htm是否正常，在IE里是否可以不经过验证直接显示。<br />本机IE存在问题也会导致一些图片无法显示情况。</p>
+<p>（3）权限问题，图片显示叉号 说明服务端拒绝了 可能证书 session等问题，导致没有直接访问该图片的权限，有些需要验证之后才能访问图片。由于Lodop借用IE下载引擎，与非IE浏览器之间目前不能传递Session(cookies)<br />（4）清空ie缓存 重置ie 后在ie中查看下。IE中的URL最大长度限制为2048字节。超过这个长度会不支持。<br />（5） 查看服务器端错误日志排查下 。</p>
+<p>注意：<br />由于lodop本身没有解析超文本的引擎，调用每个客户端本机windows底层引擎，与底层IE一致，<br />需要在有问题的客户端上排查。</p>
+<p>由于调用客户端本机底层解析引擎解析超文本，此问题表现为个别电脑出现问题。</p>
+<p>2.同一个电脑https的图片无法访问，http的正常，并排查下是否是IE安全设置证书等问题：<br />查看下IE浏览器的安全设置是否正常，例如：服务端用了tls1.2，该客户端IE没有启用tls1.2。</p>
+<p>注意：<br />由于lodop本身没有解析超文本的引擎，调用每个客户端本机windows底层引擎，与底层IE一致，<br />需要在有问题的客户端上排查。</p>
+<p>由于调用客户端本机底层解析引擎解析超文本，此问题表现为个别电脑出现问题。</p>
+<p>例如：<br />intenet选项--高级里，调整为和能打印出图片的电脑一样的配置，就可以打印了，但是不知道具体是哪项影响的<br />一些IE的选项也会影响，在有问题的客户端排查</p>
+<p>3.图片不显示叉号，显示空白</p>
+<p>可能（1）<br />显示空白或者图片缺失等问题，加延迟试试：<br />LODOP.SET_PRINT_STYLEA(0,"HtmWaitMilSecs",1000)//设置上一项延迟超文本下载1000毫秒</p>
+<p>可能（2）<br />有其他打印项覆盖了图片，例如白色实心矩形，或htm超文本的带有白色背景色，遮挡了图片<br />排除这个可能的方法：去掉其他打印项，单独输出图片，防止其他打印项覆盖<br />如果需要图片在某些打印项上方，后输出图片，后输出的在上层，调整JS里打印项的输出顺序是层级顺序</p>
+<p>可能（3）<br />默认图片打印项单独输出时，是截取模式，被截取了，图片左上角刚好是空白<br />参考样例8，http://www.c-lodop.com/demolist/PrintSample8.html<br />加可变形或不可变形缩放，缩放到打印项宽高大小</p>
+<p>或进入打印设计，拖动宽高，增大宽高，扩大后显示出图片的左上角内容了，说明之前空白的原因是图片太大，截取的部分刚好是没有色彩的图片左上角小区域</p>
+<p>可能（4）<br />图片定位出现问题<br />单独输出图片，左边距顶边距设置有问题，超出了纸张范围内</p>
+<p>4.大量打印图片，图片空白<br />img图片需要经过浏览器解析，如果较多较大，可能会有问题，<br />（2）显示空白或者图片缺失等问题，加延迟试试：<br />LODOP.SET_PRINT_STYLEA(0,"HtmWaitMilSecs",1000)//设置上一项延迟超文本下载1000毫秒<br />或拆分下任务，每个任务输出少量图片，或不加img标签方式</p>
+<p>并排查版本是否是最新版，以管理员权限安装最新版c-lodop测试下http://www.c-lodop.com/download.html<br />最新版对大量打印htm超文本有优化。</p>
+<p>大量打印，建议用不加img标签方式，这种不需要浏览器解析：<br />ADD_PRINT_IMAGE直接输出http的URL方式测试下，不加img标签。<br />例如：<br />LODOP.ADD_PRINT_IMAGE(0,0,"210mm","296.99mm","http://www.c-lodop.com/demolist/PrintSample8.jpg");<br />或参考样例38，直接输出base64码，不加img标签，不经过浏览器解析,http://www.c-lodop.com/demolist/PrintSample38.html<br />或换成这两种方式，不加img标签，不经过浏览器解析</p>
+<p>且批量打印大量图片，建议多分一些任务。</p>
+<p>6.图片路径问题<br />（1）查看lodop内部解析的html信息，见http://www.c-lodop.com/faq/pp8.html<br />查看一下传入的图片路径是否正确，尽量用绝对路径地址，换个图片试试。<br />例如http开头的绝对路径，不建议用相对路径</p>
+<p>7.svg或canvas生成的图形图片，<br />lodop是基于本机windows底层引擎进行渲染解析的，与ie调用的引擎一致，不建议使用svg，canvas等样式，可以转成图片。<br />svg，canvas等不是所有版本底层IE都支持，需要测试是否支持，但如果不能统一客户底层IE版本和环境，建议更换实现方式。</p>
+<p>8.预览显示有图片，点样例的打印按钮，图片消失了<br />核对下是否是下面两个情况：<br />是否是htm内部的img图片<br />操作系统是否是win11 24H2</p>
+<p>目前win11 24H2中，htm内部的img图片是有问题，后续版本会处理</p>
+<p>1.可以先用样例8单独输出iimg片方式，http://www.c-lodop.com/demolist/PrintSample8.html<br />2.或不加img标签的下面两种方式<br />ADD_PRINT_IMAGE直接输出http的URL方式测试下，不加img标签。<br />例如：<br />LODOP.ADD_PRINT_IMAGE(0,0,"210mm","296.99mm","http://www.c-lodop.com/demolist/PrintSample8.jpg");<br />或参考样例38，直接输出base64码，不加img标签，不经过浏览器解<br />析,http://www.c-lodop.com/demolist/PrintSample38.html<br />或换成这两种方式，不加img标签，不经过浏览器解析</p>
+<p>截止视频发布时间，该问题只在win11 24H2中有问题，如果不是这个版本的win11不会有这个问题。后续lodop版本会处理，可先改成单独输出图片方式。</p>
+<p>关于带img标签的图片，受本机windows底层引擎进行渲染解析的，与ie调用的引擎一致，<br />本机没有IE怎么处理，虽然后续win版本默认是edge浏览器了，本机底层还是有IE的，可以百度下当前系统打开IE的方法。<br />后续lodop也有计划会抛弃IE引擎。</p>
+<p>由于个别电脑图片显示不了，和当前客户端环境有关，因此当个别出现问题时，需要去有问题的客户端排查。<br />或改成上面的直接输出http的URL方式，或直接输出样例38，base64不加img标签方式，这两种不会受解析引擎问题。</p>
+<p>ps:<br />此问题现象比较明显：进入打印预览显示图片，点打印后预览里图片消失，当出现这个现象，排查是否符合这个情况：</p>
+<p>1.是否是htm内部的img图片<br />2.操作系统是否是win11 24H2<br />是否是上面两条这种情况，预览显示图片，点打印图片消失，win11 24H2系统</p>
+<p>解决方法：<br />（1）单独输出图片<br />（2）临时用一个不是 win11 24H2的电脑打印，win10等其他系统没有这个问题，且不是24H2的1其他win11版本也没有问题。 </p>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>

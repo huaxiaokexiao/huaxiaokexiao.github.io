@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】linux下某png图片base64打印显示image error（CRC错误）（newblog98）（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】linux下某png图片base64打印显示image error（CRC错误）（newblog98）（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】linux下某png图片base64打印显示image error（CRC错误）（newblog98）（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>某png图片的base64，windows下打印正常，怎么用linux版的lodop打印显示image error？</p>
+<p>(图）</p>
+<p>排查图片是否有CRC错误：</p>
+<p>在linux下执行如下语句对png文件进行检查:<br />pngcheck -v 你的文件.png</p>
+<p>如果pngcheck 没安装就执行 sudo apt install pngcheck</p>
+<p>png文件有CRC错误，图片转换成base64码有错，不可使用。仅打开看看尚可。</p>
+<p>属于图片本身问题，下面是百度AI的一些介绍，自己没有测试过，可参考或百度他人的经验测试效果：</p>
+<p>PNG文件中的CRC错误通常是由于图片的宽度或高度被修改导致的。&zwnj;</p>
+<p>PNG文件格式和CRC校验的基本知识：<br />PNG文件的前8个字节（89 50 4E 47 0D 0A 1A 0A）是固定的文件头，接下来的4个字节（00 00 00 0D）表示头部数据块的长度为13。接下来的4个字节（49 48 44 52）表示文件头数据块的标识。之后是13个字节的数据块，前8个字节表示图片的宽度和高度，接下来的4个字节是CRC校验码。CRC校验码是通过计算从第12个字节到第28个字节的数据得到的&zwnj;</p>
+<p><br />CRC错误的原因和解决方法<br />&zwnj;修改宽度或高度&zwnj;：在PNG图片中修改宽度或高度会导致计算出的CRC校验码与原始图片的CRC校验码不一致，从而引发CRC错误。Windows的图片查看器会忽略错误的CRC校验码，因此可以显示图片，但图片可能会显示不全或扭曲。而Linux下的图片查看器不会忽略错误的CRC校验码，因此无法打开或显示错误的图片&zwnj;<br />1<br />3<br />。<br />&zwnj;使用工具检查和修复&zwnj;：可以使用工具如pngcheck来检查PNG文件的CRC错误。如果图片在Linux中无法打开，可以尝试使用CRC爆破的方法来恢复正确的宽度和高度。具体可以通过编写脚本，枚举可能的宽度和高度组合，计算CRC校验码，直到找到与原始图片CRC校验码匹配的组合&zwnj;<br />2<br />4<br />。<br />预防措施和最佳实践<br />为了避免PNG文件出现CRC错误，建议在处理图片时：</p>
+<p>使用专业的图像处理软件进行操作，避免手动修改图片的二进制数据。<br />在修改图片宽度或高度后，重新计算并更新CRC校验码。<br />定期使用工具检查图片的完整性，确保CRC校验码正确。</p>
+<p>如何解决这个问题：</p>
+<p>这个是百度给的方法：<br />修改宽度或高度&zwnj;：在PNG图片中修改宽度或高度会导致计算出的CRC校验码与原始图片的CRC校验码不一致，从而引发CRC错误。Windows的图片查看器会忽略错误的CRC校验码，因此可以显示图片，但图片可能会显示不全或扭曲。而Linux下的图片查看器不会忽略错误的CRC校验码，因此无法打开或显示错误的图片&zwnj;</p>
+<p><br />使用工具检查和修复&zwnj;：可以使用工具如pngcheck来检查PNG文件的CRC错误。如果图片在Linux中无法打开，可以尝试使用CRC爆破的方法来恢复正确的宽度和高度。具体可以通过编写脚本，枚举可能的宽度和高度组合，计算CRC校验码，直到找到与原始图片CRC校验码匹配的组合&zwnj;</p>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>
