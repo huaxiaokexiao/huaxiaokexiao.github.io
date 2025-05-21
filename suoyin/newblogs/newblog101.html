@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】打印机的可打区域（以纸张边缘为基点）（newblog101）（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】打印机的可打区域（以纸张边缘为基点）（newblog101）（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】打印机的可打区域（以纸张边缘为基点）（newblog101）（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>之前的视频：【LODOP】不同打印机偏移问题，</p>
+<p>中介绍了一些可打区域相关问题，这个视频单独介绍下可打区域，和以纸张边缘为基点。</p>
+<p>参考http://www.c-lodop.com/faq/pp26.html<br />可打区域和打印机有关，LODOP控制不了</p>
+<p>lodop预览中的虚线是打印机的可打印区域边界，也就是打印机走纸的物理边界。<br />不同的打印机边界值不同，一般是1&mdash;&mdash;5mm的差异。<br />打印机预留的物理边距，不可以取消，有个别打印机可以提供修改，具体查看一下相应的打印管理程序。</p>
+<p>-----<br />如何观察到可打区域--：</p>
+<p>进入lodop的打印预览，观察是否有虚线，虚线是打印机的可打区域，和打印机有关。<br />（如果是直接打印，可以改成先临时改成LODOP.PREVIEW();预览，观察该打印机的预览情况）</p>
+<p>该虚线是真实打印机的可打区域，如果用虚拟打印机测试，可以发现没有这个可打区域。</p>
+<p>如图：<br />这个是虚拟打印机的，周围没有虚线，无可打区域。<br />（图）</p>
+<p>这个是真实打印机的，四周出现了虚线，这个虚线是打印机的可打区域。<br />（图）</p>
+<p>如何观察到可打区域的具体数值--<br />鼠标移动到预览到纸张中可打区域内部任意一个地方，可以看到预览下方状态栏会显示size，这个是就是该打印机可打区域的尺寸。右侧的纸张就是纸张。<br />（图）</p>
+<p>鼠标移动到可打区域外部，纸张范围内，这个区域就是不可打的边距，<br />例如，移动到左侧的那个区域内，会显示不可打的左边距<br />（图）</p>
+<p>怎么用lodop调整可打区域？</p>
+<p>参考http://www.c-lodop.com/faq/pp26.html<br />可打区域和打印机有关，LODOP控制不了</p>
+<p>可打区域异常怎么办？右侧大量的不可打区域。</p>
+<p>（1）可打区域和打印机有关，LODOP控制不了<br />如果确认可打区域出现异常，重装打印机驱动试试，咨询下打印机客服</p>
+<p>（2）不同打印机对自定义纸张的支持不同，这个打印机预览显示支持了这个纸张，但右侧出现大量在可打区域外的纸张。</p>
+<p>可打区域外打印不出来，该打印机可能有限制，虽然显示好像支持这个纸张，但实际有部分区域不可打。</p>
+<p>测试下样例5，选择该打印机查看下该打印机的纸张列表，纸张列表里是否有需要的尺寸，如果有需要尺寸的纸张，可以试试宽高为0,指定这个纸张名称。<br />（图）</p>
+<p>如果打印机自带的纸张里，本身没有这个尺寸，就不支持这个纸张，或预览显示支持了纸张，但其实有大部分不可打，还是不能用这个纸张。</p>
+<p>打印机自带的纸张名称，指定的名称，可打区域外却异常大，只有一小部分能打。<br />这个可能是打印机驱动或打印机故障，打印机自带的纸张都有问题，咨询下打印机客服。</p>
+<p><br />默认以可打区域为基点，所以设置左边距和顶边距，真实打印机中，实际是设置与可打区域的距离。</p>
+<p>以纸张边缘为基点，可以通过语句控制，加该语句，可以设置以纸张边缘为基点：<br />LODOP.SET_PRINT_MODE("POS_BASEON_PAPER", true);</p>
+<p>例如：<br />这句，设置以纸张边缘为基点后，有无可打区域，内容距离纸张边缘的距离是相同的<br />LODOP.SET_PRINT_MODE("POS_BASEON_PAPER",true);<br />LODOP.ADD_PRINT_TEXT("10mm","10mm",100,20,"新加文本8")<br />（虚拟图）</p>
+<p>（真实图）</p>
+<p>再看一下不设置以纸张边缘为基点效果：<br />可以看到标尺的0前面还有一段距离，那个是不可打的边距，内容距离纸张边缘，是左边距加上可打区域，相当于内容向右偏移了<br />（图）</p>
+<p>这里设置成0，可以更容易看到效果：<br />真实没加以纸张边缘为基点的：<br />LODOP.ADD_PRINT_TEXT("0mm","0mm",100,20,"新加文本8");<br />（图）</p>
+<p>这是加了以纸张边缘为基点的：<br />LODOP.SET_PRINT_MODE("POS_BASEON_PAPER",true);<br />LODOP.ADD_PRINT_TEXT("0mm","0mm",100,20,"新加文本8");<br />（图）</p>
+<p>由于内容在可打区域外了，所以显示不出来，这边加一些文字。<br />LODOP.SET_PRINT_MODE("POS_BASEON_PAPER",true);<br />LODOP.ADD_PRINT_TEXT("0mm","0mm",100,20,"新加文本8新加文本8新加文本8新加文本8");<br />（图）（图）<br />两个对比效果，<br />一个显示完全，一个因为一部分内容定位到了可打区域外，所以只能显示部分。</p>
+<p>为了精确套打，可以设置以纸张边缘为基点吗？<br />可以，但注意留足边距，不要定位到可打区域外，可打区域外打印不出来。</p>
+<p>不是套打，需要设置以纸张边缘为基点吗？<br />建议不设置，默认以可打区域为基点，是为了防止内容超出可打区域，如果设置了，刚好有内容在可打区域外，打印不出来。</p>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>
