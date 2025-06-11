@@ -1,0 +1,893 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>【非常见问题杂笔记】重叠行高，导出excel样式，生成缓存ini，空白无内容日志，批量pdf，网页没下载完成等</title>
+  <!--<script language="javascript" src="LodopFuncs.js"></script>-->
+ <!-- <script src='http://localhost:8000/CLodopfuncs.js'></script>-->
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>LODOP超简短问答-【非常见问题杂笔记】重叠行高，导出excel样式，生成缓存ini，空白无内容日志，批量pdf，网页没下载完成等</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../qa_notes3.html"><div class="menuitem"><span style="color:blue;">问答等记录笔记，具体问题</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【非常见问题杂笔记】重叠行高，导出excel样式，生成缓存ini，空白无内容日志，批量pdf，网页没下载完成等</h1>
+------------<br>
+1.<span style="color: blue; font-weight: bold;">咱们lodop可以在手机上进行打印吗</span><br>
+手机平板等的其他操作系统可以用集中打印，或广域网打印角色，后两种角色，打印到其他windows电脑上。<br>
+三种角色及使用方法 参考http://www.c-lodop.com/demolist/t1.html<br>
+<br>
+目前lodop和c-lodop只能安装到windows操作系统上，下载中心还有linux桌面版，除windows和linux，其他操作系统无法安装，无法用客户端本地打印角色，其他操作系统可以用集中打印，或广域网打印角色，打印到其他windows电脑上。<br>
+三种角色及使用方法 参考http://www.c-lodop.com/demolist/t1.html<br>
+<br>
+2.<span style="color: blue; font-weight: bold;">这种打印重叠了，需要怎么设置呢？</span><br>
+是否有打印项重叠，打印项是什么语句输出的，是add_print_text纯文本，还是add_print_htm超文本<br>
+<br>
+发一下代码，这边测试下，并排查是否有打印项重叠<br>
+<br>
+（图)
+如果数字和文本是不同的打印项，调整数字打印项的顶边距，不要和上面的打印项重叠<br>
+<br>
+改成打印设计，选中每个打印项，查看下打印项是否有位置重叠<br>
+<br>
+(图）<br>
+文本数值太多了，超出宽度会换行，留足足够个高度<br>
+<br>
+(图）<br>
+调整每个打印项的打印项高度，和后面的打印项顶边距，留足足够的显示高度<br>
+<br>
+(图）<br>
+如果最大数据是三行，可以留够三行的高度<br>
+<br>
+参考http://www.c-lodop.com/demolist/PrintSample4.html<br>
+LODOP.PRINT_DESIGN();<br>
+<br>
+3.<span style="color: blue; font-weight: bold;">激光打印机可以适配lodop吗</span><br>
+只要是windows的打印机列表的打印机都可以<br>
+<br>
+4.<span style="color: blue; font-weight: bold;">图，图</span><br>
+预览下方状态栏的纸张，是否和实际纸张一致<br>
+<br>
+（图）<br>
+这个是真实打印机的预览吗，还是虚拟打印机的，看起来这个打印机没有可打印区域<br>
+<br>
+打印出来和预览的分页内容不一样，用该真实打印机预览下，预览是打印机的反显<br>
+<br>
+真实打印机时，留足边距，上边，和下边，留出一些距离，防止可打印区域的影响<br>
+<br>
+“可打区域”边缘与打印机本身有关，表现在预览里是虚线，可打区域的影响<br>
+http://www.c-lodop.com/faq/pp26.html<br>
+用该打印出来的真实打印机预览下，不要紧贴纸张输出，真实打印机有可打区域<br>
+<br>
+不支持自动计算高度，纯文本只能是留够足够的高度<br>
+<br>
+不支持自动计算高度<br>
+<br>
+如果是多个text输出，只能估计每个text最大高度，留足足够的高度。<br>
+<br>
+如果数据较少，会有空隙，只能是留足足够的显示高度，防止重叠<br>
+<br>
+5.<span style="color: blue; font-weight: bold;">mac系统可以安装lodop吗</span><br>
+目前lodop和c-lodop只能安装到windows操作系统上，下载中心还有linux桌面版，除windows和linux，其他操作系统无法安装，无法用客户端本地打印角色，其他操作系统可以用集中打印，或广域网打印角色，打印到其他windows电脑上。<br>
+三种角色及使用方法 参考http://www.c-lodop.com/demolist/t1.html<br>
+目前不支持mac系统，将来会开发除了linux外跨平台的其他版本。<br>
+<br>
+除windows和linux其他系统无法安装，打印到其他windows电脑上。<br>
+三种角色及使用方法 参考http://www.c-lodop.com/demolist/t1.html<br>
+<br>
+6.<span style="color: blue; font-weight: bold;">览是没问题，为什么每次就空一张</span><br>
+进入预览查看下，是否多出空白页<br>
+<br>
+测量纸张高度，是否和实际纸张一致，超出纸张高度会多走纸<br>
+<br>
+7.<span style="color: blue; font-weight: bold;">这个lodop 自带的exec导出，我看样式有问题</span><br>
+根据实际效果调整样式<br>
+<br>
+导出之前，根据导出效果，调整htm内容和样式，不是所有样式都支持<br>
+<br>
+一些维护功能权限：http://www.c-lodop.com/demolist/PrintSample21.html<br>
+<br>
+打印维护主要用于打印项位置微调，样式需要调整内容<br>
+<br>
+8.<span style="color: blue; font-weight: bold;">生成的缓存文件有没有办法不让它生成啊</span><br>
+排查是否有多余的任务名，没有任务名不会缓存配置文件<br>
+<br>
+排查是否有多余的初始语句，里面有参数<br>
+如果是刚修改，清理下浏览器缓存，刷新页面<br>
+<br>
+(图）<br>
+这来两个是打印维护的文件，查看下代码里是否有这两个任务名<br>
+<br>
+那个是插件，不用管<br>
+<br>
+和打印维护缓存的内容无关，下面那些带任务名的ini文件，是打印维护生成的<br>
+<br>
+参考http://www.c-lodop.com/faq/pp9.html<br>
+<br>
+打印维护（PRINT_SETUP语句）功能是提供给客户端单个电脑微调用的，为了让微调结果永久有效，Lodop会在本地为该过程对应生成一个ini配置文件，文件路径和文件名类似如下： 系统盘符:\Program Files (x86)\MountTaiSoftware\Lodop\PrintSetups_打印任务名.ini<br>
+<br>
+1：改一下初始化语句设置的打印任务名，使其长而与众不同，从而让Lodop指向一个不存在的配置文件；
+2：如要禁用本地微调功能，则干脆设置打印任务名为空：LODOP.PRINT_INIT("");<br>
+3：如不改程序语句而想清理本地配置文件，可以进入打印维护界面，在“复原”按钮旁边找“恢复整体缺省”菜单，恢复后再按“应用”按钮.<br>
+<br>
+执行过，没有执行过，不会生成对应任务名的ini文件<br>
+<br>
+如果不需要，可以把生成的ini文件都删除掉<br>
+<br>
+不用打印维护不会生成，您可以测试下<br>
+<br>
+您删除后，打印测试下，这个只有打印维护会生成<br>
+<br>
+或直接置空任务名<br>
+<br>
+9.<span style="color: blue; font-weight: bold;">像这个例子，打印出来应该是1122还是1212</span><br>
+默认是逐份打印，需要非逐份，语句设置下<br>
+LODOP.SET_PRINT_MODE("PRINT_NOCOLLATE",1);//设置为非逐份打印，1-1 2-2 3-3<br>
+<br>
+可以，预览的设置里查看下当前份数情况<br>
+<br>
+（图）<br>
+可以在预览的打印按钮里查看当前份数情况，和是否逐份<br>
+<br>
+10.<span style="color: blue; font-weight: bold;">做的是pdf合成，打印1000份，1个任务20份，1个任务生成就要等7,8秒钟，时间太长了，想优化下</span><br>
+批量打印，分页分任务，在页数和任务之间平衡一下，参考样例<br>26，http://www.c-lodop.com/demolist/PrintSample26.html<br>
+<br>
+如果是某个pdf过慢，用最新版c-lodop测试下，http://www.c-lodop.com/download.html<br>
+如果最新版也有问题，发一下有问题的pdf文件，这边测试下<br>
+<br>
+（图）<br>
+在欢迎页面用本地路径测试下，排除下URL问题<br>
+<br>
+这边测试该pdf是空白的，可能和该pdf文件本身有关，会反馈下<br>
+pdf功能目前仅按pdf1.7版文档标准基本完成，对其它文档版本兼容性还不够。不过也有些是pdf本身错误引起，lodop的容错性要在实践中逐步完善。<br>
+<br>
+---通过excel表格反馈给同事，后续同事集中反馈到梦泰尔群--<br>
+2025-5-27<br>
+205332300，群F<br>
+qq号：XXXX（qq昵称：XXX）<br>
+预览显示空白，原始pdf纸张是长条形状的<br>
+一个条码的预览显示空白的.pdf一个条码的预览显示空白的.pdf<br>
+------------------<br>
+<br>
+已反馈给同事，pdf功能目前仅按pdf1.7版文档标准基本完成，对其它文档版本兼容性还不够。不过也有些是pdf本身错误引起，lodop的容错性要在实践中逐步完善。<br>
+<br>
+（图）<br>
+可能是这个文件生成本身有问题，<br>
+可以再发一下上午的那个文件另存为后的可以显示的pdf，这边反馈下<br>
+<br>
+这个是正常的，可以预览显示<br>
+<br>
+如果转存pdf正常，可能是pdf版本或其他问题导致的，之前的pdf已反馈，那个可能存在一些问题。<br>
+<br>
+11.<span style="color: blue; font-weight: bold;">win7系统启动了lodop但是http://localhost:8000/CLodopfuncs.js?这个服务访问不了是什么情况</span><br>
+（图）<br>
+查看下当前启动的端口是否是8000<br>
+<br>
+以管理员权限安装最新版c-lodop测试下http://www.c-lodop.com/download.html<br>
+安装最新版后，再测试下访问http://localhost:8000欢迎页面试试<br>
+<br>
+参考http://www.c-lodop.com/faq/pp5.html<br>
+<br>
+参考http://www.c-lodop.com/faq/pp5.html<br>
+排查下链接里的条目<br>
+防火墙禁用，或一些安全软件的阻挡<br>
+七、 localhost无法访问导致<br>
+<br>
+12.<span style="color: blue; font-weight: bold;">PSetupForm Error:External exception EO6D7363</span><br>
+以管理员权限安装最新版c-lodop测试下http://www.c-lodop.com/download.html<br>
+<br>
+重启电脑后，重新安装最新版测试下<br>
+<br>
+13.<span style="color: blue; font-weight: bold;">不同电脑同一个打印数据源，预览一个能显示一个不显示但是设计能显示</span><br>
+打印项是什么语句输出的，是add_print_text纯文本，还是add_print_htm超文本<br>
+<br>
+14.<span style="color: blue; font-weight: bold;">lodop能远程打印吗</span><br>
+集中打印，或广域网打印角色，后两种角色，打印到其他windows电脑上。<br>
+三种角色及使用方法 参考http://www.c-lodop.com/demolist/t1.html<br>
+<br>
+后两种角色属于远程打印<br>
+<br>
+15.<span style="color: blue; font-weight: bold;">这个配置会影响clodop的使用吗</span><br>
+只要保证有足够的内存就可以<br>
+<br>
+打印项是什么语句输出的，是add_print_text纯文本，还是add_print_htm超文本，还是add_print_pdf打印项<br>
+<br>
+可能和很多原因有关：打印内容或样式或图片等过多，有需要下载有脚步执行或本身网络慢；<br>
+机器性能过低 系统ie有问题或缓存过多；或使用的是共享打印机。<br>
+如果预览页数多，可以多分一些任务，太多不建议预览，建议直接打印，在任务和页数之间平衡一下，参考样例26<br>
+http://www.c-lodop.com/demolist/PrintSample26.html<br>
+<br>
+pdf是否过大，如果某一个pdf存在问题，可以反馈下<br>
+<br>
+同时打印多个pdf，<br>
+是指一个任务多个pdf，<br>
+还是一个pdf一个任务，循环多任务<br>
+<br>
+如果是多任务，每个任务是否加了初始化语句，<br>
+如果一个任务多个pdf，或参考上面多分一些任务<br>
+<br>
+没有内容日志<br>
+<br>
+是否只有一台电脑有问题，并排查下上面的条目，是否有共享打印机，删除所有共享打印机再测试下<br>
+<br>
+删掉共享打印机，重新共享下，尽量用本地打印机<br>
+<br>
+找一台电脑只用本地打印机测试对比下，排查是否和共享打印机有关。<br>
+某个共享打印机故障也会导致一些问题<br>
+<br>
+windows列表的，在该电脑本地连接的打印机。<br>
+是的<br>
+<br>
+如果是共享打印机，需要网络，出现故障会导致一些问题，本地打印角色尽量用本地打印机<br>
+<br>
+可能和很多原因有关：打印内容或样式或图片等过多，有需要下载有脚步执行或本身网络慢；<br>
+机器性能过低 系统ie有问题或缓存过多；或使用的是共享打印机。<br>
+如果预览页数多，可以多分一些任务，太多不建议预览，建议直接打印，在任务和页数之间平衡一下，参考样例26<br>
+http://www.c-lodop.com/demolist/PrintSample26.html<br>
+网络共享打印机受网络影响，可以在有问题的机器上删除后，重新共享下，或换用本地打印机打印<br>
+<br>
+您是批量打印pdf，如果发现是某个pdf引起的问题，也可以反馈下该 pdf<br>
+<br>
+您是打印的pdf吗，打印项是怎样输出的<br>
+打印项是什么语句输出的，是add_print_text纯文本，还是add_print_htm超文本，还是add_print_pdf打印项<br>
+<br>
+打印的是pdf，如果发现是某个pdf引起的问题，也可以反馈下该pdf<br>
+<br>
+可以测试下是否是某个pdf引起卡死，如果遇到能还原的pdf，可以反馈下<br>
+<br>
+日志只有发送任务成功的，没有内容日志，lodop不会记录打印内容<br>
+<br>
+lodop本身是个打印控件，不会记录打印内容<br>
+<br>
+没有关于内容的日志，目前只能排查到任务执行情况，是否发送成功等<br>
+<br>
+偶尔出现不好判断，可能和您用共享打印机有关，或某个pdf过大出现卡死等。<br>
+<br>
+是必现问题，做个简单例子发过来，这边测试下，<br>
+只发有问题的5个pdf和简单例子<br>
+<br>
+可以先测试下空白的那个pdf，单独测试是否是空白的。<br>
+<br>
+16.<span style="color: blue; font-weight: bold;">打印的时候打印机会出现断一下断一下</span><br>
+（图)<br>
+您这个打印任务大小60多MB，是否是否内容过多<br>
+<br>
+您是多个pdf一个任务输出吗，或拆分一下任务，多任务输出<br>
+<br>
+（图)<br>
+是否是打印机驱动有问题，用其他打印机驱动测试下，查看下进入后是否该任务还是60多MB<br>
+<br>
+（图)<br>
+这边用一个针式打印机驱动，显示只有6MB，您是否有其他打印机驱动，用其他打印机驱动测试下<br>
+<br>
+（图)<br>
+可能和打印机驱动解析大小有关，有的打印机驱动解析较大导致比较慢<br>
+<br>
+http://localhost:8000/c_pdfprint<br>
+单独测试下两个pdf，测试下弹出预览的速度是否正常<br>
+<br>
+排除下打印机问题，可以在欢迎页面http://localhost:8000/c_pdfprint测试下弹出预览的速度<br>
+<br>
+（图)<br>
+在有问题的客户端，切换不同打印机，预览查看下效果，测试下预览弹出的速度<br>
+<br>
+慢一些属于正常现象，第二个pdf比第一个pdf内容多，解析比第一个慢<br>
+<br>
+说明是正常的，这边测试加入针式打印机队列速度也正常。<br>
+用其他电脑或其他打印机测试下<br>
+<br>
+（图)<br>
+页数较多，观察队列的情况，他会逐个加入<br>
+<br>
+可以根据内容拆分成多任务，<br>
+打印机脱机，会在队列里打印不出来<br>
+<br>
+（图)<br>
+每个任务10页，需要等前面的10页都加入后，才会进行下一个任务<br>
+如果想提高速度，多拆分一些任务<br>
+<br>
+您可以尝试一次输出两个pdf，多任务输出，根据实际内容调整任务数量<br>
+<br>
+都是需要等前一个加入完成，再执行下一个任务<br>
+（图)<br>
+因为单个任务页数过多，所以下一个任务加入的时间会等待前面的任务完成<br>
+<br>
+和内容也有关，和pdf解析大小有关<br>
+可以用pdf欢迎页面自带的pdf，或其他打印项对比下<br>
+<br>
+只能拆成多任务，减少每个任务的输出量，提高速度，<br>
+<br>
+没有了，或在生成pdf时，重新生成下<br>
+<br>
+如果不修改pdf，提升速度，只能是拆分任务，或尝试用其他打印机驱动试试<br>
+<br>
+参考pdf欢迎页面自带的pdf，用简单的pdf样式，<br>
+<br>
+修改pdf内部，让解析更快<br>
+<br>
+lodop不修改pdf内部，如果您不能修改pdf，只能是拆多任务提高速度<br>
+<br>
+不会，会按照JS执行，前面的任务没执行完，会继续执行前面的<br>
+<br>
+都在当前页速度更快<br>
+<br>
+（-----后，另一个客户反馈：pdf合成 上百个报告拼在一起，批量打印，后期我们改成了用代码拼接成一个pdf让客户下载，比线上打印体验好多了，客户下载后直接用pdf查看工具打印跟网站就没关系了。-----------）<br>
+<br>
+17.<span style="color: blue; font-weight: bold;">打印预览里面的内容 有什么方法可以转成图片吗</span><br>
+导出图片，参考http://www.c-lodop.com/demolist/PrintSample27.html<br>
+或打印预览，右键，另存为图片<br>
+<br>
+18.<span style="color: blue; font-weight: bold;">如何将导出的图片调用接口保存到服务器，有方法吗</span><br>
+导出图片，参考http://www.c-lodop.com/demolist/PrintSample27.html<br>
+客户端本地角色，只能导出到本地<br>
+<br>
+不支持远程写文件，导出到本地后，或自己用其他方法上传自己的服务器<br>
+<br>
+参考http://www.c-lodop.com/demolist/PrintSample40.html<br>
+只能是本地文件转成base64<br>
+<br>
+19.<span style="color: blue; font-weight: bold;">有 mac 版吗</span><br>
+目前lodop和c-lodop只能安装到windows操作系统上，下载中心还有linux桌面版，除windows和linux，其他操作系统无法安装，无法用客户端本地打印角色，其他操作系统可以用集中打印，或广域网打印角色，打印到其他windows电脑上。<br>
+三种角色及使用方法 参考http://www.c-lodop.com/demolist/t1.html<br>
+目前不支持mac系统，将来会开发除了linux外跨平台的其他版本。<br>
+<br>
+20.<span style="color: blue; font-weight: bold;">win11 24H2操作系统的这个问题处理好了吗</span><br>
+安装最新版6623，http://www.c-lodop.com/download.html<br>
+该问题已解决<br>
+<br>
+参考变更记录，http://www.c-lodop.com/c-lodopsteprec.html<br>
+变更记录有版本更新记录<br>
+<br>
+6.6.2.3<br>
+修正：进一步完善Win11下图片莫名消失问题，包括超文本图片、背景图和ADD_PRINT_HTML(图形模式)几种情况;<br>
+安装这个版本以及之后的版本可以解决<br>
+<br>
+21.<span style="color: blue; font-weight: bold;">提示“网页还没下载完毕，请稍等一下再操作.”</span><br>
+参考http://www.c-lodop.com/faq/pp3.html 新版修改了该提示，是同一问题，参考链接里的方法。<br>
+<br>
+参考http://www.c-lodop.com/faq/pp3.html<br>
+如果是页面点击后打印，把获取LODOP对象放在打印按钮里触发。进入页面稍等一会再点击，参考样例2http://www.c-lodop.com/demolist/PrintSample2.html<br>
+如果是需要一进入页面就进行打印，不需要点击页面的按钮等触发，可参考链接里的处理方法，加延迟或等c-lodop加载完再调用。<br>
+<br>
+如果是一直提示这个，<br>
+查看windows打印机列表是否有共享打印机，删除共享打印机后，重新安装试试。<br>
+<br>
+测试官网样例http://www.c-lodop.com/demolist/PrintSample2.html<br>
+进入页面稍等一会再点击<br>
+<br>
+查看下浏览器的JS报错信息，<br>
+安装最新版c-lodop，更新最新的lodopFuncs.js<br>
+http://www.c-lodop.com/download.html<br>
+<br>
+调试JS ，排查clodopFucs.js是否访问到了<br>
+<br>
+参考样例2http://www.c-lodop.com/demolist/PrintSample2.html<br>
+如果是需要一进入页面就进行打印，不需要点击页面的按钮等触发，可参考链接里的处理方法，加延迟或等c-lodop加载完再调用。<br>
+<br>
+如果是点击后调用，进入页面稍等一会再点击<br>
+<br>
+在有问题的电脑上测试下样例2<br>
+<br>
+进入页面稍等一会再点击，查看下浏览器的JS报错信息，确认是最新版6623<br>
+<br>
+进入页面稍等一会再点击<br>
+<br>
+（图）<br>
+最新版lodopFuncs.js有四个，ws访问不了，会走http的<br>
+<br>
+进入页面稍等一会再点击<br>
+<br>
+（图）<br>
+调试JS，ws不成功，会走http的，等所有JS完成再调用<br>
+<br>
+（图）<br>
+http的会加载这四个，先用ws，访问不了，会走http的<br>
+<br>
+查看下浏览器的JS报错信息<br>
+<br>
+进入页面稍等一会再点击，等clodopFuncs.js加载完之后，再调用INIT初始化语句<br>
+<br>
+这个lodopFuncs.js里加载速度很快的，用其他浏览器测试下，调试JS，排查JS执行情况<br>
+<br>
+查看下JS执行情况，是慢在那个地方<br>
+<br>
+LODOP对象只有加载完clodopFuncs.js后才能调用到<br>
+调试JS排查下是否执行获取到了LODOP对象<br>
+<br>
+访问http://localhost:8000欢迎页面试试<br>
+<br>
+先确保c-lodop处于启动成功状态，访问http://localhost:8000欢迎页面试试<br>
+并发一下测试结果<br>
+<br>
+c-lodop是否能安装到启动成功界面<br>
+<br>
+以管理员权限安装最新版c-lodop测试下http://www.c-lodop.com/download.html<br>
+<br>
+左上角设置里查看下8000端口是否开启了，是否是8000端口<br>
+<br>
+（图）<br>
+就是这个设置里，查看下当前启动的端口<br>
+<br>
+参考http://www.c-lodop.com/faq/pp5.html<br>
+防火墙禁用，或一些安全软件的阻挡<br>
+七、 localhost无法访问导致<br>
+如果端口没问题，再排查下链接里的条目<br>
+<br>
+如果8000端口当前没被占用，改成8000测试下<br>
+<br>
+访问http://localhost:18000欢迎页面试试<br>
+<br>
+ldoopFuncs.js里写好了判断，8000端口被占用，会走18000端口，调试JS，排查执行情况<br>
+<br>
+调试JS步骤，是否走到了18000端口，进入页面稍等一会，等所有JS加载完成<br>
+<br>
+断点调试下JS，排查下JS是否走到了18000端口那里，排查慢在那里。<br>
+这边稍后也修改端口测试下<br>
+<br>
+（图）<br>
+这边把端口修改成8001测试是可以的，8000报错，可以走18000端口。<br>
+在您的有问题客户端，调试下JS，排查下慢在哪个环节，是否走到18000端口的<br>
+<br>
+这边测试是正常的，您可以查看下JS的加载时间，8000端口被占用时，会有个报错，等8000报错完成，走18000正常时，会弹出窗口。<br>
+（图）<br>
+只有该客户一个电脑也有问题，也可能和这个8000端口被占用无关，您在有问题的客户端再调试下试试，查看下慢在哪个环节，可以反馈下。<br>
+<br>
+如果是第一次进入页面，因为8000端口访问不到，会有个时间走到18000端口，进入页面稍等一会再点击试试<br>
+<br>
+（图）<br>
+进入页面稍等一会再点击测试下<br>
+如果进入页面接着点打印，8000端口还没报错的时候，这个时候是访问不到<br>
+（图）<br>
+<br>
+22.<span style="color: blue; font-weight: bold;">打印图片到A4纸上  设置多大的宽高合适啊</span><br>
+如何输出清晰图片 参考http://www.c-lodop.com/faq/pp14.html和样例8，对图片进行缩放<br>
+<br>
+23.<span style="color: blue; font-weight: bold;">系统用了老版本了打印软件，我们是新系统，用的新版本的打印软件，如果用户在使用我们这个升级了打印软件后，会不会影响老软件的打印呢？</span><br>
+对比两个代码，如果代码相差不大，可以使用<br>
+http的地址不变，https的新旧版本有变化：<br>
+原来的：https://localhost:8443/CLodopfuncs.js<br>
+改为：https://localhost.lodop.net:8443/CLodopfuncs.js<br>
+<br>
+对比两个代码，如果代码相差不大，可以使用<br>
+http的地址不变，https的新旧版本有变化：<br>
+原来的：https://localhost:8443/CLodopfuncs.js<br>
+改为：https://localhost.lodop.net:8443/CLodopfuncs.js<br>
+如果对方还是用的旧的https地址，新版本不支持旧的https地址的<br>
+<br>
+24.<span style="color: blue; font-weight: bold;">demo 转出的base64最后一页不全</span><br>
+demo 转出的base64，是指pdf转成base64吗<br>
+<br>
+图片转成bas64后 ，再用lodop打印base64吗，<br>
+如何输出清晰图片 参考http://www.c-lodop.com/faq/pp14.html<br>
+和样例8，缩放图片等测试下，<br>
+<br>
+通过浏览器打开，是放到网页上吗，或用网页的base64图片宽高控制语句<br>
+<br>
+25.<span style="color: blue; font-weight: bold;">打印时可以选择彩打/黑白打印吗</span><br>
+彩色和黑白是打印机的功能，lodop控制不了，咨询下打印机客服<br>
+<br>
+是的，彩色和黑白是打印机的功能，lodop控制不了<br>
+<br>
+26.<span style="color: blue; font-weight: bold;">这二维码宽高怎么骤变的。不能慢慢变大</span><br>
+参考http://www.c-lodop.com/faq/pp10.html<br>
+宽度跳跃式放大或缩小，是非线性，因为受所有二维码竖横的合计值影响。<br>
+<br>
+安装最新版c-lodopl,对条码或二维码打印项进行缩放<br>
+所有对象都支持单独变形缩放(此前仅整页缩放)，例如：<br>
+LODOP.SET_PRINT_STYLEA(0,"ScalX",1.2); //水平放大1.2倍<br>
+LODOP.SET_PRINT_STYLEA(0,"ScalY",1.5); //垂直放大1.5倍<br>
+可以先通过宽高调整到大致大小，再对打印项缩放微调测试下，只要最后可以扫描出来就可以<br>
+<br>
+一维条码能包含的字符内容及长度限制 参考http://www.c-lodop.com/faq/pp18.html<br>
+lodop中code93是带星号的，不要星号，选其他条码类型<br>
+<br>
+27.<span style="color: blue; font-weight: bold;">同一个字段数据源预览，有的电脑能显示有的电脑显示不了是什么问题</span><br>
+打印项是什么语句输出的，是add_print_text纯文本，还是add_print_htm超文本<br>
+<br>
+在有问题客户端进入打印设计，查看下每个打印项实际传入的参数<br>
+或调试JS，排查参数值是否正常<br>
+<br>
+28.<span style="color: blue; font-weight: bold;">除了 PRINT_INITA  还有有整体偏移的方法吗？</span><br>
+PRINT_INITA可以调整整体偏移，只有这一个整体偏移方法。<br>
+或每个打印项各自都偏移，<br>
+如果打印机有挡板等，也可以直接调整打印机挡板。<br>
+<br>
+29.<span style="color: blue; font-weight: bold;">很多用户反应打印老师打不全</span><br>
+用xps或pdf虚拟打印机测试下，<br>
+win7以后系统自带Microsoft XPS Document Writer虚拟打印机或者 下载安装群文件里的Doro PDF Writer虚拟打印机<br>
+<br>
+并在有问题的客户端用有问题的打印机截图下lodop的打印预览效果，查看是否有可打印区域的影响<br>
+参考http://www.c-lodop.com/faq/pp26.html<br>
+可打区域和打印机有关，LODOP控制不了<br>
+<br>
+30.<span style="color: blue; font-weight: bold;">请问如何设置用哪个打印机打印，以及打印几份，有文档吗</span><br>
+参考样例和lodop技术手册<br>
+http://www.c-lodop.com/download.html<br>
+http://www.c-lodop.com/LodopDemo.html<br>
+<br>
+31.<span style="color: blue; font-weight: bold;">设置了纸张大小，却没有效果，请问是说什么原因？</span><br>
+纸张设置，参考样例5 http://www.c-lodop.com/demolist/PrintSample5.html<br>
+用xps或pdf虚拟打印机测试一下（测试可用样例5），如果虚拟打印机输出的是正确的纸张，真实打印机不是，可能是打印机不支持该自定义纸张。 选择该真实打印机，在打印预览下方状态栏查看一下纸张大小，有的打印机不支持该自定义纸张。<br>
+<br>
+在样例5步骤1里输入宽高，预览切换不同打印机测试下，对自定义纸张的支持和打印机有关<br>
+<br>
+用xps或pdf虚拟打印机测试对比下，<br>
+win7以后系统自带Microsoft XPS Document Writer虚拟打印机或者 下载安装群文件里的Doro PDF Writer虚拟打印机<br>
+对自定义纸张的支持和打印机有关<br>
+<br>
+如果虚拟打印机输出的是正确的纸张，真实打印机不是，打印机不支持该自定义纸张。<br>
+<br>
+LODOP.SET_PRINT_PAGESIZE(1,document.getElementById('W1').value,document.getElementById('H1').value,"A3");<br>
+这个是这个直接打印的纸张语句，<br>
+改成打印预览，查看下预览效果<br>
+<br>
+在第一步，步骤1里选不同打印机测试下，自定义宽高是否生效，预览下方状态栏可以看到当前纸张<br>
+<br>
+（图）<br>
+预览的设置里查看下当前的打印机<br>
+<br>
+预览是打印机的反显，在设置里切换xps虚拟打印机查看下效果<br>
+<br>
+如果虚拟打印机输出的是正确的纸张，真实打印机不是，打印机不支持该自定义纸张。<br>
+<br>
+测试下样例5，选择该打印机查看下该打印机的纸张列表，纸张列表里是否有需要的尺寸，如果有需要尺寸的纸张，可以试试宽高为0,指定这个纸张名称。<br>
+<br>
+（图）<br>
+自定义宽高如果真实打印机不支持，可以查看纸张列表是否有需要的纸张，指定名称<br>
+<br>
+在预览设置里切换真实打印机测试下，查看下真实打印机是否支持该自定义纸张<br>
+<br>
+虚拟打印机支持，真实打印机不一定支持自定义宽高<br>
+<br>
+32.<span style="color: blue; font-weight: bold;">这个条码的字体大小怎么设置？</span><br>
+（图）<br>
+用设置字体大小语句，可以设置大小<br>
+<br>
+例如： LODOP.ADD_PRINT_BARCODE(88,32,206,78,"128B","123456789012");<br>
+LODOP.SET_PRINT_STYLEA(0,"FontSize",18);<br>
+<br>
+参考样例11http://www.c-lodop.com/demolist/PrintSample11.html<br>
+LODOP.SET_PRINT_STYLEA(0,"ShowBarText",0);//设置不显示下方的条码数值<br>
+<br>
+33.<span style="color: blue; font-weight: bold;">设置打印份数的语句是什么</span><br>
+份数 参考样例7 http://www.c-lodop.com/demolist/PrintSample7.html<br>
+<br>
+34.<span style="color: blue; font-weight: bold;">国产的操作系统，安装后打印没反应</span><br>
+是否能安装到启动成功界面<br>
+<br>
+如果能安装到启动成功界面，访问http://localhost:8000欢迎页面试试<br>
+<br>
+访问http://localhost:8000欢迎页面试试<br>
+<br>
+(图）<br>
+切换不同的打印机，查看下预览效果，是否可以弹出预览界面<br>
+<br>
+也可以直接测试下官网样例，测试官网样例http://www.c-lodop.com/demolist/PrintSample2.html<br>
+点样例2的预览试试，是否可以弹出预览界面<br>
+<br>
+调用成功了，您的网站是http的，还是https的<br>
+测试官网样例http://www.c-lodop.com/demolist/PrintSample2.html<br>
+点样例2的预览试试<br>
+<br>
+和官网样例一样，测试下样例2是否可以正常调用，<br>
+测试官网样例http://www.c-lodop.com/demolist/PrintSample2.html<br>
+如果样例正常，样例页面右键查看源码 ，参考样例的使用方法<br>
+<br>
+这个样例，linux和windows都可以测试<br>
+<br>
+语句是一样的，测试下样例2调用是否正常<br>
+<br>
+样例正常，样例页面右键查看源码 ，参考样例的使用方法<br>
+使用方法相同，对照样例排查下<br>
+<br>
+35.<span style="color: blue; font-weight: bold;">预览正常，打印出来会缺个线</span><br>
+用xps或pdf虚拟打印机测试下，<br>
+win7以后系统自带Microsoft XPS Document Writer虚拟打印机或者 下载安装群文件里的Doro PDF Writer虚拟打印机<br>
+<br>
+查看下虚拟打印机的输出效果<br>
+<br>
+理论上本机虚拟打印没问题的话，说明插件代码没问题，程序可做的努力就的确很少了，毕竟windows下的打印是微软倡导的设备无关系原则，要在打印机和打印驱动程序 系统上排查下<br>
+<br>
+36.<span style="color: blue; font-weight: bold;">设置了pos_baseon_paper没用</span><br>
+参考http://www.c-lodop.com/faq/pp26.html<br>
+可打区域和打印机有关，LODOP控制不了<br>
+设置以纸张为基点不会消除可打区域，只是打印基点变为了纸张，控制内容不要超出可打区域<br>
+<br>
+“可打区域”边缘与打印机本身有关，表现在预览里是虚线，可打区域的影响<br>
+http://www.c-lodop.com/faq/pp26.html<br>
+调整内容，不要在可打区域外，留足边距<br>
+<br>
+调整内容，不要超出可打区域<br>
+<br>
+可打区域和打印机有关，LODOP控制不了，http://www.c-lodop.com/faq/pp26.html<br>
+<br>
+LODOP控制不了可打区域，或留足边距，不要紧贴纸张输出，调整内容<br>
+<br>
+37.<span style="color: blue; font-weight: bold;">个demo转换的base64清晰度不够，而且还有锯齿，要如何解决</span><br>
+如何输出清晰图片 参考http://www.c-lodop.com/faq/pp14.html<br>
+<br>
+如果是导出图片的清晰度，没有提升方法<br>
+如果是打印图片的清晰度，按照链接里的方式输出<br>
+<br>
+38.<span style="color: blue; font-weight: bold;">本地测试的时候配置的注册码还是会有这个弹窗怎么解决</span><br>
+购买的是什么类型的注册号，是ip域名的，还是公司名的，<br>
+根据购买类型参考排查一下http://www.c-lodop.com/faq/ph01.html<br>
+<br>
+如果是ip或域名注册类型，<br>
+访问的是否是注册的ip或域名，浏览器地址栏输入的是否是注册的ip或域名，<br>
+（1）.单独注册服务器ip地址，登陆访问方式是ip地址访问，例如：注册ip地址：192.168.0.1，登陆方式如下<br>
+：http：//192.168.0.1:8000/index.jsp等，域名访问时，注册信息无效。<br>
+（2）.单独注册域名：登陆访问方式是域名地址访问，例如：注册域名： www.c-lodop.com 登陆方式如下
+：http://www.c-lodop.com/index.html等，ip地址访问时，注册信息无效<br>
+<br>
+是否是公司名顶级注册类型<br>
+<br>
+直接复制收注册号邮箱里的语句，有多句，多句都复制上<br>
+<br>
+根据购买类型参考排查一下http://www.c-lodop.com/faq/ph01.html<br>
+LODOP.SET_LICENSES........<br>
+LODOP.PRINT();<br>
+直接放到PRINT()语句前面测试下。<br>
+<br>
+公司名顶级的，两句都复制上<br>
+<br>
+直接复制收注册号邮箱里的语句<br>
+<br>
+39.<span style="color: blue; font-weight: bold;">ao断桥  也可以操作ao打印机是吧</span><br>
+AO端桥如果不在本机打印，也可以当做访问端，访问其他AO打印机<br>
+<br>
+http://www.c-lodop.com/aoprint.html<br>
+访问端可以通过端桥打印，也可以通过AO打印机打印<br>
+<br>
+40.<span style="color: blue; font-weight: bold;">C-Lodop“提示窗口已打开”</span><br>
+参考http://www.c-lodop.com/faq/pp27.html<br>
+<br>
+如果是批量多任务，直接用PRINT输出<br>
+<br>
+排查代码里是否还有需要返回值的语句<br>
+<br>
+是指PRINT加了获取返回值吗<br>
+<br>
+c-lodop是异步的，如果是获取状态等返回值，参考样例45的13，上一个不在队列再打印下一个。<br>
+或直接去掉获取回调返回值，参考样例26，直接打印输出，不返回状态<br>
+<br>
+41.<span style="color: blue; font-weight: bold;">这边想把咱们打印预览里的内容形成文件加盖电子签章  ，现在生成图片的方案不行了，能推荐一下方案吗</span><br>
+把预览的内容生成文件，<br>
+如果不生成图片，可以借助pdf虚拟打印机输出为pdf文件<br>
+<br>
+群文件里有个doro pdf虚拟打印机。安装后，选择该打印机进行打印，输出成pdf文件。<br>
+选择打印机，参考样例5、7<br>
+http://www.c-lodop.com/demolist/PrintSample5.html<br>
+http://www.c-lodop.com/demolist/PrintSample7.html<br>
+<br>
+虚拟打印机弹出保存框选择路径是虚拟打印机的功能，可以在网上找一下试试<br>
+百度下找一下可以设置默认路径的pdf虚拟打印机，例如Bullzip PDF Printer。<br>
+<br>
+42.<span style="color: blue; font-weight: bold;">买的域名顶级，本地调试是不能用的吗？</span><br>
+可以修改本机hosts，该域名指向本机 127.0.0.1，然后用域名访问<br>
+<br>
+只要浏览器地址栏的地址是注册的域名就可以，修改本机hosts也是有效的<br>
+<br>
+43.<span style="color: blue; font-weight: bold;">这里设置 按内容高度 自适应， 是只支持 通过 lodop 指令添加的 内容吗，我直接 通过 ADD_PRINT_HTM 把我要打印的整个 html 内容 传进去  可以吗</span><br>
+这个是纸张，<br>
+纸张不定高一般小票打印机等特殊打印机支持，普通打印机可能有一定的幅面限制，不支持纸张不定高，可以实际测试下打印机是否支持不定高纸张。<br>
+<br>
+预览查看下该打印机纸张不定高是否支持，预览下方状态栏可以看到当前的纸张<br>
+<br>
+小票打印 ，参考样例18 http://www.c-lodop.com/demolist/PrintSample18.html<br>
+（小票针式打印 建议用 ADD_PRINT_TEXT文本，不用htm超文本，纸张高度不定容易引起 htm 中排版变形）<br>
+小票建议用纯文本累计高度，htm容易引起一些问题<br>
+<br>
+发一下您的打印预览截图，下方的纸张是多少，虚拟打印机也有最大纸张高度 <br>
+<br>
+第一个纸张是A4纸张，不定高纸张没生效<br>
+<br>
+发一下您的不定高的纸张语句<br>
+<br>
+参数用具体值，发一下这个语句<br>
+<br>
+纸张宽度没设置，不定高纸张需要设置宽度<br>
+<br>
+不定高纸张，只能是高度不定，宽度根据实际纸张设置宽度<br>
+<br>
+44.<span style="color: blue; font-weight: bold;">加载页面LODOP  加载控件时卡住怎么办，有些电脑没事，有些出现这种情况</span><br>
+卡住是指c-lodop卡住，还是网页卡住了<br>
+<br>
+如果出现问题时c-lodop启动成功界面打不开，并观察该客户端电脑是否有共享打印机，<br>
+参考http://www.c-lodop.com/faq/pp5.html<br>
+九、c-lodop安装界面始终打不开<br>
+可能是网络共享打印机的问题，删除就好了<br>
+是否有共享打印机，删除共享打印机后，重新安装c-lodop试试。<br>
+<br>
+没用c-lodop，是指用的是lodop插件方式吗<br>
+参考http://www.c-lodop.com/faq/pp21.html<br>
+高版本的火狐谷歌不再支持np插件，需要使用c-lodop，可参考官网样例混合部署<br>http://www.c-lodop.com/LodopDemo.html<br>
+Lodop控件升级到C-Lodop云打印 参考http://www.c-lodop.com/faq/pp7.html<br>
+<br>
+建议升级到c-lodop方式<br>
+<br>
+建议升级到c-lodop，不是浏览器插件，支持所有浏览器，跳出浏览器的限制<br>
+<br>
+（图）<br>
+或先用这个技术手册的这个语句临时处理，<br>
+建议后续升级到C-Lodop云打印 参考http://www.c-lodop.com/faq/pp7.html<br>
+<br>
+建议后续升级到C-Lodop云打印 参考http://www.c-lodop.com/faq/pp7.html<br>
+参考http://www.c-lodop.com/blogs/Blog020.html<br>
+9、用了云打印，很多传统问题迎刃而解，如谷歌和火狐的插件定时提示无响应、其它NP插件故障对Lodop造成影响甚至一起崩溃、某些浏览器自动升级迫使Lodop重安装、仅因浏览器变化就被迫无休止升级打印程序担忧等等。<br>
+<br>
+45.<span style="color: blue; font-weight: bold;">发送到虚拟打印机获取的打印状态不是16或128</span><br>
+样例右键查看源码，代入这个参数。<br>
+（图）<br>
+<br>
+代入这个参数解析下，或直接或状态码描述<br>
+<br>
+（图）<br>
+右键查看源码，c-lodop需要回调函数，或直接获取状态码描述<br>
+<br>
+如果是想获取成功：<br>
+参考样例35 http://www.c-lodop.com/demolist/PrintSample35.html<br>
+样例45的13 http://www.c-lodop.com/demolist/PrintSample45.html<br>
+样例35返回的“打印成功”实际仅是成功加入后台队列。<br>
+样例45的13 判断“JOB不在队列”就足可认定已经打印成功。<br>
+一般建议使用样例4，35方法简单判断打印成功，发送打印指令加入打印机队列算打印成功。<br>
+<br>
+状态码的成功需要打印机支持，可以测试下样例45，用真实打印机测试<br>
+<br>
+46.<span style="color: blue; font-weight: bold;">能给clodop传递https路径的下载接口吗，接口下载流文件</span><br>
+是指打印https的pdf文件吗<br>
+<br>
+参考欢迎页面的第四步，(例如Https方式)需先下载好再打印，<br>
+（注意这步演示需要访问地址https://localhost.lodop.net:8443/c_pdfprint才行）<br>
+右键查看源码，在网页源码里<br>
+<br>
+47.<span style="color: blue; font-weight: bold;">lodop 是否支持根据打印机的名字来指定打印机？</span><br>
+选择打印机，参考样例5、7<br>
+http://www.c-lodop.com/demolist/PrintSample5.html<br>
+http://www.c-lodop.com/demolist/PrintSample7.html<br>
+打印机优先级，参考http://www.c-lodop.com/blogs/Blog002.html<br>
+支持<br>
+<br>
+指定序号或名称<br>
+<br>
+48.<span style="color: blue; font-weight: bold;">现在用虚拟pdf打印时 设置了文件路径和动态文件名 LODOP.SET_PRINT_MODE("PRINT_TO_FILE", "C:\\"+$("#str_report_code").val()+".pdf"); 不起作用 要怎么解决</span><br>
+lodop没有导出pdf的方法，用打印语句，输出到pdf虚拟打印机<br>
+<br>
+PRINT或PRINTA等，直接打印预语句，借助pdf虚拟打印机打印成pdf文件<br>
+<br>
+保存名字是虚拟打印机的功能，lodop控制不了<br>
+<br>
+lodop只能导出图片，excel，无法导出pdf文件<br>
+<br>
+获取不到<br>
+<br>
+pdf虚拟打印机打印成pdf文件，是虚拟打印机的功能，lodop看不到保存的名字<br>
+<br>
+没有删除指定路径文件的方法<br>
+<br>
+49.<span style="color: blue; font-weight: bold;">想问下怎么看注册等级</span><br>
+私发一下收注册号邮箱，或注册号，这边查一下<br>
+<br>
+您是否已经购买了，收注册号的邮箱里<br>
+<br>
+LODOP.SET_LICENSES这个语句<br>
+<br>
+查到了，公司名顶级注册类型<br>
+<br>
+50.<span style="color: blue; font-weight: bold;">本机安装lodop后，他的lodop.print.js在哪里</span><br>
+lodop.print.js，没有这个js<br>
+<br>
+这个不是lodop的方法，是网上的方法<br>
+<br>
+右键查看源码，这个是JS的方法<br>
+<br>
+这个方法在源码里，是网上的JS方法，里面不是lodop的语句<br>
+<br>
+百度一下相关的JS语句，如果用这个，只能是在同一个域名下<br>
+<br>
+百度下网上跨域的方法处理，这个右键源码里的是JS方法<br>
+<br>
+这个域名是执行本机的，也可以通过这个域名访问<br>
+<br>
+右键属性里这个就是网页的源码，源码里是网上找的JS方法<br>
+<br>
+可以自己修改这个方法，这个方法本身是网页自定义的<br>
+<br>
+这个页面是个样例，这个方法在网页中自定义的方法<br>
+<br>
+您即使修改了这个网页，也是修改的欢迎页面的例子页面，<br>
+如果想修改这个方法，在自己的网页里修改<br>
+<br>
+51.<span style="color: blue; font-weight: bold;">一直打白的，是这里设置的长宽有问题吗？</span><br>
+改成打印预览，进入预览查看下效果<br>
+<br>
+改成打印预览，查看下当前的纸张高度，是否有空白高度<br>
+<br>
+您的纸张语句发一下，纸张是怎样设置的<br>
+<br>
+如果是小票打印，可以尝试下纸张不定高，参考样例18 <br>http://www.c-lodop.com/demolist/PrintSample18.html<br>
+<br>
+没有看到纸张语句，设置下纸张，如果是小票，可以尝试设置纸张不定高，参考样例18<br>
+<br>
+纸张设置，参考样例5 http://www.c-lodop.com/demolist/PrintSample5.html<br>
+参考样例18 http://www.c-lodop.com/demolist/PrintSample18.html<br>
+您的看起来是小票，参考样例18，右键查看源码，可以尝试设置纸张不定高<br>
+<br>
+
+
+
+
+<!--main_middle结束-->
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+
+
+</div><!--body结束-->
+ </body>
+</html>
