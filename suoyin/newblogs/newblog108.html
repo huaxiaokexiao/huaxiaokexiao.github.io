@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】纯文本内容行左右对齐TextNeatRow（含有数字对齐）（newblog108）（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】纯文本内容行左右对齐TextNeatRow（含有数字对齐）（newblog108）（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】纯文本内容行左右对齐TextNeatRow（含有数字对齐）（newblog108）（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>DD_PRINT_TEXT长文本时，内容较多且有许多自动换行，右侧可能会参差不齐，这时候可以加这个语句，让文本内容行左右对齐。<br />LODOP.SET_PRINT_STYLEA(0,"TextNeatRow",true);</p>
+<p>可参考样例6，http://www.c-lodop.com/demolist/PrintSample6.html<br />二、如想文本内容行左右对齐（允许标点溢出，且英文单词拆开）可用如下语句：<br />SET_PRINT_STYLEA(0,"TextNeatRow",true);</p>
+<p>这个语句的效果是：允许标点溢出，且英文单词拆开</p>
+<p>样例6不加这个语句的效果，如图，右侧略显不整齐<br />（图）</p>
+<p>样例6加了这个语句的效果，如图，右侧比较正确，标点可以溢出，单词也可以拆分。<br />（图）</p>
+<p>加了这个语句，右侧还是不整齐怎么回事？数字超出了？<br />(图）</p>
+<p>TextNeatRow 功能没法实现严格右边对齐，它仅仅是允许拆分英文单词。当中英文混合文档时，右边界上下行有一个汉字宽度的误差，视觉上仍然参差不齐，纯中文或纯英文会好点。</p>
+<p>纯中文或纯英文会好点，但出现数字时，无法看上去右侧整齐。</p>
+<p>lodop还有一个语句，两端对齐：<br />LODOP.SET_PRINT_STYLEA(0,"AlignJustify",1);<br />这个可以让文本两端对齐，只是如果有行数数字较少，会导致间隔过大。</p>
+<p>（图）<br />如图，可以看到，由于有两行内容过少，导致间距过大。<br />这个两端对齐，在字数较少时，会增大字间距，确保两端对齐。</p>
+<p>两端对齐有行文本少，间距太多不行，有其他方法确保带数字的对齐吗？</p>
+<p>目前只有这两种两端对齐效果：</p>
+<p>1.文本内容行左右对齐（主要是中文，英文）允许标点溢出，且英文单词拆开<br />LODOP.SET_PRINT_STYLEA(0,"TextNeatRow",true);</p>
+<p>2.两端对齐：<br />LODOP.SET_PRINT_STYLEA(0,"AlignJustify",1);</p>
+<p>带数字混合的，没有很好的方法，只能是这个效果，<br />或用换行符等手工在需要的位置换行。<br />换行，参考http://www.c-lodop.com/faq/pp12.html</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>
