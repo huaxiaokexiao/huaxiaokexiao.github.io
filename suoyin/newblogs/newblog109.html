@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】打印htm圆角和透明度border-radius，background:rgba（newblog109）（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】打印htm圆角和透明度border-radius，background:rgba（newblog109）（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】打印htm圆角和透明度border-radius，background:rgba（newblog109）（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>打印htm中圆角和透明度样式不生效怎么办？<br />排查下样式http://www.c-lodop.com/faq/pp8.html，通过删减或做简单例子排查，找到出问题的样式，修改样式。</p>
+<p>css样式中，background:rgba(255,0,0,0.5);可以设置透明度<br />border-radius:50%;可以设置圆角角度</p>
+<p>但在用lodop打印时，ADD_PRINT_HTM输出，无法输出到页面的效果时。更换样式，更换实现方式。<br />或有两种方式可以输出圆角和透明度：</p>
+<p>更换样式，或换成图片方式，如输出图片，如果不更换样式或输出方式：</p>
+<p>方法1：换成LODOP.ADD_PRINT_HTML（图形模式）输出，这种能更好的还原样式，但是清晰度不如LODOP.ADD_PRINT_HTM（普通模式），如果可以接受该语句的清晰度或是高精度的打印机，可以换成这个图形模式的语句。</p>
+<p>方法2：换成lodop语句输出的纯文本进行设计，<br />LODOP.SET_PRINT_STYLEA(0,"CornerRate",0.5);//拐角度<br />LODOP.SET_PRINT_STYLEA(0,"Alpha",100);//透明度</p>
+<p>lodop可以设置支持一些这两个属性吗？<br />lodop本身没有解析超文本的引擎，调用每个客户端本机windows底层引擎，与底层IE一致。<br />可以在ie下不同版本仿真情况下验证差异 排查样式，尽量使用使用各浏览器无歧义的通用的 html css js，不支持的样式可尝试用其他样式代替。</p>
+<p>border-radius属性和background:rgba(255,0,0,0.5);这两个并不是所有IE版本都兼容，所以实际测试不支持则需要更换实现方式。</p>
+<p>当前IE版本比较高，还是不不支持，这么回事？<br />可能底层引擎调用的IE版本引擎不同，尽量使用使用各浏览器无歧义的通用的样式。</p>
+<p>当前用的是谷歌，不是IE，怎么还不支持？<br />这里不是指使用的浏览器，是指lodop调用的解析超文本引擎的浏览器 。</p>
+<p>lodop解析超文本能不用IE引擎吗？<br />C-Lodop借用Windows系统解析引擎（和IE共用），Lodop7借用当前浏览器引擎。<br />lodop7目前暂无windows版，目前有linux桌面版的lodop7，后续会推出windows版的。<br />（-------将来有计划会抛弃IE引擎，目前只能是这个效果，排查样式，修改样式-----）</p>
+<p>介绍下border-radius样式：<br />border-radius：可以设置圆角样式<br />border-radius:50%;<br />html代码：<br />（图）<br />效果图：<br />可以看到原来正方形的div的角，设置成了圆角，变成了圆形，<br />如果需要单个角等，也可以根据需要设置例如左上角border-top-left-radius，角度可以调整参数。</p>
+<p><br />这个代码调整下，用lodop打印预览查看下效果：<br />（图）</p>
+<p>效果图：<br />border-radius没有生效，正方形的还是正方形，没有圆角。<br />background-image背景图不显示 <br />（图）</p>
+<p>border-radius没有圆角：<br />border-radius因为不是所有IE版本都兼容，ADD_PRINT_HTM输出解析的超文本时，有可能会无效，建议更换实现方式或样式。</p>
+<p>background-image背景图不显示：<br />background:url()这是css背景图，http协议会按异步方式下载背景图，所以很容易等不到下载完毕就开始打印了，故lodop不打印背景图。至于普通图片参考样例37 http://www.c-lodop.com/demolist/PrintSample37.html<br />用普通图片的输出方式。</p>
+<p>介绍一下方式1：<br />换成LODOP.ADD_PRINT_HTML（图形模式）输出，这种能更好的还原样式，但是清晰度不如LODOP.ADD_PRINT_HTM（普通模式）<br />修改上面的代码为这个带L的输出<br />（图）</p>
+<p>效果图：<br />ADD_PRINT_HTML（图形模式）输出，这种能更好的还原样式，可以看到可以显示圆角，但是清晰度会有损失，真实打印机打印出来可能出现模糊等效果。<br />（图）</p>
+<p>介绍一下方式2：<br />弄个新例子得花点时间，这里就不写代码了，直接用以前自己博文的代码和例子部分截取：<br />两个div:<br />一个圆角矩形半透明：background:rgba(255,0,0,0.5);border-radius:20px;<br />一个圆行：border-radius:50%<br />（图）</p>
+<p>JS代码：<br />ADD_PRINT_HTM输出，<br />ADD_PRINT_HTML输出<br />文本输出的，和纯文本的样式 <br />（图）</p>
+<p>效果图：<br />如图，可以看到，<br />（1）ADD_PRINT_HTM输出的都没有圆角了，也没有半透明<br />（2）ADD_PRINT_HTML输出，有圆角有透明，（但注意ADD_PRINT_HTML不清晰）<br />（3）纯文本输出，有透明度，有圆角，打印出来清晰<br />（图）</p>
+<p>纯文本矩形设置了圆角，不支持怎么回事？</p>
+<p>安装最新版c-lodop，http://www.c-lodop.com/download.html<br />参考http://www.c-lodop.com/blogs/Blog021.html<br />7：矩形图形支持拐角率(也就是圆弧角矩形,中国式报表需要)，拐角率范围值是0--1.0(默认值0=直角)，<br />【定义：拐角率=拐角圆的直径与矩形小边(长和宽的短者)的比值】,例如:<br />LODOP.SET_PRINT_STYLEA(0,"CornerRate",0.5); //拐角率0.5</p>
+<p>纯文本和图形对象支持半透明(注意半透明不是变浅色的意思),透明范围值0--255(默认值255)，例如:<br /> LODOP.SET_PRINT_STYLEA(0,"Alpha",128);/这个例子的透明度值设置为128，真正意义上的"半"透明</p>
+<p>c-lodop4.0版本之后增加的功能，如果不确定自己版本是否支持，可以直接安装官网最新版后再测试。</p>
+<p>安装了最新版，还是不支持怎么回事？<br />查看下当前是否走的是c-ldoop:<br />单独c-lodop，http://www.c-lodop.com/faq/pp34.html<br />修改lodopFuncs.js里的needclodop返回true，可只用c-lodop</p>
+<p>如何区别当前是否是clodop？<br />查看JS里判断情况，或进入打印预览，左上角是小打印机图标，就表示当前走的是c-lodop，是浏览器图标，当前走的是lodop插件方式。</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>
