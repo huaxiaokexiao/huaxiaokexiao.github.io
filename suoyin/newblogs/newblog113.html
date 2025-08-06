@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】不建议集中打印用很多共享打印机（newblog113）（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】不建议集中打印用很多共享打印机（newblog113）（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】不建议集中打印用很多共享打印机（newblog113）（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>c-lodop可以用于三种角色，最常见的是客户端本地打印角色。<br />如果客户端是访问网站后，在自己的电脑的打印机上打印，属于第一种角色。</p>
+<p>一般打印流程是：<br />-----客户端有自己的电脑，电脑连着自己的打印机<br />-----客户通过浏览器访问了您的网站，在您的网站上选择自己本地的打印机进行打印。<br />-----客户在自己的打印机上把打印好的拿出来。</p>
+<p>第一种客户端本地打印角色安装和使用方法：</p>
+<p>三种角色及使用方法：<br />参考http://www.c-lodop.com/demolist/t1.html<br />第一种角色，每个客户端都要安装，服务器端不需要安装，<br />因为每个客户端是在自己本机打印，服务器本身不需要打印</p>
+<p>这种太麻烦了，不能让没个客户端安装，把所有客户打印机共享到服务器上，直接客户访问服务器上集中打印，客户就不用安装了，这样不行吗？<br />不行，这样确实可以实现，但还有考虑性能，和后续维护等，这种会后续会出现重点问题，不能这样使用。</p>
+<p>可能出现的问题：<br />（1）由于集中打印服务器上有一堆共享打印机，所有客户打印任务都发送到这个集中打印服务器上，借助这个服务器的windows打印服务打印，这个服务器压力非常大，会占用大量内存和性能。很容易出现一些异常。</p>
+<p>（2）某个共享打印机异常，导致所有打印机都无法打印了。<br />由于共享打印机需要网络，c-lodop每次都会获取打印机，出现了某异常的，会导致整个出现异常。<br />例如：网络断开原因、本地重启电脑后共享打印机没有记住共享端的用户名和密码等。<br />出现这种问题，排查起来也比较麻烦，因为c-lodop服务出现了问题，所有打印机都无法打印，不能准确判断是哪一个打印机出了问题。</p>
+<p>如果想处理，删除所有共享打印机，重新共享，但这样会非常麻烦。</p>
+<p>（3）打印非常卡慢<br />把本地打印机，共享到服务器上，再发起远程打印，这相当于绕了一圈，速度肯定比不上直接掉本地打印机打印。</p>
+<p>不能用本地打印，还需要打印到其他电脑的打印机上？<br />可以用端桥模式，指定端桥打印，这种 打印端在端桥上，AO服务器上并不需要处理打印，只是一个中转。<br />压力分散在各个端桥上。</p>
+<p>AO服务器是一个指令周转服务，压力不大的，所有的解析和打印工作都分解到端桥了。我们对AO服务器做的压力测试从没达到过服务软件的极限，反而是端桥那边受不了了。<br />几次压力测试，都是把端桥的windows打印服务池压垮了，打不开了。<br />也就说，除非你有极其多的端桥才有可能把AO服务器压垮，单如果端桥太多的话，强烈建议你部署多个AO服务器。反之，端桥没几个，业务又很大，那么端桥的打印才是瓶颈。&rsquo;</p>
+<p>端桥端还需要安装，好多客户都需要安装，这样太麻烦太不方便了，不安装怎么提高效率？<br />c-lodop安装一次后，每次开机自启动，<br />如果是客户端本地打印角色,lodopFuncs.js里写好了判断提示，可以直接提示客户端下载安装，安装 一次后，后续客户不需要再安装了，且安装并不复杂。</p>
+<p>所有打印机共享到集中打印服务器上，这种方法不建议使用，无法提高效率，还会造成很多问题。</p>
+<p>为什么不能把所有打印机共享到集中打印服务器上，那集中打印又有什么意义？<br />集中打印，http://www.c-lodop.com/blogs/Blog015.html<br />例如，前端点餐，后台打印。<br />后台有一台windows电脑连接一个打印机，集中处理前端手机等终端发送的打印任务。</p>
+<p>办公场景：<br />办公地点有多个人，公司只有一台打印机，其他人员可以通过自己电脑，远程像那台连接了打印机的电脑集中发送打印任务。</p>
+<p>这些集中打印场景，集中打印服务器本身一般只连接很少的打印机，usb接口等连接一台打印机。不会出现一堆共享打印机情况。</p>
+<p>客户端本地打印角色，如何让客户端不安装c-lodop就能打印，集中共享到一个服务器上不行吗？<br />把所有打印机共享到集中打印服务器上，确实可以实现这种效果，但这相当于绕了一圈，且容易出现大量问题。</p>
+<p>还有一种方式也不建议：后两种角色不限访问端的价格好像比域名注册便宜，虽然是本地打印，但可以弄一个AO服务器，把本地打印机指向AO服务器，然后客户端再从AO服务器上选自己本地的打印机，这样是不是可以？<br />这相当于绕了一圈，本来客户端不只需要调用本地的c-lodop，获取本地的打印机，很快就可以打印。<br />但这样多了很多步骤，性能等肯定比不过本地打印方式。<br />且AO服务器如果出了问题，本地打印也打印不了。<br />但如果是客户端本地角色，服务器端不需要安装，调用的都是本地的，如果出现问题，直接重启本地的c-lodop或排查本地就就可以。</p>
+<p>不建议使用的两种方式：<br />1.所有打印机共享到集中打印服务器上，客户端向集中打印服务器上选对应的共享打印机打印。<br />（集中打印服务器压力过多，共享打印机容易出问题，建议改成本地打印或端桥模式）<br />2.客户端把自己打印机作为端桥连到AO服务器上，访问AO服务器，选择自己的端桥机进行打印。<br />（绕了一圈，还是选自己本地打印机，但从AO服务器上绕过来打，性能肯定比不过本机安装，建议改成本地打印）</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>不建议您这种使用方法，建议修改，集中打印加很多共享打印机，这种很容易出问题<br />打印压力在每个端桥端，这样不会在一台电脑上出现问题<br />集中打印角色是一台电脑集中打印，这台电脑连接众多共享打印机，不建议用这种方式。<br />可以换成端桥方式，打印压力在端桥端</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>

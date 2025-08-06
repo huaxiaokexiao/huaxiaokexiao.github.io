@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】不定高纸张图片缩放引起空白高度（newblog110）（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】不定高纸张图片缩放引起空白高度（newblog110）（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】不定高纸张图片缩放引起空白高度（newblog110）（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>lodop中可以设置纸张不定高，当小票打印机等一些支持纸张不定高的打印机时，可以根据内容高度走纸。</p>
+<p>不定高小票打印，参考样例18，http://www.c-lodop.com/demolist/PrintSample18.html<br />例如样例18的这句：<br />LODOP.SET_PRINT_PAGESIZE(3,1385,45,"");//这里3表示纵向打印且纸高&ldquo;按内容的高度&rdquo;；1385表示纸宽138.5mm；45表示页底空白4.5mm</p>
+<p>小票建议用纯文本输出，累计打印项高度：<br />小票打印 ，参考样例18 http://www.c-lodop.com/demolist/PrintSample18.html<br />（小票针式打印 建议用 ADD_PRINT_TEXT文本，不用htm超文本，纸张高度不定容易引起 htm 中排版变形）</p>
+<p>先来看看纯文本时，累计打印项高度的该纸张语句的效果：<br />LODOP.SET_PRINT_PAGESIZE(3,1385,0,"");<br />LODOP.ADD_PRINT_TEXT(10,10,120,20,"新加文本1");<br />LODOP.ADD_PRINT_TEXT(37,10,120,20,"(复制2)新加文本1");<br />（图）</p>
+<p>text纯文本打印项高度引起的空白：<br />增大第二打印项的高度，由20变成60，再查看下效果：<br />LODOP.SET_PRINT_PAGESIZE(3,1385,0,"");<br />LODOP.ADD_PRINT_TEXT(10,10,120,20,"新加文本1");<br />LODOP.ADD_PRINT_TEXT(37,10,120,60,"(复制2)新加文本1");<br />（图）<br />累计的第二个打印项高度，下方有空白，这个是第二个text的打印项高度引起的。</p>
+<p>不定高纸张第三个参数底部空白的高度引起的空白高度：<br />这里把纸张的第三个参数由0改成600，再查看下效果：<br />LODOP.SET_PRINT_PAGESIZE(3,1385,600,"");<br />LODOP.ADD_PRINT_TEXT(10,10,120,20,"新加文本1");<br />LODOP.ADD_PRINT_TEXT(37,10,120,20,"(复制2)新加文本1");<br />（图）</p>
+<p><br />对图片使用缩放语句Stretch参数1这个是可变形缩放，可以把图片打印项缩放到打印项宽高的大小。<br />在普通固定纸张情况下效果如图：<br />LODOP.ADD_PRINT_TEXT(10,10,120,20,"新加文本1");<br />LODOP.ADD_PRINT_TEXT(37,10,120,20,"(复制2)新加文本1");<br />LODOP.ADD_PRINT_IMAGE(66,12,300,300,"http://www.c-lodop.com/demolist/PrintSample8.jpg");<br />LODOP.SET_PRINT_STYLEA(0,"Stretch",1);<br />（图）</p>
+<p><br />同样的代码，再把不定高的纸张语句加上，查看下效果：<br />LODOP.SET_PRINT_PAGESIZE(3,1385,0,"");<br />LODOP.ADD_PRINT_TEXT(10,10,120,20,"新加文本1");<br />LODOP.ADD_PRINT_TEXT(37,10,120,20,"(复制2)新加文本1");<br />LODOP.ADD_PRINT_IMAGE(66,12,300,300,"http://www.c-lodop.com/demolist/PrintSample8.jpg");<br />LODOP.SET_PRINT_STYLEA(0,"Stretch",1);<br />（图）<br />PAGESIZE第三个参数是0，空白留白高度，图片打印项是300，缩放到300，打印项高度是300，但下方却出现了空白，这个空白高度是哪里来的？</p>
+<p>把缩放语句去掉，再预览查看下效果：<br />LODOP.SET_PRINT_PAGESIZE(3,1385,0,"");<br />LODOP.ADD_PRINT_TEXT(10,10,120,20,"新加文本1");<br />LODOP.ADD_PRINT_TEXT(37,10,120,20,"(复制2)新加文本1");<br />LODOP.ADD_PRINT_IMAGE(66,12,300,300,"http://www.c-lodop.com/demolist/PrintSample8.jpg");<br />（图）<br />可以看到图中，不缩放的情况下，0的留白确实是这样的。<br />可见之前缩放后出现的留白，就是不缩放的原始图片大小的引起的。</p>
+<p><br />对比查看下，两个纸张高度是相同的，<br />虽然缩放后图片的高度不同，但在不定高累计高度的时候，还是会累计原来的图片高度<br />（图）（图）</p>
+<p>如何去掉缩放图片引起的留白，用缩放后的图片打印项高度累计？<br />截止视频发布时间，当前版本只能是这效果。</p>
+<p>解决方法：<br />用其他图片处理工具（画图，ps等）处理到合适的图片尺寸，直接用原始图片大小输出。<br />在不定高纸张时，不想原始图片高度引起留白，不用loodop的这个图片缩放语句。<br />（---将来版本也可能有变化，这里指视频发布时间之前的版本---）</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><br />LODOP.SET_PRINT_PAGESIZE(3,1385,0,"");<br />LODOP.ADD_PRINT_IMAGE(30,20,300,300,"&lt;img border='0' src='http://www.c-lodop.com/demolist/PrintSample8.jpg' /&gt;");<br />LODOP.SET_PRINT_STYLEA(0,"Stretch",1);//(可变形)扩展缩放模式<br />这边测试了下，应该是和原始图片高度有关，<br />图片用LODOP语句缩放后，不定高纸张情况下，占用的高度还是原始图片的高度</p>
+<p>LODOP.SET_PRINT_PAGESIZE(3,1385,600,"");<br />LODOP.ADD_PRINT_TEXT(10,10,120,20,"新加文本1");<br />LODOP.ADD_PRINT_TEXT(37,10,120,20,"(复制2)新加文本1");<br />LODOP.ADD_PRINT_IMAGE(67,13,300,300,"&lt;img border='0' src='http://www.c-lodop.com/demolist/PrintSample8.jpg' /&gt;");</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>
