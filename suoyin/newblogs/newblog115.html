@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】导出图片不弹窗等（导出单页，默认路径，图片大小）（newblog115）（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】导出图片不弹窗等（导出单页，默认路径，图片大小）（newblog115）（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】导出图片不弹窗等（导出单页，默认路径，图片大小）（newblog115）（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>LODOP中可以把打印内容导出成图片，这里是一些导出方法，以及如何导出图片不弹出保存框，以及如何导出单张图片。</p>
+<p>方法1：设置导出默认名，弹出windows保存框保存图片</p>
+<p>为了省时间，这边直接在欢迎页面演示下http://localhost:8000/<br />直接修改欢迎页面框里的代码<br />（图）<br />LODOP.SET_SAVE_MODE("SAVEAS_IMGFILE_EXENAME",".jpg");<br />LODOP.SAVE_TO_FILE("这是导出的图片.jpg");</p>
+<p>点击查看效果，会弹出一个windows的保存框，里面包含自己设置的默认名称，可以修改名称，选择本地磁盘的路径，点保存，即可保存为jpg图片<br />（图）</p>
+<p>在保存的该路径可以查看到该图片，因为自动分页的原因，是一个包含两页内容的长长的图片。<br />（图）</p>
+<p>方法2：预览里，右键，另存为图片<br />LODOP.PREVIEW();<br />（图）<br />在预览界面，右键，另存为文件</p>
+<p>效果会弹出一个windows保存框，默认名字是INIT初始化里的任务名，默认的格式是.emf，如果想修改格式，可以修改扩展名为需要的格式<br />（图）</p>
+<p>方法3：和方法1一样，也是代码设置导出，只是不弹出windows保存框了。<br />如何导出图片不弹出windows保存框？</p>
+<p>设置样式不弹出保存框，并设置具体的磁盘路径，</p>
+<p>LODOP.SET_SAVE_MODE("FILE_PROMPT",false); <br />LODOP.SAVE_TO_FILE("D:\\dddddddd3.jpg");<br />执行后，进入该磁盘路径可以看到生成了这个图，打开这个图片，就是这个打印内容导出的长图。<br />（图）（图）</p>
+<p>不想导出到根路径，可以导出到某个文件夹里吗？<br />LODOP.SET_SAVE_MODE("FILE_PROMPT",false); <br />LODOP.SAVE_TO_FILE("D:\\aa\\dddddddd3.jpg");<br />在D盘建立一个aa的文件夹，然后导出到这个磁盘路径<br />（图）</p>
+<p>如果该盘没有这个文件夹，可以自动创建吗？<br />不能自动创建文件夹，您可以先在操作系统建立一个文件夹，用这个文件夹的路径。</p>
+<p>方法4：这个不弹窗保存路径，点击后一点提示也没有，还得去文件夹下看是否生成了，能有提示吗？<br />可以获取返回值用于提示，如果是c-lodop，需要用回调函数：<br />LODOP.SET_SAVE_MODE("FILE_PROMPT",false); <br />LODOP.On_Return=function(TaskID,Value){if(Value) alert("导出成功！");};<br />LODOP.SAVE_TO_FILE("D:\\dddddddd4.jpg");<br />（--因现在一般都是c-lodop了，所以直接回调，如果用到了插件，需要加判断，判断c-ldoop走回调，插件直接返回。---）</p>
+<p>（图）（图）<br />还是直接在欢迎页面演示，判断返回值，成功，alert弹窗提示导出成功。<br />进入D盘，可以看到导出的这个图片文件是成功了，文件存在。</p>
+<p>导出的是一个长图，这个任务有两页，能只导出第一页为图片吗？</p>
+<p>可以设置起始终止页，例如导出第一页，就是第一页到第一页：<br />打印一个任务的第几页到第几页，参考例如：<br />LODOP.SET_PRINT_MODE ("PRINT_START_PAGE",1);//设置从第1页开始打印<br />LODOP.SET_PRINT_MODE ("PRINT_END_PAGE",1);//设置从第1结束打印</p>
+<p>再来看看设置了打印该任务第一页之后的导出图片效果；<br />LODOP.SET_PRINT_MODE ("PRINT_START_PAGE",1);//设置从第1页开始打印<br />LODOP.SET_PRINT_MODE ("PRINT_END_PAGE",1);//设置从第1结束打印<br />LODOP.SET_SAVE_MODE("FILE_PROMPT",false); <br />LODOP.On_Return=function(TaskID,Value){if(Value) alert("导出成功！");};<br />LODOP.SAVE_TO_FILE("D:\\dddddddd5.jpg");<br />（图）</p>
+<p>再查看下效果，就是第一页导出的图片，并不是第一页和第二页连起来的长长的图片。</p>
+<p>怎么设置图片的大小？<br />这个导出的图片大小和纸张有关，如果想导出小的图片，设置合适的纸张</p>
+<p>LODOP.SET_PRINT_PAGESIZE(1,100,200,"");  <br />LODOP.SET_PRINT_MODE ("PRINT_START_PAGE",1);//设置从第1页开始打印<br />LODOP.SET_PRINT_MODE ("PRINT_END_PAGE",1);//设置从第1结束打印<br />LODOP.SET_SAVE_MODE("FILE_PROMPT",false); <br />LODOP.On_Return=function(TaskID,Value){if(Value) alert("导出成功！");};<br />LODOP.SAVE_TO_FILE("D:\\dddddddd6.jpg");<br />（图）（图）<br />如图，导出的图片就是一个小图了，导出图片大小和纸张大小有关。</p>
+<p>多页的任务，一个任务多页，可以导出多个图片吗，一页一个图片？<br />实现不了，可能分多次导出，分成多任务，一次导出一张图片。</p>
+<p>导出的图片可以提高清晰度吗，想更清晰一些？<br />没有提高导出图片的清晰度方法。</p>
+<p>导出图片指定纸张后，还是这么大怎么回事？<br />可以先临时改成预览，查看下预览里的纸张大小是否正常，纸张是否生效。如果没生效，可能是您默认打印机或走的打印机纸张不支持，可以指定下虚拟打印机。<br />windows打印机列表里是否有这个Microsoft XPS Document Writer<br />如果有，可以指定这个虚拟打印机，这个打印机支持的自定义纸张较多</p>
+<p>LODOP.SET_PRINT_PAGESIZE(1,100,200,"");  <br />LODOP. SET_PRINTER_INDEX("OKI MICROLINE 5200F+");测试效果<br />（图）</p>
+<p>LODOP.SET_PRINT_PAGESIZE(1,100,200,"");  <br />LODOP. SET_PRINTER_INDEX("Microsoft XPS Document Writer");<br />（图）</p>
+<p>总结：<br />1.SAVE_TO_FILE导出图片，默认弹出windows保存框，选路径保存。<br />2.预览右键另存为，可以直接导出图片<br />3.需要导出图片不弹窗，加这个LODOP.SET_SAVE_MODE("FILE_PROMPT",false); ，并导出图路径设置具体的磁盘路径。<br />4.需要返回值提示成功，用回调函数返回SET_SAVE_MODE的返回值。<br />5.导出图片默认是整个任务的，如需要某一页，设置起始页和终止页。<br />6.导出图片大小和纸张有关。<br />7.一个任务只能导出一个图片，想导出多张，分成多任务，分多次导出。</p>
+<p>导出图片，设置默认路径，导出图片的大小等，可参考该视频：<br />【LODOP】导出图片不弹窗等（导出单页，默认路径... https://v.douyin.com/ondAfaScx88/</p>
+<p><br />LODOP.SET_PRINT_PAGESIZE(1,document.getElementById('W4').value,document.getElementById('H4').value,"CreateCustomPage");<br />        //LODOP.SET_PRINT_MODE("CREATE_CUSTOM_PAGE_NAME","我的纸张名");//对新建的纸张重命名<br />参考样例5，右键查看源码，如果要重命名，用这个</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>
