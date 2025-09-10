@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】打印电子发票pdf一张A4横向居中（newblog119）（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】打印电子发票pdf一张A4横向居中（newblog119）（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】打印电子发票pdf一张A4横向居中（newblog119）（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>之前的视频中介绍了，如果缩小pdf电子发票，和控制pdf发票往左，留出左边装订距离：<br />（图）<br />里面介绍的是在A4纵向打印时，一张A4打印两张发票，缩小pdf后左侧留出装订空白。</p>
+<p>而有的情况下，可能需要一张A4打印一张发票，<br />这个时候，A4纵向，加上默认的电子发票的方向，打印出来就会是半张A4纸。<br />LODOP.SET_PRINT_PAGESIZE(1,0,0,"A4");<br />（图）</p>
+<p>如果想一张A4打一个电子发票，而不是半张A4打打一个电子发票，可以设置横向：<br />LODOP.SET_PRINT_PAGESIZE(2,0,0,"A4");<br />打出来的横向如图，电子发票内容横向，但横着上方和右侧会存在空白，因为发票本身小于纸张，lodop默认缩放是该pdf小于纸张时，原样输出。<br />（图）</p>
+<p>电子发票横着打，上方和右侧有空白，比较难看，客户不满意，可以布满纸张吗？<br />如果想布满纸张，缩放到适合大小，可以用缩放：<br />LODOP.SET_PRINT_STYLEA(0,"PDFScalMode",2);<br />//该pdf放到适合纸张</p>
+<p>LODOP.SET_PRINT_PAGESIZE(2,0,0,"A4");<br />LODOP.SET_PRINT_STYLEA(0,"PDFScalMode",2);<br />(图）</p>
+<p>一张A4布满纸张，电子发票太大了，可以原始大小水平和垂直居中显示吗？</p>
+<p>实际测试：<br />LODOP.SET_PRINT_STYLEA(0,"Horient",2);//无效<br />LODOP.SET_PRINT_STYLEA(0,"Vorient",2);//无效<br />这个是打印项居中，但是由于pdf的宽高是无效值，所以这个针对打印项宽高居中无效</p>
+<p>没有可以让横向的电子发票居中的语句，但是可以通过调整边距来实现近似的居中效果：<br />LODOP.SET_PRINT_PAGESIZE(2,0,0,"A4");<br />LODOP.ADD_PRINT_PDF(100,150,"100%","100%",strURLorContent);<br />这个是自己调整的大致数值，预览看上去效果在A4纸张中差不多<br />（图）<br />100,150这个可以根据自己的需要调整，在A4中调整左边距，顶边距等到差不多的位置。</p>
+<p>发票有的行数很多，不固定，这样调整顶边距和左边距不行，怎么让不同行数的发票都居中？<br />没有很好的方法，行数不固定，每张发票需要调整的数值也不固定。<br />对于不同行数的发票加判断，用不同的边距数值，<br />或尝试说法客户，打印发票在一张A4纸张时不要求居中，正常打印。</p>
+<p>如何打印电子发票pdf一张A4横向居中？<br />方法1：缩放pdf，放大到A4纸张，布满纸张。<br />方法2：如果发票行数比较固定，一两行，可以通过调整顶边距和左边距，让发票在A4中调整到大致居中的效果。<br />方法3：行数不固定，无法确定每个发票的边距数值，而且事先无法确定该pdf发票中的行数。<br />这种没有很好的方法，或尝试说法客户不要求该pdf在A4纸张中横向居中。</p>
+</div>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>
