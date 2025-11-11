@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】直线变成斜线的一些可能（newblog123）（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】直线变成斜线的一些可能（newblog123）（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】直线变成斜线的一些可能（newblog123）（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>之前的视频【LODOP】操作系统控制面板显示里是否是100%（打印缩放了）<br />（图）<br />中介绍了操作系统显示里的缩放，会导致直线变成斜线，甚至官网样例的直线也会变为斜线。</p>
+<p>（之前的视频片段）</p>
+<p>这里再介绍一些直线变成斜线的一些可能。<br />首先介绍下直线的输出方法：<br />（---直接用自己之前的博文中的图片和文本介绍下---）<br />Lodop打印设计提供了可视化设计，生成代码的方便，在打印设计界面上，选择添加打印项的时候，可以看到没有添加直线选项，可添加斜线，然后把添加的斜线调整成直线:<br />线宽=高 -----水平直线<br />线宽=宽-----垂直直线<br />线宽=高=宽----点<br />线宽！=高&amp;&amp;线宽！=宽----斜线</p>
+<p>（图）<br />（图）<br />（图）<br />（图）</p>
+<p>官网样例4，样例A1有演示直线：<br />http://www.c-lodop.com/demolist/PrintSample4.html<br />http://www.c-lodop.com/demolist/PrintSampleA1.html</p>
+<p>如何确保当前是直线，确保：<br />线宽=高 -----水平直线<br />线宽=宽-----垂直直线</p>
+<p>比较细的直线就是线宽=高都是1。<br />例如样例4的直线：<br />（图）</p>
+<p>如果想用粗一点的线宽为2，那么需要确保高也是2，才会是水平直线。<br />（图）<br />（图）</p>
+<p>打印设计有生成代码的功能，可以设计完成后生成的代码<br />（图）<br />如果遇到直线变成斜线，也可以通过进入打印设计进行排查。</p>
+<p>可能1：个别电脑出现问题，（同样代码 ，其他电脑正常，个别电脑出现直线变斜线）<br />可能原因：<br />【LODOP】操作系统控制面板显示里是否是100%（打印缩放了）<br />（图）</p>
+<p>如何确认有可能是操作系统控制面板缩放引起的？<br />可以直接测试下例子，例子的线按照正常情况都是直的，例子都是经过测试没有问题的，<br />如果该有问题的电脑，例子也都变成了斜线，说明当前操作系统缩放，或分辨率，或打印机等都有可能，问题出在该电脑上，目前收到的反馈就是操作系统显示里的缩放的影响：<br />http://www.c-lodop.com/demolist/PrintSample4.html<br />http://www.c-lodop.com/demolist/PrintSampleA1.html</p>
+<p>可能2：直线用的是小数mm单位形式。<br />这个在之前自己的另一个博文里提到过：LODOP直线px转换mm变斜线<br />https://www.cnblogs.com/huaxie/p/10607626.html</p>
+<p>样例都是用的整数型数据，所以没有这个问题，直线建议用整数型，<br />如果用到了打印设计，不要用打印设计把设计好的再转成mm单位的，打印设计确实可以转，但转出来是小数，会造成一些问题。</p>
+<p>还是直接用之前博文里的图片和例子：<br />如果有直线，不要用这个生成代码里的转成mm单位，<br />（图）</p>
+<p>小数mm单位情况下，直线可能会变成斜线。<br />（用默认整数型单位，缺省单位是px，这里的px并不是像素）<br />（图）</p>
+<p>可能3：打印机或打印机驱动问题，放置纸张倾斜问题<br />这种也比较容易排查，<br />打印预览和虚拟打印机等都正常，真实打印机进入lodop的打印预览也是正常的。<br />只有打印机打印出来是斜线</p>
+<p>确保是打印机或打印机驱动，或放纸问题后，在打印机方面排查。</p>
+</div>
+</div>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>

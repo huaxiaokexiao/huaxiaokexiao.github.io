@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】如何打印黑底白字（纯文本背景色）（newblog127）（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】如何打印黑底白字（纯文本背景色）（newblog127）（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】如何打印黑底白字（纯文本背景色）（newblog127）（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>如何给ADD_PRINT_TEXT纯文本添加背景色？<br />ADD_PRINT_TEXT纯文本，无法添加背景色样式，如果内容固定，可以通过在下方输出实心某颜色的矩形，上方输出文本方式，变相实现。</p>
+<p>之前视频里介绍了打印项层级：<br />（图）<br />【LODOP】打印项层级覆盖 https://v.ixigua.com/puma0Zh9Om8/</p>
+<p>这个视频单独介绍给文本设置背景色。</p>
+<p>ADD_PRINT_TEXT是lodop打印项输出的纯文本，并没有给纯文本添加背景色这种样式。<br />若内容固定 ，可通过实心矩形在下方输出，实现类似背景色的效果。</p>
+<p>如何实现黑底白字效果：</p>
+<p>黑色实心矩形先输出，白色文字后输出，先输出的在下层，后输出的在下层<br />例如：<br />LODOP.ADD_PRINT_SHAPE(4,27,35,100,60,0,1,"#000000");<br />LODOP.ADD_PRINT_TEXT(43,34,100,20,"新加文本");<br />LODOP.SET_PRINT_STYLEA(0,"FontColor","#FFFFFF");<br />（图）</p>
+<p>如何用打印设计插入实心矩形？<br />1.打印设计这个按钮下，选择插入矩形，实心矩形。<br />（图）</p>
+<p>2.插入矩形后，选中实心矩形打印项，拖动可以调整实心矩形的宽高。<br />（图）</p>
+<p>3.选中实心矩形打印项，上方的颜色按钮，点击可选择需要的颜色。<br />（图）</p>
+<p>4.插入文本，注意打印项顺序，文字必须在实心矩形打印项之后输出，后输出的打印项在上层，<br />根据预览效果调整文本到合适的位置。<br />（图）</p>
+<p>5.按钮下是生成代码，或直接获取打印设计返回的代码，可以获取到打印设计设计好的代码。<br />（图）</p>
+<p>LODOP.ADD_PRINT_SHAPE(4,10,10,100,60,0,1,"#000000");<br />LODOP.ADD_PRINT_SHAPE(4,10,147,127,78,0,1,"#0080C0");<br />LODOP.ADD_PRINT_TEXT(38,165,95,28,"新加文本3");<br />LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");<br />LODOP.SET_PRINT_STYLEA(0,"FontSize",12);<br />LODOP.SET_PRINT_STYLEA(0,"FontColor","#FFFF00");</p>
+<p>注意事项：<br />注意打印项输出顺序就是层级顺序，也就是JS里语句的顺序，ADD_PRINT_TEXT一定要在实心矩形打印项之后输出。<br />如果先输出文本，再输出实心矩形，文本就会被实心矩形覆盖：<br />（图）</p>
+<p>文字数量不固定怎么办？想给文本添加背景色，文本不固定。<br />没有很好的方法，lodop没有给ADD_PRINT_TEXT纯文本添加背景色的方法，<br />或尝试判断字符串的字符数量，来设置不同的实心矩形，但由于各种文字和英文数字等占的宽度不同，所以这种无法准确判断，因此没有很好的方法。</p>
+<p>也可以用htm超文本输出，htm超文本需要经过浏览器解析，如果不要求一定要背景色，大量打印还是建议用纯文本输出。<br />htm超文本中，lodop无法输出css背景图，但可以输出htm中的背景色：</p>
+<p>例如:样例2的表格中就是设置了背景色：<br />http://www.c-lodop.com/demolist/PrintSample2.html</p>
+</div>
+</div>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>
