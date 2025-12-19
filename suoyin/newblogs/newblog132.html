@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】集中或AO端桥打印多任务顺序穿插进行（同一个打印机）（newblog132）（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】集中或AO端桥打印多任务顺序穿插进行（同一个打印机）（newblog132）（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】集中或AO端桥打印多任务顺序穿插进行（同一个打印机）（newblog132）（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>三种角色及使用方法：<br />参考http://www.c-lodop.com/demolist/t1.html</p>
+<p>c-lodop作为后两种角色，可以进行远程打印，如果多个发送端，同时发多任务到同一个远程电脑的同一个打印机驱动上，那么就会根据JS顺序打印，哪个先进入哪个先打印，由于多个循环同时进行，所以会造成任务穿插进行情况。</p>
+<p>且即使都是本地打印，如果同时操作多个页面里的多任务打印，同时运行里面的循环JS进行打印，也会造成任务穿插进行。</p>
+<p>例如：员工A，员工B，都想用这台远程电脑连接的打印机进行打印，员工A需要打印某种表格，员工B需要打印另一种文件。由于需要打印的较多，通过了多任务循环发送。<br />这样打印机打印出来，可能会是员工A的第一个任务表格，员工B的文件....（如果两个任务大小差不多）然后就出现循环穿插进行情况。</p>
+<p>如果内容页数不是很多，也可用一个任务多页方式，各自的任务作为一个整体在打印机队列里。<br />由于打印机队列是排队的，会出现一个任务在打，另一个任务在排队情况。<br />由于两个员工不是循环多任务，所以会是先打一个员工的任务，再打另一个员工的任务。</p>
+<p>这里先用两个页面本地打印测试下穿插任务的效果。<br />for (j = 1; j &lt;=10; j++) {<br />LODOP.PRINT_INITA(1,1,770,660,"测试1");<br />LODOP.SET_PRINTER_INDEX("RONGTA 58mm Series Printer");<br />LODOP.ADD_PRINT_TEXT(10,60,300,200,"这是测试的纯文本，下面是超文本:");<br />LODOP.PRINT();<br />};</p>
+<p>for (j = 1; j &lt;=10; j++) {<br />LODOP.PRINT_INITA(1,1,770,660,"测试2");<br />LODOP.SET_PRINTER_INDEX("RONGTA 58mm Series Printer");<br />LODOP.ADD_PRINT_TEXT(10,60,300,200,"这是测试的纯文本，下面是超文本:");<br />LODOP.PRINT();<br />};</p>
+<p>同样的内容，两个页面里点按钮进行打印。<br />测试效果：<br />（图）</p>
+<p>由于本人是先点一个按钮，再切换另一个页面，点另一个按钮，所以有一点的延迟时间，会有一个任务先发送了几个任务。</p>
+<p>后面两个JS进行循环，可以查看下任务队列的情况是穿插进行的。<br />（图）</p>
+<p>这样会造成一些问题，员工A需要打印的测试1的循环，和员工B需要打印的测试2的循环，两种文件混合打印输出，穿插进行，两个员工需要把打印出来的文件手动区分谁是谁的。</p>
+<p>集中打印或AO端桥方式，除了PRINT直接打印，也可以用打印预览，如果多个用户同时选一个打印机进行预览，旧版本可能会造成一些问题，新版对该问题有优化，可以安装最新版对比测试：<br />（----这个问题出现比较少，因为需要多人不差一分一秒同时用同一个远程打印机，点打印预览，且多人可能有的点预览有的直接打印---）</p>
+<p>6.6.1.1<br />修正：解决内嵌预览内的同步打印偶尔引起的死锁问题;</p>
+<p>参考http://www.c-lodop.com/demolist/t1.html<br />集中打印方式比较可能出现，集中打印是在服务器端进行打印，常用于办公室局域网集中场景，餐厅点餐场景。</p>
+<p>餐厅点餐场景影响不大，多个用户同时下单点打印，每个客户是自己的单子自己的任务，餐厅后台会根据点单JS加入顺序逐个任务进行打印。</p>
+<p>办公室场景下，办公室弄了一台打印机，其他员工都远程调用这个（作为集中打印服务器的电脑）的打印机打印。<br />而办公场景需要打印的文件就比较多了，合同，表格等，每个员工可能都想打大量的自己的东西。<br />如果刚好多个人，同时都要用这个打印机打印，且都是循环多任务要打很多，这个集中打印服务器电脑上就会根据收到的JS顺序打印任务，多个员工想多任务栏批量打的就会混在一起。</p>
+<p>如何解决这个同时多任务穿插问题？<br />方法1：如果是办公室场景，一般是局域网，距离不远，可以观察该打印机是否正在打印，如果其他人正在打，可能等对方打完，自己再远程发任务，这样就不会和对方的多任务混在一起。</p>
+<p>方法2：一个任务多页方式，打印机接受到队列排队，是按照任务排队进行的。<br />一个任务多页，该任务不会拆开，会打完自己的这个任务，再打另一个任务发的任务。<br />（至于先打哪个，要看哪个先进入队列）</p>
+<p>（---一个任务多页方式，虽然不会造成任务穿插情况，但如果需要成百上千页，都放一个任务里，有可能会造成一些异常，例如卡慢崩溃内存异常等，如果在内容不复杂页数不多时，可以用一个任务多页方式---）</p>
+<p>上面的是本地两个页面测试的，再分别用电脑，和手机，两个作为发送端集中打印测试。<br />(---直接在欢迎页面测试，不写页面了--)<br />(图）(图）</p>
+<p>打印后在队列的实际效果：<br />手机和电脑，同时点击打印<br />(图）<br />两个循环进行穿插进行。</p>
+<p>再改一下，一个任务10页，<br />LODOP.PRINT_INITA(1,1,770,660,"电脑发送的多页");<br />LODOP.SET_PRINTER_INDEX("RONGTA 58mm Series Printer");<br />for (j = 1; j &lt;=10; j++) {<br />LODOP.NEWPAGEA();<br />LODOP.ADD_PRINT_TEXT(10,60,300,200,"这是测试的纯文本，下面是超文本:");<br />};<br />LODOP.PRINT();</p>
+<p>看一下队列的情况：<br />(图）</p>
+<p>可以看到，两个10页的任务，两个任务在队列排队，会一个任务一个输出。<br />而任务内部不会进行穿插，一个任务多页方式，这两个员工发10页就不会混在一起了。</p>
+</div>
+</div>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>

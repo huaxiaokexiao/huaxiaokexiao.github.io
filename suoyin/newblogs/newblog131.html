@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】打印出来0和O相似怎么办？（newblog131）（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】打印出来0和O相似怎么办？（newblog131）（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】打印出来0和O相似怎么办？（newblog131）（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>某些字体中，0和大写的O非常相似，导致打印出来难以分辨，这时候需要设置更适合其他的字体。<br />例如：微软雅黑，等</p>
+<p>ADD_PRINT_TEXT打出来的0和O怎么一样，分辨不出来？<br />ADD_PRINT_TEXT属于纯文本，在不设置字体情况默认是宋体，而宋体的0和O是很相似的，</p>
+<p>参考lodop技术手册http://www.c-lodop.com/download.html<br />FontName的值： 字符型，与操作系统字体名一致，缺省是&ldquo;宋体&rdquo;<br />默认是宋体，而宋体本身0和大写的O非常相似。</p>
+<p>在中文字体中，微软雅黑可以比较好的区别0和大写的O<br />LODOP.SET_PRINT_STYLEA(0,"FontName","微软雅黑");</p>
+<p><br />这里测试了一些常见字体，可以看下效果：<br />LODOP.ADD_PRINT_TEXT(23,33,196,20,"（宋体）00OO");<br />LODOP.ADD_PRINT_TEXT(57,33,192,20,"（黑体）00OO");<br />LODOP.SET_PRINT_STYLEA(0,"FontName","黑体");<br />LODOP.ADD_PRINT_TEXT(87,33,191,20,"（楷体）00OO");<br />LODOP.SET_PRINT_STYLEA(0,"FontName","楷体");<br />LODOP.ADD_PRINT_TEXT(115,33,231,20,"（微软雅黑）00OO");<br />LODOP.SET_PRINT_STYLEA(0,"FontName","微软雅黑");<br />LODOP.ADD_PRINT_TEXT(145,33,215,20,"（Arial）00OO");<br />LODOP.SET_PRINT_STYLEA(0,"FontName","Arial");<br />LODOP.ADD_PRINT_TEXT(171,33,233,20,"（方正兰亭黑_GBK）00OO");<br />LODOP.SET_PRINT_STYLEA(0,"FontName","方正兰亭黑_GBK");</p>
+<p>打印设计和预览效果图：<br />（图）<br />可以看到微软雅黑和Arial字体，能比较好的区分0和O</p>
+<p>放大查看下效果，宋体中国0和大写O确实很相似，难以区分<br />（图）</p>
+<p>在windows字体库里可以看到宋体中的0和大写O相似很高。<br />（图）</p>
+<p>如果想打印出来需要区分0或O，打印出来的文件需要后续扫描识别等操作。建议不要用宋体，更换字体，例如更换为微软雅黑。</p>
+<p>有什么方法能让lodop打印出来的宋体0或O进行区分吗？<br />目前没有这种方法，只能更换字体，例如更换为微软雅黑。</p>
+<p>其他0或大写O的相关区分经验：</p>
+<p>开票时，通过天眼查网站避免税号0或O出错:<br />在开票时，有时候给的开票信息会是图片，自己如果不是太忙，一般会打出公司名，然后在网上查询（天眼查，是个很好的查询税号等公司信息的网站），然后直接复制查询出来的税号。<br />这样就可以确保税号没有没有问题。</p>
+<p>一些图片转文字软件也比较好用，qq也自带这个图中文字提取功能，但提取出来因图片模糊或一些其他原因，也会导致识别出错，特别是0或O，所有再通过核对开票公司名和税号，会更精确，避免出错。</p>
+<p>只要开票期间自己不忙，还会公司名和税号都查一下，通过天眼查查询一下公司名，查询一下税号，确保自己的得到的开票信息正确。</p>
+<p>lodop注册号的使用中的0或O：<br />lodop注册语句中注册号，也经常出现0或O，数字和字母混合，如果收到注册邮件，建议直接复制里面的语句。<br />之前也遇到过几次因为输错0或O导致注册号无效情况。</p>
+<p>避免出错的最好方法，就是ctrl+C（复制）和ctrl+V(粘贴）,因为只有原信息不出错，复制粘贴不会导致错误信息。</p>
+<p>1.开票时，通过天眼查等验证下税号，也可以避免客户给的税号出错。<br />有些公司财务，采购，技术等职位比较多，数据在人员传输过程中可能有人会出现打字的情况，打字就可能导致出错。</p>
+<p>2.lodop注册语句，直接复制收注册号邮箱里的语句<br />手工输出容易出错，特别是0或O。<br />（如果是手机收的邮件，想打字到电脑上，建议直接在手机上复制，传到电脑上，可以有效避免输入错误）</p>
+<p>3.lodop打印出来的文件需要后续扫描识别，宋体的0和O识别出错。<br />修改字体为0和O相差较大的字体，例如微软雅黑或Arial。</p>
+</div>
+</div>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>

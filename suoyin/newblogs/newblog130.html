@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】如何更新LodopFuncs.js（谷歌跨域CORS报错）（newblog130）（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】如何更新LodopFuncs.js（谷歌跨域CORS报错）（newblog130）（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】如何更新LodopFuncs.js（谷歌跨域CORS报错）（newblog130）（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>之前的视频：</p>
+<p>LODOP】CORS报错Web打印服务CLodop未安装启动</p>
+<p>介绍了谷歌142之后CORS报错的解决方法：<br />安装最新版c-lodop，更新最新的lodopFuncs.js<br />http://www.c-lodop.com/download.html</p>
+<p>此视频再介绍补充下各种情况，和LodopFuncs.js更新介绍</p>
+<p>关于谷歌142+版本问题解决如下：</p>
+<p>一、如果你是网站程序员，请用你的问题谷歌测试如下例子：<br />http://www.c-lodop.com/demolist/PrintSample2.html<br />或者<br />https://www.lodop.net/demolist/PrintSample2.html<br />（以上例子如果提示升级就按提示下载安装一次）</p>
+<p>如果以上例子没问题，请比照该例子更新自己的Lodopfuncs.js文件，<br />或者参照它的思路修改自己的加载方法。</p>
+<p>二、如果是普通用户，也按以上步骤访问官网例子并下载安装最新版本，<br />另外特别注意：当谷歌弹出一个&ldquo;查找并连接到本地网络上的任何(打印/路由)设备&rdquo;询问框时，一定选择&ldquo;允许&rdquo;。<br />或者联系所访问网站的技术尽快按第一项更新js。</p>
+<p>解决该问题有两个条件<br />（1）安装最新版c-lodop<br />（2）更新最新的lodopFuncs.js</p>
+<p>为什么要安装最新版？为什么测试例子提示升级，需要安装新版本后再测试？</p>
+<p>因为新版本的LodopFuncs.js增加了ws方式，而如果版本太旧，则即使更新了lodopFuncs.js，没安装新版本也不会生效：</p>
+<p>具体增加ws的版本如下，但建议---直接安装当前下载中心最新版（截止视频发布时间最新版6628）<br />6.5.6.5<br />增加：新增WebSocket方式加载CLodopfuncs.js从而进一步解决CORS问题，特别是新版外壳浏览器问题;<br />修正：针对WebSocket方式大幅度改进demo文件：LodopFuncs.js;</p>
+<p>新版本的LodopFuncs.js有注释进行了说明，如果想ws生效，需要c-lodop足够新：<br />（图）</p>
+<p><br />更新最新的lodopFuncs.js，如何更新？<br />这个在之前的视频里介绍过，<br />新版lodopFuncs.js在下载中心发行包里<br />在这个发行包里，解压缩，里面有个lodopFuncs.js<br />（图）</p>
+<p>（注意是这个win32发行包，不是下面那个win64版的压缩包，那个压缩包里没有这个lodopFuncs.js）</p>
+<p>终端用户（非开发人员）怎么处理？<br />1.联系所访问网站的技术对lodopFuncs.js进行更新。</p>
+<p>也可以临时尝试一下这些方法：</p>
+<p>2.在chrome浏览器地址栏输入chrome://flags/，然后搜索Local Network Access Checks，把这个属性改为Disabled试试<br />改一下浏览器设置试试</p>
+<p>（1）输入chrome浏览器地址栏输入chrome://flags/<br />（2）搜索栏搜Local Network Access Checks<br />（图）</p>
+<p>（3）把该属性改成Disabled</p>
+<p><br />3.当谷歌弹出一个&ldquo;查找并连接到本地网络上的任何(打印/路由)设备&rdquo;询问框时，一定选择&ldquo;允许&rdquo;。</p>
+<p>在谷歌浏览器的设置里，有个本地网络访问权限，点允许试试<br />（图）</p>
+<p>（图）</p>
+<p>设置这个浏览器方法，自己并未测试过，来自他人反馈，可以尝试下。</p>
+<p>最终解决方法还是尽快联系当前网站的技术人员，让他们进行更新：<br />安装最新版c-lodop，更新最新的lodopFuncs.js</p>
+<p>之前购买过，更新LodopFuncs.js后能打印了，但是有水印输出了？<br />注册语句每次打印都要调用，LodopFuncs.js里有个标注处，可以让每次调用lodop时调用注册语句，如果之前注册语句放在了这个文件里，那么更新LodopFuncs.js后也再加上注册语句 。<br />（图）</p>
+<p>更新LodopFuncs.js后提示下载安装文件，找不到下载文件了？<br />由于下载地址是放自己项目里，所有下载路径会改成自己项目的地址，LodopFuncs.js只是个默认路径。<br />更新LodopFuncs.js后，再把自己之前放自己项目的路径修改上。</p>
+<p>（有些为了提示美观，修改了提示方式 ，不是LodopFuncs.js默认的，可能是弹窗，且提示文本有修改，更新LodopFuncs.js后可以再根据自己需要再修改下）</p>
+<p><br />关于谷歌Chrome浏览器94版跨域问题的解决方案，参考http://www.c-lodop.com/blogs/Blog024.html<br />这个博文里的第三条，那个选项怎么没有了？<br />（图）<br />谷歌142之后这个选项没有了，设置该选项，重启谷歌浏览器这种方法不行了。</p>
+<p>只能用第二条：<br />安装最新版c-lodop，更新最新的lodopFuncs.js</p>
+<p>自己是https网站，怎么也提示CORS报错？<br />查看下浏览器的具体的JS报错信息，如果提示的是http://localhost:8000/CLodopFuncs.js从某个https网站中CORS报错。<br />说明当前https网站，调用了http资源。</p>
+<p>方法也是：安装最新版c-lodop，更新最新的lodopFuncs.js<br />新版本有增加https判断，https的会走8443的，而不是这个http的8000的。<br />（图）</p>
+<p>引用了lodopFuncs.js，怎么https网站还是报错http://localhost:8000/CLodopFuncs.js？<br />测试下https的官网例子：<br />https://www.lodop.net/demolist/PrintSample2.html</p>
+<p>官网例子正常，说明自己网站的引用方式出了问题。<br />目前发现有些既引用了lodopFuncs.js，也引用了http://localhost:8000/CLodopFuncs.js，页面有重复引用情况，导致多余的http://localhost:8000/CLodopFuncs.js引用引起报错 。</p>
+<p>lodopFuncs.js使用方法，怎么引用：<br />http网站例子：<br />http://www.c-lodop.com/demolist/PrintSample2.html</p>
+<p>https网站例子：<br />https://www.lodop.net/demolist/PrintSample2.html</p>
+<p>样例右键查看源码，参考样例的调用和使用方法。<br />（图）</p>
+<p>其他相关问题：<br />---CLodopFuncs.js已经是最新的，怎么还是不行？<br />注意这里指的是lodopFuncs.js。<br />发行包里解压缩后的这个文件：<br />(图）</p>
+<p>---更新了最新版，怎么还是不行？<br />注意是安装发行包里的这个CLodop_Setup_for_Win32NT.exe<br />另外两个.exe是插件，升级那两个无效。</p>
+<p>----CLodopFuncs.js可以下载到本地调用吗，不通过端口调用？<br />不行，CLodopFuncs.js是动态的，打印机增删等都会有变化，只能通过端口调用。</p>
+<p>---样例22怎么用不了了？<br />http://www.c-lodop.com/demolist/PrintSample22.html<br />样例22新版内嵌http被阻挡了，</p>
+<p>https的地址可以，但会有个提示，可以点允许。<br />https://www.lodop.net/demolist/PrintSample22.html<br />(图）</p>
+<p>----getCLodop() 获取不到？<br />测试官网样例http://www.c-lodop.com/demolist/PrintSample2.html<br />如果样例正常，样例页面右键查看源码 ，参考样例的使用方法。<br />用样例的方法，引用lodopFuncs.js里的getlodop,<br />LODOP=getLodop();</p>
+<p>---更新了lodopFuncs.js，怎么不行？<br />如果是刚更新lodoFuncs.js，清理下浏览器缓存，刷新页面让最新的JS执行</p>
+<p>---是替换安装目录里的lodopFuncs.js吗<br />不是安装目录里的，是当前使用的网站页面引用的lodopFuncs.js<br />您发布到网站的服务器上的调用的lodopFuncs.js</p>
+<p>---客户太多了，怎么让客户升级？可以不升级c-lodop安装版本吗？<br />lodopFuncs.js写好判断，安装版本小于判断版本，会提示升级。可以提示客户端下载升级。</p>
+<p>6.5.6.5<br />增加：新增WebSocket方式加载CLodopfuncs.js从而进一步解决CORS问题<br />需要确保是这个版本之后的，才能走新版lodopFuncs.js里的ws方式。</p>
+<p>建议都提示安装最新版，最新版优化较多，降低lodopFuncs.js里的判断版本，可以让一些客户不用升级，但必须是6.5.6.5及之后的版本</p>
+<p>---https网站，vue中checkOrTryHttp()报错，注释掉了这个方法，有问题<br />不要注释掉这个，这个里面有判断http或https的：<br />lodopFuncs.js是普通的JS，其他框架语法需要自己整合下<br />例如：<br />setTimeout("checkOrTryHttp();",200);，去掉checkOrTryHttp()的引号试试</p>
+<p>---安装新版本，更新lodopFuncs.js后，页面代码需要改吗？<br />如果之前使用的也是lodopFuncs.js，可以替换成新的，页面的代码不用改。<br />新版lodopFuncs.js里提示下载地址，如果有注册号，也加上注册号，<br />和之前的lodopFuncs.js使用方法一致</p>
+<p>---为什么IE浏览器正常，谷歌不行<br />IE走的是插件方式，这个CORS是新版谷歌的报错，<br />安装最新版c-lodop，更新最新的lodopFuncs.js可以解决新版谷歌的这个问题。</p>
+<p>---为什么就谷歌有问题，edge没问题<br />这个CORS就是新版谷歌阻挡了，这个解决方法就是解决新版谷歌的这个问题。</p>
+<p>---引用了最新的lodopFuncs.js，也安装了新版本，怎么还是报错？<br />http://www.c-lodop.com/demolist/PrintSample2.html<br />测试下样例2，是否正常<br />样例正常，样例页面右键查看源码 ，参考样例的使用方法，调用里面的getlodop方法。</p>
+<p>如果只引用 了lodopFuncs.js，却没有调用getlodop方法，页面引用了其他的clodopFuncs.js，没走lodopFuncs.js里的ws方法，也是无效的。</p>
+<p>对照样例排查调用方法。<br />调用方法参考样例的方法，引用lodopFuncs.js，调用里面的getlodop</p>
+<p>---谷歌JS报错，提示INIT（或其他lodop方法）没定义<br />如果获取不到LODOP对象，所有方法会提示未定义。<br />只有获取到clodopFuncs.js后，才能获取到LODOP对象，新版lodopFuncs.js加载clodopFuncs.js增加了ws方式 。</p>
+<p>---（新版谷歌）已经安装启动了，为什么还是提示未安装启动<br />clodopFuncs.js访问不到就会提示这个，实际不一定是未安装或未启动，也可能是被阻挡了，clodopFuncs.js被阻挡了也会提示没安装启动。<br />查看下浏览器JS报错新，如果是CORS报错，参考视频里介绍的解决方法：<br />安装最新版c-lodop，更新最新的lodopFuncs.js</p>
+</div>
+</div>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>
