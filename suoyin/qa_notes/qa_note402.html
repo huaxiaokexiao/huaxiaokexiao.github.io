@@ -1,0 +1,975 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>【非常见问题杂笔记】批量出现空白，偏移基点，定制仅本机，测试注册号，支持DM，打印维护多页等</title>
+  <!--<script language="javascript" src="LodopFuncs.js"></script>-->
+ <!-- <script src='http://localhost:8000/CLodopfuncs.js'></script>-->
+ </head>
+ <body>
+<style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>LODOP超简短问答-【非常见问题杂笔记】批量出现空白，偏移基点，定制仅本机，测试注册号，支持DM，打印维护多页等</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../qa_notes3.html"><div class="menuitem"><span style="color:blue;">问答等记录笔记，具体问题</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【非常见问题杂笔记】批量出现空白，偏移基点，定制仅本机，测试注册号，支持DM，打印维护多页等</h1>
+------------<br>
+1.<span style="color: blue; font-weight: bold;">想在局域网里打印，但是另一台电脑访问不了8443的这个端口的服务</span><br>
+三种角色及使用方法：<br>
+参考http://www.c-lodop.com/demolist/t1.html<br>
+您是哪种角色，是本地打印，还是后两种远程的<br>
+<br>
+2.<span style="color: blue; font-weight: bold;">软件有没有自动刷新，或者自动重启功能，现在打印多了，就死机了，需要重启软件才能正常工作了</span><br>
+以管理员权限安装最新版c-lodop测试下http://www.c-lodop.com/download.html<br>
+参考http://www.c-lodop.com/faq/pp5.html<br>
+排查链接里的启动条目<br>
+<br>
+3.<span style="color: blue; font-weight: bold;">用标签机打印标签的时候，打印大批量的时候是20个调用一次LODOP.PRINT()，现在客户这边打印中间出现一张空白的然后跳了好几个</span><br>
+20个调用一次LODOP.PRINT()，是指20页是一个任务吗，改成打印预览，预览查看下每页是否都有内容，是否多出空白页等<br>
+<br>
+20页是一个任务，预览可以点下一页，切换下一页观察<br>
+<br>
+客户那里遇到问题，只能在客户那台电脑上测试<br>
+<br>
+也可以在客户那里，用xps或pdf虚拟打印机测试下，<br>
+win7以后系统自带Microsoft XPS Document Writer虚拟打印机或者 下载安装群文件里的Doro PDF Writer虚拟打印机<br>
+<br>
+理论上本机虚拟打印没问题的话，说明插件代码没问题，程序可做的努力就的确很少了，毕竟windows下的打印是微软倡导的设备无关系原则，要在打印机和打印驱动程序 系统上排查下<br>
+<br>
+4.<span style="color: blue; font-weight: bold;">htm打印时纸张很小 内容变的有间距了 我放大200%显示正常的</span><br>
+排查下样式http://www.c-lodop.com/faq/pp8.html，通过删减或做简单例子排查，找到出问题的样式，修改样式<br>
+内容可能和容器有关，纸张大小会影响样式变化，排查样式，尽量用不用容器影响的样式<br>
+<br>
+印项是什么语句输出的，是add_print_text纯文本，还是add_print_htm超文本<br>
+<br>
+设置下具体的字体名称试试，用不同字体测试下，<br>
+如果是中文名，不要用中文名的英文简称<br>
+<br>
+(图）<br>
+用不同的字体名称测试下，<br>
+http://www.c-lodop.com/demolist/PrintSample3.html<br>
+<br>
+ADD_PRINT_HTM的字体只能在htm里测试，SET_PRINT_STYLE无关修改htm里的字体，参考样例3，测试下不同的字体<br>
+<br>
+可以尝试下样例3的方式对比下，之前有客户反馈font-family有的解析可能会有问题<br>
+<br>
+5.<span style="color: blue; font-weight: bold;">做一个打印服务器，是不是要把打印机装在服务器上才行，装客户端不识别是不是？</span><br>
+三种角色及使用方法：<br>
+参考http://www.c-lodop.com/demolist/t1.html<br>
+是哪种角色<br>
+<br>
+如果客户端是访问网站后，在自己的电脑的打印机上打印，属于第一种角色。<br>
+<br>
+访问下http://[C-Lodop服务所在主机ip或域名]:[C-Lodop端口]欢迎页面试试<br>
+<br>
+确保网络正常，两个电脑可以连通，可以ping一下该ip或域名<br>
+如果正常，排查集中打印服务器上防火墙是否放开了对应的端口<br>
+<br>
+https需要配置上您自己域名的证书，且8443端口放开<br>
+<br>
+查看下集中打印服务器上启动的https端口是否是8443,，如果是，排查是否有防火墙阻挡<br>
+证书是颁发给域名的，并用域名访问下，测试是否显示安全，证书是否正常<br>
+https的C-Lodop如何使用 参考http://www.c-lodop.com/faq/pp32.html<br>
+<br>
+后两种角色，是的，需要配置上自己域名的证书<br>
+<br>
+https的C-Lodop如何使用 参考http://www.c-lodop.com/faq/pp32.html<br>
+不是c-lodop自带的证书，是您自己网站的证书。<br>
+c-lodop自带的是本地的证书，第一种角色的。<br>
+<br>
+6.<span style="color: blue; font-weight: bold;">为什么这个会往上偏</span><br>
+进入lodop的打印预览，查看下预览上方是否有空白<br>
+<br>
+偏移 参考http://www.c-lodop.com/faq/pp17.html<br>
+<br>
+如果打印出来的有问题的那个电脑上，虚拟打印机正常。真实打印机预览正常。<br>
+排查是否是打印机的偏移问题，参考http://www.c-lodop.com/faq/pp17.html<br>
+调整打印机的初始位置，或用打印维护进行整体偏移。<br>
+<br>
+----客户反馈---<br>
+调整好了，调整了一下打印机的打印基准点<br>
+-------------<br>
+<br>
+7.<span style="color: blue; font-weight: bold;">客户询问，咱这个控件的数据安全是如何控制的。我该如何回答</span><br>
+lodop传入什么打印什么，内容可以自己控制。<br>
+<br>
+三种角色及使用方法：<br>
+参考http://www.c-lodop.com/demolist/t1.html<br>
+如果是客户端本地打印角色，访问本地的c-lodop<br>
+<br>
+关于C-Lodop安全策略及相关设置，参考http://www.mtsoftware.cn/blogs/Blog025.html<br>
+<br>
+8.<span style="color: blue; font-weight: bold;">（图）设置了  但是不生效 </span><br>
+这边测试是正常的，<br>
+以管理员权限安装最新版c-lodop测试下http://www.c-lodop.com/download.html<br>
+<br>
+（图）<br>
+导出后，可以查看下面的sheet表格，是否有多个，这边测试可以正常分页<br>
+<br>
+不支持，样例26只能是一个table<br>
+<br>
+add_print_table只能输出一个表格<br>
+<br>
+或参考样例12，可以是其他htm打印项<br>
+<br>
+导出excel，<br>
+参考http://www.c-lodop.com/demolist/PrintSample27.html<br>
+参考http://www.c-lodop.com/demolist/PrintSample12.html<br>
+<br>
+add_print_table只用于输出单个表格。<br>
+如果有多个打印项或非table内容，可以尝试下样例12写入表格<br>
+<br>
+一个table自动分页，会导出一个excel多个sheet，可以测试下样例效果<br>
+<br>
+如果想分成多个excel，可以分成多任务，每个任务是各自的excel表格<br>
+<br>
+9.<span style="color: blue; font-weight: bold;">软件有没有自动刷新，或者自动重启功能，现在打印多了，就死机了，需要重启软件才能正常工作了 </span><br>
+以管理员权限安装最新版c-lodop测试下http://www.c-lodop.com/download.html<br>
+参考http://www.c-lodop.com/faq/pp5.html<br>
+排查链接里的启动条目<br>
+<br>
+打印多了，就死机了，大约是打印多少内容后死机的，是否是htm内容过多<br>
+可能和很多原因有关：打印内容或样式或图片等过多，有需要下载有脚步执行或本身网络慢；<br>
+机器性能过低 系统ie有问题或缓存过多；或使用的是共享打印机。<br>
+如果预览页数多，可以多分一些任务，太多不建议预览，建议直接打印，在任务和页数之间平衡一下，参考样例26<br>
+http://www.c-lodop.com/demolist/PrintSample26.html<br>
+<br>
+打印多了，就死机了，大约是打印多少内容后死机的，是否是htm内容过多<br>
+可能和很多原因有关：打印内容或样式或图片等过多，有需要下载有脚步执行或本身网络慢；<br>
+机器性能过低 系统ie有问题或缓存过多；或使用的是共享打印机。<br>
+如果预览页数多，可以多分一些任务，太多不建议预览，建议直接打印，在任务和页数之间平衡一下，参考样例26<br>
+http://www.c-lodop.com/demolist/PrintSample26.html<br>
+<br>
+（图）<br>
+c-lodop有个定时重启功能，或尝试下这个<br>
+<br>
+10.<span style="color: blue; font-weight: bold;">热敏纸在100张连打的情况下，打着打着就弹框这个错误了，窗口已打开 </span><br>
+参考http://www.c-lodop.com/faq/pp27.html<br>
+<br>
+11.<span style="color: blue; font-weight: bold;">目前我们有本地打印机设置的是黑白，直接打印也是黑白的。调用clodop打印出来是彩色的。</span><br>
+黑白和彩色是打印机的功能，LODOP没有控制 语句，咨询下打印机客服<br>
+<br>
+12.<span style="color: blue; font-weight: bold;">localhost好不好去水印的</span><br>
+是指您浏览器地址栏地址是localhost吗<br>
+<br>
+您购买的是什么类型的注册号，是绑定域名的吗<br>
+<br>
+如果是绑定域名的，可以修改本机hosts，<br>
+修改本机hosts，把该域名指向本机<br>
+只要浏览器地址栏的地址是注册的域名就可以，修改本机hosts也是有效的<br>
+<br>
+需要测试的域名临时指向本地127.0.0.1<br>
+只要浏览器地址栏的地址是注册的域名就可以，修改本机hosts也是有效的<br>
+然后用这个域名访问<br>
+<br>
+域名注册，验证浏览器地址栏的地址，需要测试的域名临时指向本地127.0.0.1<br>
+然后把用该域名访问<br>
+<br>
+修改本机hosts也是有效的，只有浏览器地址栏是注册的域名就可以<br>
+<br>
+13.<span style="color: blue; font-weight: bold;">我要打印DM码，应该怎么实现？</span><br>
+安装最新版，参考样例11<br>
+<br>
+http://www.c-lodop.com/demolist/PrintSample11.html<br>
+<br>
+14.<span style="color: blue; font-weight: bold;">除了一维码和QR码 能否设置DM码</span><br>
+最新版支持了，安装最新版，并测试官网最新的样例11<br>
+<br>
+http://www.c-lodop.com/demolist/PrintSample11.html<br>
+<br>
+15.<span style="color: blue; font-weight: bold;">Microsoft Print to PDF这个打印pdf文件时，任务名没有默认到文件名</span><br>
+pdf虚拟打印机是虚拟打印机的功能，用其他虚拟打印机测试下<br>
+<br>
+打印成pdf文件是pdf虚拟打印机的功能，和pdf虚拟打印机有关<br>
+<br>
+16.<span style="color: blue; font-weight: bold;">用打印维护调整打印格式之后，再批量打印条码，为什么只有第一个打印的会生效，第二个打印开始还是原来的格式</span><br>
+参考http://www.c-lodop.com/demolist/PrintSample26.html<br>
+在分组打印模板中，需要用ADD_PRINT_TEXTA函数，为每一个对象起个类名<br>
+<br>
+取同样的类名，所有的同类名的都会被维护<br>
+<br>
+如果是多任务，排查任务名是否相同。<br>
+如果是任务内多页，可以用同类名，可参考样例26<br>
+<br>
+是的，一个任务多页时，同类名的都会被维护<br>
+<br>
+根据需要，这个是设置样式的，SET_PRINT_STYLE是对后面所有样式，<br>
+SET_PRINT_STYLEA是对前面的打印项的样式<br>
+<br>
+ADD_PRINT_BARCODEA<br>
+<br>
+在lodop技术手册里<br>
+<br>
+(图）
+也可以进入打印设计，右键属性里设置，然后在菜单下生成代码<br>
+<br>
+(图）<br>
+也可以进入打印设计，右键属性里设置，然后生成代码<br>
+LODOP.ADD_PRINT_BARCODEA("a",30,46,100,60,"Code39","123456789012");<br>
+<br>
+您的批量打印是一个任务多页，还是多个任务<br>
+从init到PRINT是一个任务<br>
+<br>
+参考样例26，http://www.c-lodop.com/demolist/PrintSample26.html<br>
+是指分组打印，既有多任务，也有多页吗。<br>
+如果有多页，可以用类名，同类名的都会被维护。<br>
+如果是多任务，一个任务一页，任务名相同，会根据任务名都会被维护<br>
+<br>
+如果是多任务，且任务内也有分页，可参考样例26的方法<br>
+<br>
+打印维护（PRINT_SETUP语句）功能是提供给客户端单个电脑微调用的，为了让微调结果永久有效，Lodop会在本地为该过<br>程对应生成一个ini配置文件，文件路径和文件名类似如下： 系统盘符:\Program Files (x86)\MountTaiSoftware\Lodop\PrintSetups_打印任务名.ini<br>
+打印维护会根据任务名缓存，查看下是否生成的了对应的ini文件，如果生成了。<br>
+预览或打印测试下，会是调整后的<br>
+<br>
+如果是循环多任务，从INIT到PRINT循环，<br>
+<br>
+多任务时每个任务都要加初始化语句<br>
+<br>
+您是想循环多任务吗，INIT属于任务的一部分，也在循环里<br>
+<br>
+如果是想一个任务一页，INIT和PRINT都在循环里<br>
+<br>
+INIT放在外面，里面加分页语句，属于一个任务多页。<br>
+如果想一个任务多页，可以用类名，参考样例26，同类名的都会被维护<br>
+<br>
+LODOP.PRINT_INIT("打印任务名");               //首先一个初始化语句<br>
+LODOP.ADD_PRINT_TEXT(0,0,100,20,"文本内容一");//然后多个ADD语句及SET语句<br>
+LODOP.PRINT();                               //最后一个打印(或预览、维护、设计)语句<br>
+从INIT到PRINT是一个任务，循环多任务，就是循环多个这样的组合<br>
+<br>
+如果是分页，就是任务内分页，初始化一次，里面加分页语句<br>
+http://www.c-lodop.com/demolist/PrintSample30.html<br>
+<br>
+一个任务多页时，进入windows打印机队列会只有一个任务。<br>
+<br>
+可以，参考样例26，分组打印，既有循环多任务，也有循环多页<br>
+<br>
+如果是需要维护一页，多页都生效，需要设置类名，可参考样例26<br>
+<br>
+17.<span style="color: blue; font-weight: bold;">咋们打印插件支持查询打印机是否支持双面打印吗</span><br>
+双面打印 参考http://www.c-lodop.com/demolist/PrintSample6.html<br>
+<br>
+需要用打印机实际测试，有可能打印机不支持自动双面打印，如果不支持，可以试试手动双面<br>
+<br>
+不支持，无法判断该打印机是否支持自动双面 <br>
+<br>
+18.<span style="color: blue; font-weight: bold;">这个可以连接热敏标签打印机打印吗？TSPL指令，有相关eg吗？</span><br>
+打印机指令，参考样例17http://www.c-lodop.com/demolist/PrintSample17.html<br>
+<br>
+19.<span style="color: blue; font-weight: bold;">pdf需要顶级注册，我们公司已经购买了最高级的会员了</span><br>
+私发一下注册语句，这边查一下注册等级<br>
+<br>
+公司名顶级是两句，两句都需要加上<br>
+<br>
+直接复制收注册号邮箱里的语句<br>
+<br>
+直接复制收注册邮箱的语句，不要修改参数，且有两句时，两句都需要加上<br>
+<br>
+20.<span style="color: blue; font-weight: bold;">部分电脑 使用 c-lodop 打印，ADD_PRINT_URL 这一步 添加 本地的 文件路径 经常会卡个 3秒多，有什么排查思路吗</span><br>
+由于Lodop借用IE下载引擎，与非IE浏览器之间目前不能传递Session(Cookies)，所以需要安全验证的页面不要用URL方式打印，要用页面已经下载好的内容的HTM方式打印，也就是ADD_PRINT_HTM或ADD_PRINT_TABLE等语句<br>
+另外URL方式需要二次访问服务器，理论上存在下载失败的可能，所以专业的管理系统尽量不要用URL方式。<br>
+<br>
+建议不用URL方式，URL的特征决定的，建议用页面已经下载好的内容的HTM方式打印，也就是ADD_PRINT_HTM或<br>ADD_PRINT_TABLE等语句<br>
+<br>
+21.<span style="color: blue; font-weight: bold;">pdf需要顶级注册</span><br>
+根据注册类型，参考逐条排查一下http://www.c-lodop.com/faq/ph01.html<br>
+<br>
+1.浏览器地址栏是否是注册的地址<br>
+2.LODOP.SET_LICENSES........<br>
+LODOP.PRINT();<br>
+直接放到PRINT()语句前面测试下。<br>
+3.清理下浏览器缓存，<br>
+先排查下这三个条目<br>
+970的是域名注册，可以先排查下这三个<br>
+<br>
+只要是注册的地址就可以，如果是ip，浏览器地址栏是注册的ip就可以<br>
+<br>
+2.LODOP.SET_LICENSES........<br>
+LODOP.PRINT();<br>
+直接放到PRINT()语句前面测试下。<br>
+3.清理下浏览器缓存，3.清理下浏览器缓存，<br>
+<br>
+如果确认浏览器地址栏是注册的地址，再排查下这两个，执行问题和缓存问题<br>
+<br>
+22.<span style="color: blue; font-weight: bold;">打印生成的二维码， 怎么能增加识别率</span><br>
+增大二维码宽高测试下<br>
+<br>
+23.<span style="color: blue; font-weight: bold;">本地修改的hosts，把注册的域名指向本地之后，测试结果打印还是有水印，是什么原因</span><br>
+浏览器地址栏是否是注册的地址<br>
+<br>
+域名指向本地后，浏览器地址栏用该域名访问<br>
+<br>
+参考逐条排查一下http://www.c-lodop.com/faq/ph01.html<br>
+<br>
+再排查下其他条目，可以先排查常见的这两条<br>
+2.LODOP.SET_LICENSES........<br>
+LODOP.PRINT();<br>
+直接放到PRINT()语句前面测试下。<br>
+3.清理下浏览器缓存，<br>
+<br>
+24.<span style="color: blue; font-weight: bold;">怎么设置指定打印边距大小</span><br>
+直接打印项在纸张中定位，例如：ADD_PRINT_HTM(intTop,intLeft,intWidth,intHeight,strHtml)增加超文本项 前两个参数，顶边距和左边距。<br>
+<br>
+如果是htm打印项，宽度可以在样式里控制<br>
+htm会根据打印项高度自动分页<br>
+<br>
+如果是指预览的虚线，这个是打印机的可打区域<br>
+“可打区域”边缘与打印机本身有关，表现在预览里是虚线，可打区域的影响<br>
+http://www.c-lodop.com/faq/pp26.html<br>
+<br>
+和打印机有关，虚拟打印机无可打区域的虚线<br>
+<br>
+25.<span style="color: blue; font-weight: bold;">果条码纸特别小只有 30mm*30mm 用原生的打印设计 所有的文本组件会挤在一起，很难设计模板 </span><br>
+您好，加一下qq群:http://www.c-lodop.com/about.html<br>
+<br>
+打印设计是辅助设计的，无法放大打印设计界面，<br>
+直接写代码，通过参数调整打印项位置<br>
+<br>
+直接写JS代码，条码参考样例11，左边距顶边距，宽度等<br>
+如果其他文本，也是同样的定位方式<br>
+<br>
+根据您的需要修改，可以不断修改，预览查看效果<br>
+<br>
+不同的模板取不同的任务名<br>
+<br>
+26.<span style="color: blue; font-weight: bold;">标签模板中就是不显示，需要修改属性【不变形缩放】就可以看见</span><br>
+增大宽高测试下，默认是截取模式<br>
+<br>
+如果想缩放到大小，参考http://www.c-lodop.com/demolist/PrintSample8.html<br>
+加变形或不可变形缩放测试下<br>
+<br>
+27.<span style="color: blue; font-weight: bold;">可以实现这种样式吗，我用了几种网上设置背景颜色的方法，但是并没有生效</span><br>
+如果是用纯文本输出，可以<br>
+黑色实心矩形先输出，白色文字后输出，先输出的在下层，后输出的在下层<br>
+例如：<br>
+LODOP.ADD_PRINT_SHAPE(4,27,35,100,60,0,1,"#000000");<br>
+LODOP.ADD_PRINT_TEXT(43,34,100,20,"新加文本");<br>
+LODOP.SET_PRINT_STYLEA(0,"FontColor","#FFFFFF");<br>
+<br>
+28.<span style="color: blue; font-weight: bold;">有一套打印机不显示二维码，是什么原因</span><br>
+后输出二维码测试下，先输出的在下层，后输出的在上层<br>
+<br>
+barcode打印项语句放到htm语句后面测试下，防止有覆盖问题<br>
+<br>
+29.<span style="color: blue; font-weight: bold;">有没有mac电脑的安装文件？</span><br>
+目前lodop和c-lodop只能安装到windows操作系统上，下载中心还有linux桌面版，除windows和linux，其他操作系统无法安装，无法用客户端本地打印角色，其他操作系统可以用集中打印，或广域网打印角色，打印到其他windows电脑上。<br>
+三种角色及使用方法 参考http://www.c-lodop.com/demolist/t1.html<br>
+目前不支持mac系统，将来会开发除了linux外跨平台的其他版本。<br>
+<br>
+30.<span style="color: blue; font-weight: bold;">空白行 打印时会被自动忽略掉，有什么设置能实现不忽略吗</span><br>
+打印项是什么语句输出的，是add_print_text纯文本，还是add_print_htm超文本<br>
+<br>
+LODOP.ADD_PRINT_TEXT(29,66,236,114,"新加文本新加文本新加文本\r\n\r\n\r\n新加文本新加文本新加文本新加文本");<br>
+可以加换行符保留空行<br>
+<br>
+（图）<br>
+（图）<br>
+<br>
+31.<span style="color: blue; font-weight: bold;">打印内容要打印一个勾选框，别的电脑都正常，</span><br>
+在有问题的电脑上测试下样例23，http://www.c-lodop.com/demolist/PrintSample23.html<br>
+如果样例正常，右键查看源码，参考样例的使用方法<br>
+<br>
+32.<span style="color: blue; font-weight: bold;">用的是分组分页批量打印，第一组打出来对的，第二组开始就不对了，已经加了类名了，LODOP.ADD_PRINT_TEXTA("WorkshopName",...);</span><br>
+任务名是否是相同的，需要用相同的任务名，根据任务名的ini文件走打印维护的本地配置文件<br>
+<br>
+这个不是任务名，INIT或INITA里是任务名<br>
+打印维护（PRINT_SETUP语句）功能是提供给客户端单个电脑微调用的，为了让微调结果永久有效，Lodop会在本地为该过程对应生成一个ini配置文件，文件路径和文件名类似如下： 系统盘符:\Program Files <br>(x86)\MountTaiSoftware\Lodop\PrintSetups_打印任务名.ini<br>
+<br>
+那个是给队列里单独设置任务名。<br>
+和打印维护本地配置的INIT或INITA里任务名是不同的<br>
+<br>
+（图）<br>
+LODOP.PRINT_INIT("中文学位证书打印");<br>
+例如样例26的这个，是相同的任务名<br>
+<br>
+第二个任务单独进入预览查看下，是否是调整后的结果<br>
+<br>
+单独测试第二个任务进入打印预览查看下，是否是调整后的结果，会根据任务名走对应的ini文件<br>
+<br>
+您是第二个任务有问题，直接测试第二个任务的<br>
+<br>
+（图）<br>
+这两个哪个是您打印维护的格式，是左边的，还是右边的<br>
+<br>
+维护需要打印项个数相同，不能增删打印项，是否任务打印项个数不同<br>
+<br>
+如果个数不同，属于不同的模板。<br>
+或您把text赋值是空的，效果类似删除，确保打印项存在<br>
+<br>
+打印维护ini文件里是根据序号生成的，确保打印项个数一致。<br>
+调试JS，排查您第二个任务的任务名是否是生成的ini文件的那个任务名<br>
+<br>
+（图）
+左边是维护后的，感觉比右侧的少了很多内容，<br>
+如果模板差异较大，建议直接做一个新的模板。<br>
+<br>
+打印维护不走打印设计的代码，会走本地生成的ini文件<br>
+<br>
+http://www.c-lodop.com/faq/pp9.html<br>
+您取消下打印维护的调整，恢复整体缺省，重新调整再测试下，注意不要删除打印项<br>
+<br>
+打印维护调整后，就不走页面的代码了，走打印维护调整后的<br>
+如果想走代码里的，可以参考上面先恢复整体缺省，会走代码的<br>
+<br>
+打印维护是用来给客户端微调的，您两个模板内容差异较大，建议直接做一个新的模板<br>
+<br>
+不同的模板取不同的名字，打印维护是用来给客户端本地微调的，且调整是根据序号的。<br>
+打印项个数不同，就会调整错位。<br>
+<br>
+打印维护一般用于不同打印机偏移问题，用来客户端本地微调，<br>
+不适合设置不同的模板，需要是同一个模板的微调<br>
+<br>
+可以，只要是该任务名，且生成了对应的ini文件就可以<br>
+<br>
+您如果恢复了整体缺省，再调整下，点应用<br>
+<br>
+右键以管理员权限运行再测试下，需要有管理员权限<br>
+<br>
+以管理员权限安装最新版c-lodop测试下http://www.c-lodop.com/download.html<br>
+安装时，右键以管理员权限运行<br>
+<br>
+预览和打印应该是一致的，都是走的同样的任务名。<br>
+注意直接打印时，每个任务都加通用的任务名。<br>
+您两个模板相差很大，或直接用不同的模板<br>
+<br>
+您可以直接测试样例26调整是否正常，如果样例26正常，对照样例排查下代码，逐步删减代码增加代码等测试下<br>
+<br>
+（---之后弄点例子和视频，既然官网有例子，就先打字回复下，还有其他群和定制的那个修改，还有发票--）<br>
+<br>
+33.<span style="color: blue; font-weight: bold;">clodop安装了官网最新版，64位操作系统，win7，管理员身份无法正常启动服务</span><br>
+以管理员权限安装最新版c-lodop测试下http://www.c-lodop.com/download.html<br>
+右键以管理员权限运行试试<br>
+<br>
+如果安装不到起多功能成功界面<br>
+并参考http://www.c-lodop.com/faq/pp5.html<br>
+九、c-lodop安装界面始终打不开<br>
+可能是网络共享打印机的问题，删除就好了<br>
+是否有共享打印机，删除共享打印机后，重新安装c-lodop试试。<br>
+<br>
+34.<span style="color: blue; font-weight: bold;">模板设置了图片打印预览正常，网页打印也正常，通过插件打印点打印 图片一闪然后没有出来添加的图片没有打印  是插件还是什么问题？</span><br>
+以管理员权限安装最新版c-lodop测试下http://www.c-lodop.com/download.html<br>
+<br>
+安装c-lodop6636再测试下<br>
+<br>
+35.<span style="color: blue; font-weight: bold;">识别了设备缺不认打应机是咋了</span><br>
+用其他打印机测试下<br>
+<br>
+用xps或pdf虚拟打印机测试下，<br>
+win7以后系统自带Microsoft XPS Document Writer虚拟打印机或者 下载安装群文件里的Doro PDF Writer虚拟打印机<br>
+<br>
+这个是excel表格自带的，用lodop打印测试下<br>
+<br>
+虚拟打印机是打印成xps或pdf模拟打印<br>
+<br>
+理论上本机虚拟打印没问题的话，说明插件代码没问题，程序可做的努力就的确很少了，毕竟windows下的打印是微软倡导的设备无关系原则，要在打印机和打印驱动程序 系统上排查下<br>
+<br>
+用lodop打印测试下，您的截图里是用的excel表格里的打印，没有经过lodop，<br>
+可以测试下样例5,7等例子http://www.c-lodop.com/LodopDemo.html<br>
+<br>
+（图）<br>
+您这个没有经过lodop，和lodop无关，txt本地文件也没有经过lodop<br>
+<br>
+36.<span style="color: blue; font-weight: bold;">新版的安装有中文的？</span><br>
+下载中心发行包里的c-lodop有中文<br>
+<br>
+64位的c-lodop是纯英文的安装界面<br>
+<br>
+37.<span style="color: blue; font-weight: bold;">打印html是不是不兼容css3旋转</span><br>
+查看lodop内部解析的html信息，见http://www.c-lodop.com/faq/pp8.html<br>
+分析差异点，因浏览器<br>
+（..大段.)<br>
+<br>
+其他旋转方式：<br>
+旋转，参考http://www.c-lodop.com/faq/pp25.html<br>
+<br>
+38.<span style="color: blue; font-weight: bold;">这个打印服务注册域名之后，访问量有没有限制</span><br>
+三种角色及使用方法：<br>
+参考http://www.c-lodop.com/demolist/t1.html<br>
+是哪种角色<br>
+<br>
+如果是第一种本地打印角色，注册域名后，验证浏览器地址栏的地址，访问端无限制，只要是该域名的就可以<br>
+<br>
+发一下具体的JS报错信息，是访问不到，还是被CORS阻挡了，或是有证书问题<br>
+<br>
+关于谷歌Chrome浏览器访问本地打印设备问题的解决方案<br>
+(微软Edge浏览器也一样)<br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+安装最新版，更新最新的lodopFuncs.js<br>
+<br>
+最新的lodopFuncs.js有判断，https的会走https的<br>
+<br>
+最新版lodopFuncs.js在下载中心发行包里<br>
+（图）<br>
+<br>
+http://www.c-lodop.com/download.html<br>
+<br>
+CLodop_Setup_for_Win32NT.exe<br>
+安装发行包里的<br>
+<br>
+并更新lodopFuncs.js<br>
+<br>
+是的，更新您自己页面上的lodopFuncs.js，里面增加了https判断等内容，可以对比下<br>
+<br>
+https的判断，https网站会走https的8443端口<br>
+<br>
+也可以解决http网站里的cors问题<br>
+<br>
+39.<span style="color: blue; font-weight: bold;">pdf，打印两页内容出现 第三空白页 这个有方案解决吗</span><br>
+如果是同一个pdf三页，<br>
+用最新版c-lodop测试下，http://www.c-lodop.com/download.html<br>
+如果最新版也有问题，发一下有问题的pdf文件，这边测试下<br>
+<br>
+打印项是什么语句输出的，是add_print_htm超文本，还是add_print_pdf打印项<br>
+<br>
+可能有不可视内容 导致打印内容高度超过打印项高度 打印设计里调整下打印项高度。<br>
+进入打印设计LODOP.PRINT_DESIGN();，查看lodop内部解析的html信息，见http://www.c-lodop.com/faq/pp8.html<br>
+分析一下 超文本是否输出了空白信息 或加入超文本背景色看一下。<br>
+空白页，正好超出设置高度一点也会自动分页，从这里入手分析。<br>
+<br>
+参考http://www.c-lodop.com/faq/pp4.html<br>
+双击桌面上的c-lodop快捷方式，重启一下本机的c-lodop，重启c-lodop后刷新页面。<br>
+<br>
+40.<span style="color: blue; font-weight: bold;">打印票据有最大长度限制吗？目前我遇到一个问题就是打印到一定长度，后续内容被截断了</span><br>
+小票打印 ，参考样例18 http://www.c-lodop.com/demolist/PrintSample18.html<br>
+（小票针式打印 建议用 ADD_PRINT_TEXT文本，不用htm超文本，纸张高度不定容易引起 htm 中排版变形）<br>
+<br>
+纸张不定高一般小票打印机等特殊打印机支持，普通打印机可能有一定的幅面限制，不支持纸张不定高，可以实际测试下打印机是否支持不定高纸张。<br>
+<br>
+有的打印机有幅面限制，需要打印机支持，不定高可以实际测试下<br>
+<br>
+41.<span style="color: blue; font-weight: bold;">这个打印啥意思（乱码）</span><br>
+用虚拟打印机测试下<br>
+<br>
+（---因为定制问题，正在切换管理员和普通用户，所以这个在手机上简略回复了下--）<br>
+<br>
+用xps或pdf虚拟打印机测试下，<br>
+win7以后系统自带Microsoft XPS Document Writer虚拟打印机或者 下载安装群文件里的Doro PDF Writer虚拟打印机<br>
+<br>
+用xps或pdf虚拟打印机测试下，排查乱码是和内容有关，还是打印机有关。<br>
+<br>
+42.<span style="color: blue; font-weight: bold;">表格超出页我设置表格高度没有反应</span><br>
+分页 参考样例30 http://www.c-lodop.com/demolist/PrintSample30.html<br>
+超文本超过设置的打印项高度或纸张会自动分页。<br>
+减小打印项高度，会根据打印项高度分页<br>
+<br>
+再减小一下测试下，并查看是否是ADD_PRINT_HTM输出的。这个可以切行补线<br>
+<br>
+减小ADD_PRINT_HTM第四个参数<br>
+<br>
+页脚是否是关联了表格<br>
+<br>
+如果想每页固定位置输出
+LODOP.SET_PRINT_STYLEA(0,"ItemType",1);//设置上面的为页眉页脚，每页固定位置输出<br>
+去掉关联<br>
+<br>
+排查是否设置了样例41的关联http://www.c-lodop.com/demolist/PrintSample41.html<br>
+如果设置了，会跟着表格分页<br>
+<br>
+截图下预览效果，标注下问题<br>
+<br>
+如果想每页输出固定位置，去掉样例41的关联，可以固定每页的位置输出<br>
+<br>
+43.<span style="color: blue; font-weight: bold;">（图）帮我看下这个问题</span><br>
+进入队列后就交给windows打印服务和打印机驱动了，进入队列打印不出来，一般和打印机或打印机驱动有关。<br>
+之前有个客户反馈没有任务名有的打印机会有问题，初始化里加上一个任务名试试<br>
+LODOP.PRINT_INIT("打印任务名"); //首先一个初始化语句<br>
+<br>
+44.<span style="color: blue; font-weight: bold;">（图）</span><br>
+参考http://www.c-lodop.com/faq/pp1.html<br>
+排查链接里的条目，最常见的是共享打印机问题，或打印机驱动问题，删除所有共享打印机。<br>
+重新安装下打印机驱动试试<br>
+<br>
+45.<span style="color: blue; font-weight: bold;">更新了js包还是会这个错，什么原因cors</span><br>
+关于谷歌Chrome浏览器访问本地打印设备问题的解决方案<br>
+(微软Edge浏览器也一样)<br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+46.<span style="color: blue; font-weight: bold;"> 一个word文档内容中有一条线10cm，用c-lodop控件打印出来之后只有9cm</span><br>
+线条是怎样输出的<br>
+<br>
+是lodop纯文本画线，还是htm输出的<br>
+<br>
+lodop不支持打印word文件，您是转成了其他格式吗，是htm还是图片或pdf格式<br>
+<br>
+发一下您的打印项输出语句<br>
+<br>
+您的打印项输出语句发一下，add_print_pdf吗<br>
+<br>
+(图）<br>
+pdf目前有三种模式，默认缩小大页面<br>
+如果pdf大于纸张，会缩放，也有其他模式：<br>
+LODOP.SET_PRINT_STYLEA(0,"PDFScalMode",1);//实际大小<br>
+LODOP.SET_PRINT_STYLEA(0,"PDFScalMode",2);//适合纸张<br>
+<br>
+参考http://www.c-lodop.com/faq/pp36.html<br>
+单一PDF打印模式:纸张大小以PDF文档中自身纸张定义为准<br>
+还有一个单一文档模式<br>
+<br>
+参考http://www.c-lodop.com/LodopDemo.html<br>
+lodop不支持打印word文件，非常抱歉，没有这个功能<br>
+您可以转成pdf，htm,图片等格式<br>
+<br>
+47.<span style="color: blue; font-weight: bold;">用注册好的时候 需要写上公司名称么</span><br>
+直接复制收注册号邮箱里的语句，不要修改参数<br>
+<br>
+如果是ip或域名，不带公司名参数，直接复制收注册号邮箱里的语句<br>
+<br>
+48.<span style="color: blue; font-weight: bold;">我打印出来是空白pdf  会是什么可能的情况   好多天了搞不明白了</span><br>
+打印项是什么语句输出的，是add_print_text纯文本，还是add_print_htm超文本，还是add_print_pdf打印项，还是图片打印项<br>
+<br>
+预览是打印机的反显，用xps或pdf虚拟打印机测试下，<br>
+win7以后系统自带Microsoft XPS Document Writer虚拟打印机或者 下载安装群文件里的Doro PDF Writer虚拟打印机<br>
+<br>
+可以测试下样例2，预览里切换不同打印机测试下<br>
+http://www.c-lodop.com/demolist/PrintSample2.html<br>
+预览是打印机的反显，如果虚拟打印机正常，理论上本机虚拟打印没问题的话，说明插件代码没问题，程序可做的努力就的确很少了，毕竟windows下的打印是微软倡导的设备无关系原则，要在打印机和打印驱动程序 系统上排查下<br>
+<br>
+不要用导出wps pdf那个虚拟打印机，尽量不要用带导出字样的虚拟打印机<br>
+win7以后系统自带Microsoft XPS Document Writer虚拟打印机或者 下载安装群文件里的Doro PDF Writer虚拟打印机<br>
+试试这两个虚拟打印机<br>
+<br>
+虚拟打印机打印出来是否正常，如果是正常的<br>
+理论上本机虚拟打印没问题的话，说明插件代码没问题，程序可做的努力就的确很少了，毕竟windows下的打印是微软倡导的设备无关系原则，要在打印机和打印驱动程序 系统上排查下<br>
+<br>
+http://www.c-lodop.com/demolist/PrintSample2.html<br>
+用预览里面的打印可以调用，是指预览里调用到虚拟打印机不显示另存为吗<br>
+<br>
+直接在样例2里测试下，如果本机有这个Microsoft XPS Document Writer虚拟打印机，可以选这个测试下，<br>
+<br>
+xps查看器<br>
+<br>
+49.<span style="color: blue; font-weight: bold;">这个提示 是没识别到字体么</span><br>
+条码类型参考样例11，需要是支持的类型<br>
+<br>
+http://www.c-lodop.com/demolist/PrintSample11.html<br>
+条码不支持设置字体，可以设置条码类型<br>
+<br>
+50.<span style="color: blue; font-weight: bold;">怎么将LODOP.SET_PRINT_STYLEA(0,"ContentVName","变量名");这个在生成程序代码时加入到对应的元素下</span><br>
+参考样例35，设置后，打印设计可以返回变量<br>
+<br>
+http://www.c-lodop.com/demolist/PrintSample35.html<br>
+<br>
+打印设计在生成程序代码时依据以下方法，让页面变量与数据项内容对接：<br>
+        LODOP.SET_PRINT_STYLEA(0,"ContentVName","变量名");<br>
+        例如：LODOP.ADD_PRINT_TEXT(256,61,191,30,"演示发货地址信息");<br>
+        LODOP.SET_PRINT_STYLEA(0,"ContentVName","MyData");<br>
+        设计完毕，关闭设计窗口，设计时的内容自动替换为变量名称,关闭设计窗口生成代码如下:<br>
+        LODOP.ADD_PRINT_TEXT(256,61,191,30,MyData);<br>
+<br>
+在代码里添加<br>
+<br>
+在代码里添加后，关闭设计后，会替换成变量<br>
+<br>
+在JS代码里加上这句<br>
+LODOP.SET_PRINT_STYLEA(0,"ContentVName","MyData");<br>
+然后进入打印设计，关闭设计是会替换成变量<br>
+<br>
+（图）<br>
+可以参考下样例35，右键查看源码<br>
+ LODOP.ADD_PRINT_TEXT(256,61,324,30,"演示发货地址信息");<br>
+ LODOP.SET_PRINT_STYLEA(0,"ContentVName","MyData");//设置内容参数的变量名<br>
+原始的是字符串，加上后，关闭打印设计后会替换成变量<br>
+LODOP.ADD_PRINT_TEXT(256,61,324,30,MyData);<br>
+<br>
+可以，任何打印项都可以<br>
+<br>
+----未发，样例25修改测试了下，可以--<br>
+LODOP.ADD_PRINT_HTM(141,377,261,161,MyData);<br>
+LODOP.SET_PRINT_STYLEA(0,"ContentVName","MyData");<br>
+<br>
+51.<span style="color: blue; font-weight: bold;">打印测试页可以，但是其他的都不行，这是什么情况</span><br>
+用xps或pdf虚拟打印机测试下，<br>
+win7以后系统自带Microsoft XPS Document Writer虚拟打印机或者 下载安装群文件里的Doro PDF Writer虚拟打印机<br>
+测试下样例2试试，预览里切换该打印机点打印试试，是否能加入队列<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+其他.<span style="color: blue; font-weight: bold;">之前定制默认勾选仅本机的</span><br>
+后续领导发了新版本和新的的ssl文件，根据新的文件，里面修改了仅本机，设置自己的logo。定制后，覆盖安装还是有问题，在程序卸载后可以了。<br>
+之后又取消了ssl文件里的根据选项勾选的，直接是默认本机的。<br>
+定制完后，发现领导发的是通用版的ssl，之前的名称和快捷方式名称还需要改会一起的，对照以前定制的ssl文件，又改了回来。<br>
+不过因为普通版和c-lodop定制版名称不一致，如果都安装过，桌面会有多个快捷方式，反而会有误导，所以又把定制的名称改成了原来的c-lodop<br>
+<br>
+这次记录了下以后可能需要注意的修改,logo图那句就不用记录了，如果忘记了，有报错提示，记录下不会报错的一些可能修改：<br>
+（1）名称改为WEB-PRINT(32-bit)，一些客户觉得用 c-lodop名称不是自己的，感觉还是有c-lodop标识，故这里需要修改。<br>
+AppName=WEB-PRINT(32-bit)<br>
+AppVerName=WEB-PRINT(32-bit)<br>
+原始名称：<br>
+AppName=C-Lodop(32-bit)<br>
+AppVerName=C-Lodop(32-bit)<br>
+后续又改回C-Lodop(32-bit)。<br>
+桌面快捷方式名称：<br>
+Name: "{commondesktop}\C-Lodop (Print)"; Filename: "{app}\CLodopPrint64.exe ";Parameters:"setup OnlyLocalPrint";WorkingDir: "{app}";<br>
+（2）<br>
+;Name: "{group}\C-Lodop Setup"; Filename: "{app}\CLodopPrint32.exe";Parameters:"setup";<br>
+改为Parameters:"setup OnlyLocalPrint"<br>
+Name: "{group}\C-Lodop Setup"; Filename: "{app}\CLodopPrint32.exe";Parameters:"setup OnlyLocalPrint";<br>
+.....<br>
+<br>
+
+Name: "{group}\C-Lodop Setup"; Filename: "{app}\CLodopPrint32.exe";Parameters:"setup OnlyLocalPrint";<br>
+Name: "{commondesktop}\C-Lodop (Print)"; Filename: "{app}\CLodopPrint64.exe ";Parameters:"setup OnlyLocalPrint";WorkingDir: "{app}";<br>
+<br>
+Root: HKCU; Subkey: "SOFTWARE\Microsoft\Windows\CurrentVersion\Run"; ValueType: string; ValueName: <br>"CLodop"; ValueData: "{app}\CLodopPrint64.exe -AutoCU OnlyLocalPrint";Flags: deletevalue <br>uninsdeletevalue;Tasks: startupicon <br>
+Root: HKLM; Subkey: "SOFTWARE\Microsoft\Windows\CurrentVersion\Run"; ValueType: string; ValueName: <br>"CLodop"; ValueData: "{app}\CLodopPrint64.exe -AutoLM OnlyLocalPrint";Flags: deletevalue <br>uninsdeletevalue;Tasks: startupicon <br>
+<br>
+测试修改上面的还是不行，不同的人，有的32位有的64位，没有勾选。<br>
+桌面参数加上，不点击桌面快捷方式，还是能访问欢迎页面。<br>
+<br>
+---后续启动里加了参数，纯本机打印的--<br>
+[Run]<br>
+Filename: "{app}\CLodopPrint64.exe";Parameters:"setup_noauto OnlyLocalPrint"; Description: <br>"{cm:LaunchProgram,C-Lodop Setup}"; <br>
+<br>
+----自己测试是可以的，安装没勾选，但是本机模式--<br>
+(图）<br>
+测试32位安装时没有勾选，但安装完成后，访问欢迎页面可以屏蔽<br>
+<br>
+----目前看来是可以了---<br>
+经历了多次定制，终于应该是可以了。<br>
+1.勾选仅本机的<br>
+2.去掉卸载提示的<br>
+（---中间多次修改iss文件，无效，并排查权限问题--）<br>
+3.修改ini文件仅本机打印的<br>
+4.去掉里面四个位置根据选项是否本机打印的<br>
+5.6637新版的，新iss文件的<br>
+6.桌面快捷方式C-Lodop(32-bit)改成Print。<br>
+7.桌面快捷方式Print改回C-Lodop(32-bit)。<br>
+8.新版iss文件WEB-PRINT(32-bit)，app名改会回C-Lodop(32-bit)<br>
+9.Run里加参数<br>
+-----------<br>
+<br>
+可能最终效果：卸载之前的后，可以显示勾选仅本机打印。<br>
+有之前的安装干扰，不卸载情况下，有的不显示勾选，但修改了run和一些默认，不勾选也是本机。<br>
+<br>
+-------测试了下静默安装，安装后没启动--<br>
+C:\Users\Administrator>D:<br>
+D:\>.\CLodop6.637_Setup_Win64EN.exe /silent<br>
+<br>
+--反馈到梦泰尔群--<br>
+（图）<br>
+测试安装后访问不了欢迎页面，右下角没有图标，没启动<br>
+---------silent静默安装不行------<br>
+<br>
+[Run]
+Filename: "{app}\CLodopPrint32.exe";Parameters:"setup_noauto OnlyLocalPrint"; Description: "{cm:LaunchProgram,Setup C-Lodop}"; Flags: nowait postinstall<br>
+<br>
+原来的run的末尾是：Flags: nowait postinstall skipifsilent<br>
+去掉了skipifsilent<br>
+<br>
+（图）<br>
+这边测试去掉skipifsilent后可以安装到启动成功界面<br>
+<br>
+-----后续在注册表也加了这个强制本机的，又定制了一次--<br>
+<br>
+OnlyLocalPrint<br>
+自启动本机模式默认都加OnlyLocalPrint，不管是否选中<br>
+Root: HKCU; Subkey: "SOFTWARE\Microsoft\Windows\CurrentVersion\Run"; ValueType: string; ValueName: <br>"CLodop"; ValueData: "{app}\CLodopPrint32.exe -AutoCU OnlyLocalPrint";Flags: deletevalue <br>uninsdeletevalue;Tasks: startupicon<br>
+Root: HKLM; Subkey: "SOFTWARE\Microsoft\Windows\CurrentVersion\Run"; ValueType: string; ValueName: <br>"CLodop"; ValueData: "{app}\CLodopPrint32.exe -AutoLM OnlyLocalPrint";Flags: deletevalue <br>uninsdeletevalue;Tasks: startupicon <br>
+Root: HKCU; Subkey: "SOFTWARE\Microsoft\Windows\CurrentVersion\Run"; ValueType: string; ValueName: <br>"CLodop"; ValueData: "{app}\CLodopPrint32.exe -AutoCU OnlyLocalPrint";Flags: deletevalue<br> uninsdeletevalue;Tasks: startupicon<br>
+Root: HKLM; Subkey: "SOFTWARE\Microsoft\Windows\CurrentVersion\Run"; ValueType: string; ValueName: <br>"CLodop"; ValueData: "{app}\CLodopPrint32.exe -AutoLM OnlyLocalPrint";Flags: deletevalue <br>uninsdeletevalue;Tasks: startupicon
+<br>
+------ini文件里再加一个[System]----<br>
+<br>
+后续领导让写个文件，把这几天所有修改的记录下--<br>
+<br>
+word文件有点长，自己又弄了个txt<br>
+1.配置文件UserInfoUTF8.ini<br>
+里增加：<br>
+[System]<br>
+OnlyLocalPrint=1<br>
+<br>
+2.名称和通用c-lodop保持一致，不用WEB-PRINT(32-bit)<br>
+AppName=C-Lodop(32-bit)<br>
+AppVerName=C-Lodop(32-bit)<br>
+<br>
+3.Tasks里
+Name: "onlylocalicon"的unchecked改为：checkablealone<br>
+<br>
+4.Icons里<br>
+Name: "{group}\C-Lodop Setup";的Parameters:"setup";改为Parameters:"setup OnlyLocalPrint";<br>
+Name: "{commondesktop}\C-Lodop (Print)";的Parameters:"setup";改为Parameters:"setup OnlyLocalPrint";<br>
+<br>
+5.Registry里（增加OnlyLocalPrint，去掉tasks后面的onlylocalicon）<br>
+<br>
+6.run里（加OnlyLocalPrint，去掉skipifsilent）<br>
+原：Filename: "{app}\CLodopPrint32.exe";Parameters:"setup_noauto"; Description: "{cm:LaunchProgram,Setup C-Lodop}"; Flags: nowait postinstall skipifsilent<br>
+改为：Filename: "{app}\CLodopPrint32.exe";Parameters:"setup_noauto OnlyLocalPrint"; Description: <br>"{cm:LaunchProgram,Setup C-Lodop}"; Flags: nowait postinstall<br>
+<br>
+7.code里（去掉是否卸载的提示）<br>
+改为：<br>
+ if not isXP then <br>
+                    strAskMS:='One [C-Lodop] exists,uninstall it first[已安装过,先卸载旧版本吗]?' else<br>
+                    strAskMS:='One [C-Lodop] exists,replace it [已安装过,覆盖旧版本吗]?';  <br>
+                    if (not WizardSilent) then<br>
+                    begin<br>
+<br>
+---后续客户说32位不行，我静默安装试了下是可以的--<br>
+.\CLodop6.637_Setup_Win32CN.exe /silent<br>
+（图）<br>
+测试32位的静默安装也可以，访问欢迎页面提示被屏蔽<br>
+----------客户反馈32位的显示监听了0.0.0.0----------<br>
+后续客户反馈又行了，一会行一会不行，这边测试没问题。所以领导也不知道什么情况。<br>
+<br>
+(---后续随着用户越来越多，发票和定制肯定也会有所增加，之前自己发视频一般凑空闲是时间一点点整理，写文档多个问题弄成一个视频，但这样效率确实比较低，后续弄点小问答的视频，能让客户搜到更多答案，减少问答的情况--)<br>
+<br>
+后续iss又修改了下，三个.exe又发了新的6637版<br>
+----------------------后续修改----------------<br>
+用的梦泰尔群新的安装文6637版<br>
+增加了_noauto：<br>
+Filename: "{app}\CLodopPrint32.exe ";Parameters:"setup_noauto OnlyLocalPrint";<br>
+测试安装可以勾选仅本机打印，测试屏蔽了欢迎页面<br>
+-------------------------<br>
+<br>
+修改定制完后，自己又修改了word文档，然后发到了群里<br>
+因为之前只修改了run里的，领导截图圈起来_noauto，截图是从Filename开始截图的，自己查了iss，除了之前改的run还有icons里的两处，以为这里也需要修改，修改
+<br>
+修改后的iss<br>
+Icons里的setup_noauto改回了setup：<br>
+Filename: "{app}\CLodopPrint32.exe ";Parameters:"setup OnlyLocalPrint"<br>
+<br>
+<br>
+修改iss：<br>
+原： if (not WizardSilent) then<br>
+ Begin<br>
+改为： if false then<br>
+    begin<br>
+<br>
+修改iss:<br>
+去掉Tasks: onlylocalicon<br>
+ if false then<br>
+begin后面的取消注释<br>
+<br>
+修改后的平安仅本机iss已发群文件，之前的64位的取消注释的时候可能多了begin，这个是修改后正常的<br>
+<br>
+其他2.<span style="color: blue; font-weight: bold;">注意以后不要过多的解释</span><br>
+之前的run里已经加了Filename: "{app}\CLodopPrint32.exe ";Parameters:"setup_noauto OnlyLocalPrint";<br>
+<br>
+后来领导在群里发截图，圈出setup_noauto，以为是让加这个。<br>
+查了下iss文件里，run已经加了后来领导在群里发截图，圈出setup_noauto，以为是让加这个。<br>
+<br>
+Icons里还有两处Filename: "{app}\CLodopPrint32.exe ";Parameters:"setup OnlyLocalPrint"<br>
+领导截图只截取了这部分，不知道前后，既然之前的run已经加了，那么久只能是在这个加了。<br>
+<br>
+中午吃饭完饭回去，两个iss文件加上那两处，然后定制了一份新的两个安装文件，打包发群里。<br>
+因为有新的修改，之前发的修改整理的word文件，也撤回，重新把Icons里的修改的地方加上两处的_noauto。<br>
+<br>
+后续领导说这两个地方怎么能加，只在run里加就行。
+我说之前的就是在run里加的，我看群里又发了这个地方圈起来，找其他地方有没有，发现Icons有两处处Filename: <br>"{app}\CLodopPrint32.exe ";Parameters:"setup OnlyLocalPrint"<br>
+因为截图没有前后，从Filename截图的，前面的也看不到是哪一行的，就根据截图把这两处加上了。<br>
+<br>
+领导很生气说别解释什么的，以后我还是正常听比较好，只要根据领导说的说知道或点头比较好。<br>
+因为我是负责定制的，所以领导一般会在群里发怎么修改，然后让我自己修改，我一般就是根据截图修改的，截图的内容多处都有，所以可能会误认为是另一处。<br>
+<br>
+--后续--<br>
+（图）<br>
+注释掉了CLodopService32.exe那句的<br>
+;Source: "CLodopService32.exe"; DestDir: "{app}"; Flags: ignoreversion<br>
+<br>
+--后续--<br>
+（图）<br>
+不注释CLodopService32的，用的新的.exe的<br>
+<br>
+--后续又有6638版----<br>
+测试管理员静默安装可以，后续用普通用户测试<br>
+（图）<br>
+测试普通用户安装提示输入管理员密码，输入管理员密码后可以安装成功<br>
+<br>
+
+
+
+
+
+
+<!--main_middle结束-->		
+
+										
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+
+
+</div><!--body结束-->
+ </body>
+</html>
