@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】如何查看lodop内部解析的html信息（打印项实际传入的内容）（newblog141）（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】如何查看lodop内部解析的html信息（打印项实际传入的内容）（newblog141）（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】如何查看lodop内部解析的html信息（打印项实际传入的内容）（newblog141）（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>当出现一些内容异常，由于js里内容复制经常用变量，所以如果需要观察内部实际传入的JS内容，可以通过调试JS方式，查看实际传入的字符串是否正常。</p>
+<p>如果是htm，或URL输出htm页面等，如果想排查内部具体html和样式，可以通过打印设计右键属性里查看。</p>
+<p>出现的一些可能异常：<br />例如：<br />（1）某个打印项输出了重复的内容<br />（2）内容显示不全<br />（3）样式出现问题<br />（4）打印项是空白的<br />......</p>
+<p>查看lodop内部解析的html信息，见http://www.c-lodop.com/faq/pp8.html</p>
+<p>先把打印预览指令(LODOP.PREVIEW)临时改成打印设计指令(LODOP.PRINT_DESIGN)，<br />进入打印设计之后，用鼠标双击对象会弹出属性窗口，在该窗口中就能找到该对象的超文本html代码。<br />（补充：选中打印项，右键属性里也可以查看）</p>
+<p>例如样例2里的http://www.c-lodop.com/demolist/PrintSample2.html<br />把预览改成打印设计，可以进入到打印设计界面<br />LODOP.PRINT_DESIGN();</p>
+<p>选中打印项后，周围出现蓝色圆点，说明当前打印项处于选中状态，右键有个设置属性<br />（图）</p>
+<p>设置属性，第一个标签页是基本属性，htm打印项内容在第二个标签页里，切换到第二个标签页<br />（图）</p>
+<p>第二个标签页就可以看到实际传入的内容。<br />如果内容较少，想直接在该页面查看，可以勾选换行，可以查看的更方便。<br />（图）</p>
+<p>JS源码是这样的，获取页面的form1元素的的htm：<br />LODOP.ADD_PRINT_HTM(88,200,350,600,document.getElementById("form1").innerHTML);<br />如果有变量，URL，等，也可以通过该打印设计查看下具体内容和样式。</p>
+<p>如果有多个htm，被遮挡了，怎么查看有问题的htm：<br />打印设计的左侧打印项列表，可以用来选中不同的打印项，选中后也可以右键属性里查看。</p>
+<p>如果不是展开状态，进入打印设计，点击左侧的小三角形，可展开打印项列表。<br />（图）</p>
+<p>如图，在左侧列表选中右键属性里也可以查看：<br />（图）</p>
+<p>由于打印设计不能展示多页，多页打印项都会重叠在一起，如果想直接在打印设计排查某个打印项，也可以从左侧列表里选中需要的打印项，右键属性里查看。<br />（当然，也可以单独摘取出有问题的页数里的打印项，单独测试）<br />（图）</p>
+<p>以下是一些常见的排查：</p>
+<p>（1）某个打印项输出了重复的内容<br />可以进入打印设计，右键属性里查看下传入的具体值，如果传入的就是重复的内容。<br />说明问题在数据传输方面，lodop传入什么打印什么。<br />例如变量赋值出现问题，变量值异常，数据没有更新等。</p>
+<p>如果是通过 类名赋值，<br />例如：按项目类名赋值,项目类型是aa：<br />LODOP.SET_PRINT_STYLEA(&lsquo;aa&rsquo;,"Content","学生证");//项目类名是aa的所有打印项内容被替换<br />这种方式注意同类名的都会被替换。</p>
+<p>（2）内容显示不全<br />进入打印设计，右键属性里查看下传入的具体值，是否传入的数据就是不全的。<br />如果传入的内容缺少，在JS里排查变量或赋值或数据来源等问题。</p>
+<p>如果内容是全的，但是个别电脑就是显示不全，观察预览的情况，是否是不同电脑纸张不同引起的超出纸张问题，或一些样式问题。</p>
+<p>（3）样式出现问题<br />由于html在浏览器中，有浏览器为容器，在纸张中，是纸张容器，因此容器不同如果样式不固定，会受容器影响，引起一些样式差异：</p>
+<p>排查是否和容器有关：<br />可以把它们复制成一个独立html文件用IE浏览器(一定要用IE)打开看看效果，查看时调整浏览器窗口接近纸张大小。 用IE浏览器查看，查看时调整窗口，这样可以看到html代码是否与容器大小有关.</p>
+<p>关于不同电脑htm样式不同问题（虚拟打印机也不同，排除打印机问题）</p>
+<p>尽量用通用的样式：<br />查看lodop内部解析的html信息，见http://www.c-lodop.com/faq/pp8.html<br />分析差异点，因浏览器版本不同遵循的html标准不同，造成某些标签属性显示有差异，尽量避免使用有差异的属性，可以在ie下不同版本仿真情况下验证差异 排查样式，尽量使用使用各浏览器无歧义的通用的 html css js，不支持的样式可尝试用其他样式代替。</p>
+<p>图形模式输出：<br />可尝试把ADD_PRINT_HTM 换成 ADD_PRINT_HTML（图形模式）试试，ADD_PRINT_HTML不如ADD_PRINT_HTM清晰，适合高精度的打印机，两者各有优势。<br />由于ADD_PRINT_HTML是图形模式，大部分普通打印机都不清晰，建议还是用普通模式，排查样式，除非自己测试图形模式清晰度符合自己的要求。</p>
+<p>排查样式：<br />Lodop是基于本机windows底层引擎进行渲染解析的，与ie调用的引擎一致。在样式有问题所在电脑上，尝试重置ie，升级ie，<br />或排查下样式http://www.c-lodop.com/faq/pp8.html，通过删减或做简单例子排查，找到出问题的样式，修改样式。</p>
+<p>lodop本身没有解析超文本的引擎，调用每个客户端本机windows底层引擎，与底层IE一致<br />排查样式，尽量用通用的各种IE支持的样式，以预览效果为准排查调整样式</p>
+<p>出现问题时，注意应在在有问题的电脑上进行排查，lodop本身没有解析超文本的引擎，调用每个客户端本机windows底层引擎，所以存在不同电脑解析效果有差异问题。<br />这种情况可通过排查样式，修改样式进行解决，一些问题也可以通过升级IE解决。</p>
+<p>（这里指当前视频发布时间附近的版本，由于lodop不断升级，以后也可能会抛弃IE引擎。）<br />（linux版用的是当前浏览器引擎解析，和windows版不同，这里指windows版的，不包含lodop7）</p>
+<p>有的电脑样式是正常的，有的不行，不能统一吗？<br />由于lodop本身没有解析超文本的引擎,客户端底层引擎的一些样式可能有差异，只能通过排查样式，尽量用通用的样式。</p>
+<p>或建议使用ADD_PRINT_TEXT等纯文本和画线进行设计，这种不受浏览器引擎解析的影响。<br />参考http://www.c-lodop.com/demolist/PrintSample4.html<br />画线输出表格，参考http://www.c-lodop.com/demolist/PrintSampleA1.html</p>
+<p><br />LODOP.PRINT_DESIGN();打印设计右键属性里可以看到实际传入的内容。<br />如果是ADD_PRINT_URL方式，也可以看到URL里的html实际内容。<br />（图）</p>
+<p>当然，不建议用URL方式：<br />由于Lodop借用IE下载引擎，与非IE浏览器之间目前不能传递Session(Cookies)，所以需要安全验证的页面不要用URL方式打印，要用页面已经下载好的内容的HTM方式打印，也就是ADD_PRINT_HTM或ADD_PRINT_TABLE等语句<br />另外URL方式需要二次访问服务器，理论上存在下载失败的可能，所以专业的管理系统尽量不要用URL方式。</p>
+<p>对于https地址的pdf，由于无法直接用URL方式，<br />参考欢迎页面的第四步，(例如Https方式)需先下载好再打印，<br />（注意这步演示需要访问地址https://localhost.lodop.net:8443/c_pdfprint才行）<br />且pdf所在域名和当前域名在同一个域名下，否则会有跨域问题，</p>
+<p>LODOP.PRINT_DESIGN();打印设计右键属性里可以看到实际pdf转成的base64，也可以用于排查。<br />（图）（图）</p>
+<p>demoDownloadPDF(strURL)是JS方法，在欢迎页面右键查看源码里，会把pd转成base64.</p>
+<p>即使是用的纯文本等设计的，可以在打印设计选中打印项右键属性里辅助排查传入的内容等，由于代码里多变量，调试JS，或改成打印设计，也可以辅助排查纯文本的内容属性和文本内容。</p>
+<p>有一种异常情况，打印设计没问题，预览和打印有问题，且只在一个电脑上发生，这种一般是打印维护本地配置的影响：<br />http://www.c-lodop.com/faq/pp9.html</p>
+<p>预览和设计JS代码不一致的情况：<br />1：改一下初始化语句设置的打印任务名，使其长而与众不同，从而让Lodop指向一个不存在的配置文件；<br />2：如要禁用本地微调功能，则干脆设置打印任务名为空：LODOP.PRINT_INIT("");<br />3：如不改程序语句而想清理本地配置文件，可以进入打印维护界面，在&ldquo;复原&rdquo;按钮旁边找&ldquo;恢复整体缺省&rdquo;菜单，恢复后再按&ldquo;应用&rdquo;按钮.，</p>
+</div>
+</div>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>

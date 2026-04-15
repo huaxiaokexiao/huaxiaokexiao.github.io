@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】多页打印维护的调整（对象类名）维护一页，所有页都被维护（newblog143）（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】多页打印维护的调整（对象类名）维护一页，所有页都被维护（newblog143）（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】多页打印维护的调整（对象类名）维护一页，所有页都被维护（newblog143）（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>样例26演示了批量打印，还有批量打印维护模板的问题，这里详细解释和介绍下为什么要用类名，如何维护一页模板，该任务所有页的打印项都会被维护。<br />会介绍一些常见的问题和错误用法导致的现象。<br />http://www.c-lodop.com/demolist/PrintSample26.html</p>
+<p>首先介绍下什么是打印维护：<br />打印维护（PRINT_SETUP语句）功能是提供给客户端单个电脑微调用的，为了让微调结果永久有效，Lodop会在本地为该过程对应生成一个ini配置文件，文件路径和文件名类似如下： 系统盘符:\Program Files (x86)\MountTaiSoftware\Lodop\PrintSetups_打印任务名.ini</p>
+<p>其中的&ldquo;打印任务名&rdquo;是初始化语句的参数设置的：<br />LODOP.PRINT_INIT("具体的打印任务名");<br />或： LODOP.PRINT_INITA(0,0,800,600,"具体的打印任务名");</p>
+<p>最常见的就是解决不同打印机的偏移问题，有些打印机不在初始位置，可以根据该打印机用打印维护本地整体偏移，针对该打印机的内容偏移位置进行调整。<br />打印维护由于截图在客户端本地生成ini文件，所以对其他客户端没有影响。<br />当有打印维护本地配置的对应任务名的ini文件2时，不会走代码里的语句，会根据ini结果显示预览和打印。</p>
+<p>做个简单例子演示下打印维护的功能：<br />这是个简单的两个text文本的打印内容，第二个参数是左边距，两个左边距34，对齐的。<br />（原始页面代码的内容，如图）<br />（图）</p>
+<p>这个是预览效果：<br />（图）</p>
+<p>演示打印维护的调整功能：<br />把第二个文本随便往右移动了一下，在打印维护点应用<br />（图）</p>
+<p><br />页面没有改任何代码情况下，进入预览查看下：<br />（可以看到预览第二个text没有按照代码里的左边距走，而是打印维护调整后的）<br />（图）</p>
+<p>在该电脑的类似路径下，可以看到生成了对应打印维护的ini文件：<br />C:\Program Files (x86)\MountTaiSoftware\Lodop<br />（图）</p>
+<p>这就是打印维护的功能，针对某个电脑微调，对其他客户端没有影响，本地微调。</p>
+<p>这个打印维护可以影响预览和直接打印，还有打印维护，对打印设计没有影响，打印设计还是会走原始代码的：<br />（图）</p>
+<p>当发现预览和打印出现异常，但JS代码和打印设计都正常时，就可以排查打印维护本地配置的影响了<br />如果想恢复到和是原始代码一致，可以恢复整体缺省。<br />进入打印维护&mdash;&mdash;点恢复整体缺省&mdash;&mdash;点应用<br />即可恢复到代码里的情况，如果需要重新调整，可以根据原代码再进行维护。<br />（图）</p>
+<p>上面是对打印维护的简单介绍，下面是演示对象类名，是如何维护一页，让该任务所有页的同类名的打印项都被维护的。<br />（图）</p>
+<p>还是上面那个例子，一个只有两个text的简单页面：<br />由于需要加类名，ADD_PRINT_TEXT换成ADD_PRINT_TEXTA，第一个参数为类名<br />	function CreateOnePage(W3,W4){	<br />    LODOP.NEWPAGEA();<br />	LODOP.ADD_PRINT_TEXTA("text01",25,34,100,20,W3);<br />    LODOP.ADD_PRINT_TEXTA("text02",61,34,100,20,W4);<br />	};</p>
+<p>在一个任务里，循环10页这样的页面：<br />	function prn1_preview() {<br />    LODOP=getLodop();	<br />    LODOP.PRINT_INIT("克里斯蒂");<br />	for (j = 1; j &lt;=10; j++) {<br />	CreateOnePage("A文本"+j,"B文本"+j);			<br />	};	;<br />	LODOP.PREVIEW();	<br />	};</p>
+<p>打印维护功能，只写一页的：<br />	function prn1_setup() {	<br />    LODOP=getLodop();<br />    LODOP.PRINT_INIT("克里斯蒂");<br />    CreateOnePage("A文本1","B文本2");<br />	LODOP.PRINT_SETUP();	<br />	};</p>
+<p>点击打印维护，随便拖动第二个打印项到右边一些，点应用，可以看到当前打印维护只有两个打印项，也就是1一页。<br />（图）</p>
+<p>再进入打印预览，切换后面的页数，可以看到不只是第一页的打印项，后面的所有同类名的打印项都被维护了，第二个text位置变为了打印维护后的位置。<br />（图）</p>
+<p>为什么要用类名，不用类名不行吗？<br />不行，10页循环里有多个打印项，如果想维、护一页，该任务所有页都被维护，需要设置相同的类名，例如上面的例子，第二个text都有同样的类名：text02</p>
+<p>这边也演示下不用类名会有什么现象？<br />（图）<br />LODOP.NEWPAGEA();<br />LODOP.ADD_PRINT_TEXT(25,34,100,20,W3);<br />LODOP.ADD_PRINT_TEXT(61,34,100,20,W4);</p>
+<p>打印维护还是移动下，点应用，进入预览，可以看到第一页是维护后的结果，但第2页以及之后的页数并没有被维护，还是走的代码的里的位置。<br />（图）</p>
+<p>如果想同一个模板，维护一页，该任务所有页都被维护，则可以用设置类名方式。</p>
+</div>
+</div>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>

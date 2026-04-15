@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】非TEXT文本如何设置打印项类名（对象类名）（newblog144）（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】非TEXT文本如何设置打印项类名（对象类名）（newblog144）（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】非TEXT文本如何设置打印项类名（对象类名）（newblog144）（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>之前的视频介绍了多页打印任务，维护一页，所有页都被维护，由于套打一般是固定格式的，以ADD_PRINT_TEXT纯文本居多，纯文本不受浏览器解析的影响，因此样例26演示的是纯文本多页。<br />参考样例26，http://www.c-lodop.com/demolist/PrintSample26.html<br />（图）<br />【LODOP】多页打印维护的调整（对象类名）维护一页，所有页都被维护</p>
+<p>类名可以用来赋值，可以用来多页打印时，维护一页，所有页都会被维护的情况等。</p>
+<p>其他打印项也是可以设置类名的，<br />ADD_PRINT_TEXT加类名的方式，是用ADD_PRINT_TEXTA，这个带A的，这个带A的前面多了个参数，类名参数。</p>
+<p>这里再介绍下其他打印项设置类名的语句和情况：<br />不直接写语句，也可以用打印设计可以辅助生成代码，LODOP.PRINT_DESIGN();<br />（1）进入打印设计，选中需要设置对象类名的打印项，右键属性里，设置对象类名，点确定。<br />（图）<br />（2）点打印设计里的生成代码，(或JS返回代码，参考样例35），就可以看到当前打印项类名的设置方法<br />（图）</p>
+<p>套打还经常用到条码，条码打印项可以设置类名吗？<br />可以，例如上面的用打印设计生成的代码。<br />LODOP.ADD_PRINT_BARCODE替换成LODOP.ADD_PRINT_BARCODEA，带A的这个多了第一个参数对象类名。<br />LODOP.ADD_PRINT_BARCODEA("a",10,21,154,60,"Code39","123456789012");</p>
+<p>是不是只要给打印项加A，就可以设置类名？<br />并不是这样的，这边再演示图片和htm超文本设置类名，可以用打印设计后生成下代码。<br />（图）</p>
+<p>图片，htm等打印项，可以用ItemName设置对应打印项的类名。<br />LODOP.SET_PRINT_STYLEA(0,"ItemName","htm1");</p>
+<p>条码用BARCODEA，文本用TEXTA，图片和HTM用ItemName设置对象类名。<br />LODOP.ADD_PRINT_BARCODEA("b1",16,32,154,60,"Code39","123456789012");<br />LODOP.ADD_PRINT_TEXTA("t1",86,31,100,20,"新加文本2");<br />LODOP.ADD_PRINT_IMAGE(28,254,300,160,"&lt;img border='0' src='http://localhost:8000/CLodopDemos/PrintSample8.jpg' /&gt;");<br />LODOP.SET_PRINT_STYLEA(0,"ItemName","im1");<br />LODOP.ADD_PRINT_HTM(190,50,300,100,"&lt;body&gt;\r HTML Demo content\r &lt;br&gt;&lt;font color=\"#FF0000\"&gt;Double click me and modify...&lt;/font&gt;\r&lt;/body&gt;");<br />LODOP.SET_PRINT_STYLEA(0,"ItemName","htm1");</p>
+<p><br />除了TEXT打印项，其他打印项可以用类名赋值吗？<br />可以，方法相同，给其他打印项如htm设置类名后，再根据类名赋值即可。<br />LODOP.ADD_PRINT_HTM(190,50,300,100,"&lt;body&gt;\r HTML Demo content\r &lt;br&gt;&lt;font color=\"#FF0000\"&gt;Double click me and modify...&lt;/font&gt;\r&lt;/body&gt;");<br />LODOP.SET_PRINT_STYLEA(0,"ItemName","htm1");<br />LODOP.SET_PRINT_STYLEA("htm1","Content","&lt;body&gt;替换后的htm&lt;/body&gt;");</p>
+<p>LODOP.SET_PRINT_STYLEA("对象类名","Content","需要重赋的值");<br />（图）</p>
+</div>
+</div>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>

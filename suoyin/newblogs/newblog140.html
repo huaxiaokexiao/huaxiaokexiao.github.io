@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】远程预览显示空白（端桥预览空的，什么也没有）（newblog140）（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】远程预览显示空白（端桥预览空的，什么也没有）（newblog140）（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】远程预览显示空白（端桥预览空的，什么也没有）（newblog140）（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>远程预览界面上显示空白区域，也没有纸张，远程预览下方显示纸张为0,0,界面上也看不到白色的纸张。<br />（图）<br />这个视频介绍出现这种情况可能的几个原因，以及可以尝试的几种方法。</p>
+<p>1.对集中打印或AO服务器，一般是租的网上的云服务器，有时候需要远程操作服务器。<br />注意在操作时，远程桌面链接时，取消勾选打印机，<br />远程桌面操作者，在远程桌面-&gt;选项-&gt;本地资源-&gt;去掉勾选项&ldquo;打印机&rdquo;，如图<br />（图）</p>
+<p>如果不取消勾选，服务器上会出现重定向字样的打印机，可能会造成一些问题，上面那种预览什么都没有情况也是其中一种情况。</p>
+<p>2.AO服务器上没有打印机存在<br />端桥模式，发送端，AO服务器端，都不是打印端，实际打印端在端桥。<br />因为AO服务器只作为中转，不需要打印，因此可能出现AO服务器上一个打印机也没有情况，之前发现一个打印机也没有时，该操作系统的windows打印服务可能会出现异常，因此如果遇到这种情况，可以在AO服务器上安装一个打印机(可以是虚拟打印机）试试，不打印，只装上，为了确保AO服务器上的windows打印服务正常。</p>
+<p>3.端桥端出现异常，端桥不在线，端桥下打印机驱动存在问题<br />如果有多个端桥，可以用其他端桥测试下，如果只有一个端桥有问题，可以确认异常在该端桥电脑上。</p>
+<p>可以尝试：<br />在该端桥端：<br />以管理员权限安装最新版c-lodop测试下http://www.c-lodop.com/download.html<br />或，桌面上的c-lodop快捷方式，右键以管理员权限运行试试，以管理员权限重启本机c-lodop<br />重启端桥端c-lodop后再测试下。</p>
+<p>4.端桥下共享打印机故障<br />共享打印机故障会导致一些异常，先用其他端桥测试，确认问题在该端桥电脑上。<br />观察该端桥电脑windows打印机列表是否有共享打印机，删除所有共享打印机，只用本地打印机再测试下。<br />如需要共享打印机，删除后再重新安装共享下。</p>
+<p>5.打印到了集中打印或AO服务器的虚拟打印机上<br />目前的许多虚拟打印机保存成xps或pdf文件，都是弹窗方式，弹出选择路径保存对应的文件。<br />集中打印或AO端桥模式，属于远程打印，如果远程那里没有人点击弹窗点确认，会造成异常。<br />AO服务器安装c-lodop时勾选云服务工作模式，可禁用虚拟打印机，防止打印到AO服务器上造成问题。</p>
+<p>6.多个发送端同时打印，同时预览，出现异常<br />表现为所有端桥都出现问题，都是预览什么也没有，也没有空白的纸张。<br />因为所有端桥都出现了问题，所以和AO服务器有关，重启AO服务器上的c-lodop可以解决该问题。</p>
+<p>并尝试安装最新版，该版本之后的版本有处理：<br />AO服务器上以管理员权限安装最新版c-lodop测试下http://www.c-lodop.com/download.html<br />6.6.1.1<br />修正：解决内嵌预览内的同步打印偶尔引起的死锁问题;</p>
+<p>上面是一些可能的远程预览出现什么也没有，也无纸张的情况。</p>
+<p>之前视频里提到了一些端桥打印不出来情况，这个视频只说明预览界面什么都没有的情况，其他的也简略介绍下：<br />【LODOP】AO端桥模式打印不了，端桥打印机任务出不来<br /> https://v.douyin.com/Czv1ahw-j7U/</p>
+<p>简略减少其他端桥打印不了的（之前的视频简略总结）：<br />1.clodopFuncs.js访问不了(AO服务器异常），<br />集中或AO服务器上的c-lodop没启动；<br />端口被阻挡，未在防火墙放开对应端口；<br />https的自己的域名出现异常；</p>
+<p>2.免费版超出5个限制，访问欢迎页面提示超出限制<br />如需用于测试，重启c-lodop后可以重新计数</p>
+<p>3.端桥不在线（某端桥异常），<br />端桥电脑处于关机状态<br />端桥电脑c-lodop没启动<br />端桥电脑网络出现问题，网络异常<br />端桥电脑系统打印服务(Print Spooler)，windows打印服务异常<br />端桥电脑某共享打印机或某打印机驱动异常</p>
+<p>如需确认问题，可在异常时，通过测试欢迎页面排查问题：<br />集中打印，访问下http://[C-Lodop服务所在主机ip或域名]:[C-Lodop端口]，<br />端桥打印，访问下http://[C-Lodop服务所在主机ip或域名]:[C-Lodop端口]/c_aobridge</p>
+</div>
+</div>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>

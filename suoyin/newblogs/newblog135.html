@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】图片变成了横向（图片横向纵向）（newblog135）（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】图片变成了横向（图片横向纵向）（newblog135）（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】图片变成了横向（图片横向纵向）（newblog135）（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>htm中有些图，某个图本身是纵向的，打印出来却是横向的，是怎么回事？</p>
+<p>此问题表现于：<br />在htm中有img标签的纵向图片，在谷歌浏览器中显示正常，但打印出来图片变成了横向的。</p>
+<p>目前发现这个和图片本身有关，目前发现两种情况，一种是资料中人物的照片，由客户自己上传，出现了某一张原本纵向的照片，变成了横向的。<br />一种可能是扫描件，某一张谷歌浏览器中显示纵向，打印时显示成了纵向。</p>
+<p>因为和图片本身有关，所有大部分正常图片不会出现这个问题，只有很少情况遇到的异常图片会出现问题。<br />异常图片本身内部生成时可能方向本身有问题。</p>
+<p>此问题不好解决，目前有两种方式：<br />1.单独输出图片，可以通过加旋转语句旋转图片打印项。<br />LODOP.SET_PRINT_STYLEA(0,"Angle",90);（新版本可以旋转图片了）<br />（缺点：无法判断客户的图片是否是正常的，毕竟大部分图片都是不需要旋转的。导致预览前无法确定是否需要旋转图片）<br />如果正常图片和异常图片，都在同一个模板里，异常图片就会出错，但如果图片是用户提供的，则无法判断提供的图片是否异常。</p>
+<p>2.把异常图片处理下，以下方法可能有帮助：<br />（1）.通过某些图片查看器查看图片<br />（2）.通过画图工具打开图片，重新保存或另存为一下。<br />（3）.用PS工具另存为一下<br />（缺点，需要用户那边预先处理异常的图片）<br />可以发现出问题的图片后，联系用户，让用户用以上方法处理下，再让对方重新上传。</p>
+<p>此问题并不常见，一般的图片都是正常的，这种问题之前出现过一次上传任务资料的照片，最近又遇到一个扫描图也出现这个问题，只遇到过三次。<br />原因不了解，猜测估计是图片生成时，内部的方向在生成时存在问题，或其他软件对图片旋转过导致一些方向异常。</p>
+<p>该问题不常见，最好的方法就是联系用户，让对方把异常图片修改下，从lodop打印方面无法区分异常图片和正常图片。</p>
+<p>---结束-----</p>
+<p>对图片和现象测试了下，下面是一些图片的现象：<br />（原因不明，后续的可以不用看，只是查看下情况）</p>
+<p>这是一张异常图片：<br />图片右键属性里，查看属性修改一栏，看到该图片宽高：2732 x1928<br />确实是横向的图片。<br />（图）</p>
+<p>但同一张图，在详细信息一栏里，看到的图片却是这样：<br />1928 x 2732<br />是纵向的图片。<br />（图）</p>
+<p>同一张图右键属性里出现了宽高相反情况。<br />正常的图片查看时，这两栏的宽高是一致的。</p>
+<p>该图片在IE里，用本地路径打开图片：<br />IE本显示横向<br />（图）</p>
+<p>IE里htm内部img标签方式，显示横向<br />（图）</p>
+<p>谷歌tm内部img标签方式，显示纵向<br />（图）</p>
+<p>本来认为是IE解析问题，lodop目前是底层IE引擎解析，但IE里直接打开磁盘本地路径图片，也会显示横向，可见该图片原本可能应该是横向的。</p>
+<p><br />此外有些查看器本身，当旋转查看时，推出时保持旋转状态，也会改变图片的方向，自己测试了几个：</p>
+<p>用windows查看器打开该图片，点旋转<br />然后关闭windows查看器，<br />可以发现该图片原本纵向的，显示了横向，属性里两栏也会变成相同的横向。<br />windows查看器旋转可以影响异常图片的方向。</p>
+<p>有些查看器点旋转，查看后图片方向会变化，而有些查看器查看后不会变化。<br />360查看器查看视图里点旋转，会弹出一个提示框，保留图片原始方向，只是视图旋转，或旋转方向。<br />（图）</p>
+<p>用wps打开图片，旋转图片，也会导致图片旋转。<br />目前测试的不多，查看器旋转后，无论是横向，还是纵向，会固定方向。<br />并不会出现图片右键属性里，两个属性界面出现相反宽高的情况，对于这种图片是如何生成的，并不太了解，且遇到的比较少</p>
+<p>可能（1）图片生成时，内部生成的方向指定出现问题。<br />可能（2）某些图片查看器等，旋转了部分属性方向，但有些地方又呈现原始方向。</p>
+<p>对于异常图片，无法判断识别吗，异常图片打印横向的怎么办？<br />程序代码里无法区分，无法判断哪些图片正常，哪些图片异常，都是同样的模板，无法控制客户上传的图片是否正常。<br />由于这种图片很少见（不知道是什么原因导致的），一般遇不到，发现出问题的图片后，联系用户，让用户用前面提到的方法处理（画图,ps，等工具另存为）下，再让对方重新上传。</p>
+<p>&ldquo;Windows图片查看图片修改和图片属性不一致&rdquo;问题，通常指在图片查看器中对图片进行了调整（如旋转、裁剪），但保存后查看文件属性时，发现修改未被应用或属性信息（如尺寸、方向）与实际显示不符。这在Windows系统中是常见现象，主要原因和解决方法如下：</p>
+<p>主要原因<br />&zwnj;查看器仅预览，不修改原文件&zwnj;：Windows&ldquo;照片&rdquo;应用或&ldquo;照片查看器&rdquo;在打开图片时，对图片进行的旋转、翻转等操作通常是&zwnj;临时的、基于元数据（EXIF）的显示指令&zwnj;，并非直接修改图片的像素数据。当您关闭图片时，这些操作可能不会被自动保存到原文件中。<br />&zwnj;元数据（EXIF）与实际像素数据不一致&zwnj;：图片文件（如JPEG）通常包含EXIF元数据，其中记录了图片的拍摄方向（Orientation）。查看器会读取此信息来正确显示图片。如果您在查看器中旋转了图片，但系统未正确更新或写入EXIF数据，就会导致&ldquo;显示&rdquo;与&ldquo;属性&rdquo;（如原始尺寸、方向）不一致。<br />&zwnj;文件格式或权限限制&zwnj;：某些图片格式（如HEIC、RAW）或受保护的文件，可能不允许查看器直接修改其内容。此外，如果文件被设置为只读，任何修改都无法保存。</p>
+</div>
+</div>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>
