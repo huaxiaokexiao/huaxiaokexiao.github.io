@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>【非常见问题杂笔记】cors报错，c-lodop自动关闭，打印标签等</title>
+  <!--<script language="javascript" src="LodopFuncs.js"></script>-->
+ <!-- <script src='http://localhost:8000/CLodopfuncs.js'></script>-->
+ </head>
+ <body>
+<style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>LODOP超简短问答-【非常见问题杂笔记】等</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../qa_notes3.html"><div class="menuitem"><span style="color:blue;">问答等记录笔记，具体问题</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【非常见问题杂笔记】等</h1>
+------------<br>
+1.<span style="color: blue; font-weight: bold;">下在的6.6.3.8版本，把LodopFuncs.JS文件上传到项目，就报错</span><br>
+是报错CORS阻挡吗，如果是<br>
+关于谷歌Chrome浏览器访问本地打印设备问题的解决方案<br>
+(微软Edge浏览器也一样)<br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+修改浏览器设置<br>
+操作步骤：<br>
+让客户在 Chrome 地址栏输入：chrome://flags/#local-network-access-check<br>
+找到 “Local Network Access check” 这个选项。<br>
+将其从 Default 改为 Disabled。<br>
+点击右下角的 “Relaunch” 重启浏览器。<br>
+<br>
+2.<span style="color: blue; font-weight: bold;">为什么今天打印全部不行了？</span><br>
+查看下浏览器的JS报错信息，如果是CORS阻挡了<br>
+关于谷歌Chrome浏览器访问本地打印设备问题的解决方案<br>
+(微软Edge浏览器也一样)<br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+修改浏览器设置<br>
+操作步骤：<br>
+让客户在 Chrome 地址栏输入：chrome://flags/#local-network-access-check<br>
+找到 “Local Network Access check” 这个选项。<br>
+将其从 Default 改为 Disabled。<br>
+点击右下角的 “Relaunch” 重启浏览器。<br>
+<br>
+3.<span style="color: blue; font-weight: bold;">银河麒麟一直卡在这</span><br>
+以root权限安装测试下，重启电脑，重新安装测试下<br>
+<br>
+是否是操作系统出现了异常，重启电脑后，重新安装测试下<br>
+<br>
+是否是启动出现了问题，备用进程会再次启动。<br>
+再出问题时，可以观察下可能是什么导致了lodop7的启动异常<br>
+<br>
+参考http://www.c-lodop.com/blogs/Blog027.html<br>
+<br>
+c-lodop日志功能，在端口设置界面的右键菜单里勾选 RunLog Status<br>
+web地址查看：http://localhost:8000/c_sysmessage?subopt=acrc<br>
+<br>
+4.<span style="color: blue; font-weight: bold;">最新版本不能安装</span><br>
+以管理员权限安装最新版c-lodop测试下http://www.c-lodop.com/download.html<br>
+右键以管理员权限运行测试下<br>
+<br>
+5.<span style="color: blue; font-weight: bold;">每次我到这里我不知道下载哪个</span><br>
+可以安装发行包里的32位c-lodop，<br>
+32位c-lodop支持32和64位操作系统，可以都安装32位的c-lodop<br>
+http://www.c-lodop.com/download.html<br>
+<br>
+查看下浏览器的JS报错信息，如果是CORS阻挡了<br>
+关于谷歌Chrome浏览器访问本地打印设备问题的解决方案<br>
+(微软Edge浏览器也一样)<br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+修改浏览器设置<br>
+操作步骤：<br>
+让客户在 Chrome 地址栏输入：chrome://flags/#local-network-access-check<br>
+找到 “Local Network Access check” 这个选项。<br>
+将其从 Default 改为 Disabled。<br>
+点击右下角的 “Relaunch” 重启浏览器。<br>
+<br>
+http://www.c-lodop.com/faq/ph01.html<br>
+再排查其他条目，目前所有注册号无效问题都在里面<br>
+<br>
+6.<span style="color: blue; font-weight: bold;">我们这边也是 客户门店说提示未安装，也是按照上面这样处理吗</span><br>
+查看下浏览器的JS报错信息，如果是CORS阻挡了，是按照这个处理<br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+7.<span style="color: blue; font-weight: bold;">最近两天大批量提示找不到打印机，这是什么情况？</span><br>
+查看下浏览器的JS报错信息，如果是CORS阻挡了<br>
+关于谷歌Chrome浏览器访问本地打印设备问题的解决方案<br>
+(微软Edge浏览器也一样)<br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+修改浏览器设置<br>
+操作步骤：<br>
+让客户在 Chrome 地址栏输入：chrome://flags/#local-network-access-check<br>
+找到 “Local Network Access check” 这个选项。<br>
+将其从 Default 改为 Disabled。<br>
+点击右下角的 “Relaunch” 重启浏览器。<br>
+<br>
+8.<span style="color: blue; font-weight: bold;">我们支持云打印吗</span><br>
+手机平板等的其他操作系统可以用集中打印，或广域网打印角色，后两种角色，打印到其他windows电脑上。<br>
+三种角色及使用方法 参考http://www.c-lodop.com/demolist/t1.html<br>
+<br>
+如果是指想远程打印，后两种可以远程打印到其他电脑上<br>
+<br>
+获取的是安装到windows打印机列表的打印机。<br>
+只要是能安装到windows打印机列表的打印机都可以。<br>
+可以测试下样例5,7能否获取到，http://www.c-lodop.com/demolist/PrintSample7.html<br>
+<br>
+不在windows打印机列表里的，获取不到<br>
+<br>
+是的，获取的是windows打印机列表的打印机<br>
+<br>
+不在windows打印机列表的，lodop获取不到<br>
+<br>
+必须是能安装到windows打印机列表的打印机<br>
+<br>
+非常抱歉，如果该打印机没有安装到windows打印机列表，lodop获取不到<br>
+<br>
+9.<span style="color: blue; font-weight: bold;">浏览器上做的打印功能，有些用户会遇到这种情况，然后一般重新安装下软件就可以了，过段时间可能又发生。这种情况一般是什么情况导致的？</span><br>
+查看下浏览器的JS报错信息，如果是CORS阻挡了<br>
+关于谷歌Chrome浏览器访问本地打印设备问题的解决方案<br>
+(微软Edge浏览器也一样)<br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+修改浏览器设置<br>
+操作步骤：<br>
+让客户在 Chrome 地址栏输入：chrome://flags/#local-network-access-check<br>
+找到 “Local Network Access check” 这个选项。<br>
+将其从 Default 改为 Disabled。<br>
+点击右下角的 “Relaunch” 重启浏览器。<br>
+<br>
+10.<span style="color: blue; font-weight: bold;">有个问题麻烦你们协助一下</span><br>
+发一下问题<br>
+<br>
+三种角色及使用方法：<br>
+参考http://www.c-lodop.com/demolist/t1.html<br>
+是后两种角色吗，访问下对应的欢迎页面<br>
+<br>
+访问下http://[C-Lodop服务所在主机ip或域名]:[C-Lodop端口]欢迎页面试试<br>
+<br>
+能访问说明安装启动调用正常，参考欢迎页面的使用方法<br>
+<br>
+参考欢迎页面的使用方法，能访问说明正常<br>
+<br>
+点欢迎页面的预览或打印试试，对照样例排查下<br>
+<br>
+访问下http://[C-Lodop服务所在主机ip或域名]:[C-Lodop端口]/c_aobridge<br>
+<br>
+清理下浏览器缓存，刷新页面，并用其他端桥测试下<br>
+<br>
+图文详解AO打印（端桥模式） 参考http://www.c-lodop.com/blogs/Blog014.html<br>
+注意AO服务的默认端口是9200，测试和管理(访问)端口是8000(备用端口18000），服务器开启防火墙的话，要开通这三个端口访问权。<br>
+<br>
+11.<span style="color: blue; font-weight: bold;">没准备好，加这个判断就不会有这个提示了吗</span><br>
+如果没准备好，可以设置提示没准备好，<br>
+<br>
+参考http://www.c-lodop.com/faq/pp3.html<br>
+如果是页面点击后打印，把获取LODOP对象放在打印按钮里触发。进入页面稍等一会再点击，参考样例<br>2http://www.c-lodop.com/demolist/PrintSample2.html<br>
+如果是需要一进入页面就进行打印，不需要点击页面的按钮等触发，可参考链接里的处理方法，加延迟或等c-lodop加载完再调用。<br>
+<br>
+如果是一进入页面就调用，可以尝试加延迟<br>
+<br>
+如果是点击后调用，进入页面稍等一会再点击<br>
+<br>
+是一直提示这个吗，查看下浏览器JS报错信息，是否有CORS阻挡<br>
+<br>
+进入页面稍等一会点击，或点击后再加一些延迟<br>
+<br>
+参考http://www.c-lodop.com/faq/pp3.html<br>
+<br>
+（图）<br>
+<br>
+如果是点击后调用，也可以在点击方法里再加延迟。<br>
+<br>
+因为只在第一次进入页面时有这个提示，也可以直接进入页面后稍等一会再点击<br>
+<br>
+不需要杀死所有得浏览器进程<br>
+点确定后，稍等一会再点击，如果c-lodop启动且调用正常，会正常使用<br>
+<br>
+参考http://www.c-lodop.com/faq/pp3.html<br>
+原因：调用打印语句（print或preview等）时机太早，在页面第一次加载完成后有几百毫秒时间等待WebSocket通讯服务准备完成。<br>
+<br>
+都是这个原因导致的，进入页面时c-lodop没准备好<br>
+<br>
+12.<span style="color: blue; font-weight: bold;">但是为啥 今天突然 都不能用了</span><br>
+查看下浏览器的JS报错信息，如果是CORS阻挡了<br>
+关于谷歌Chrome浏览器访问本地打印设备问题的解决方案<br>
+(微软Edge浏览器也一样)<br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+13.<span style="color: blue; font-weight: bold;">如何获取全部打印机列表啊</span><br>
+选择打印机，参考样例5、7<br>
+http://www.c-lodop.com/demolist/PrintSample5.html<br>
+http://www.c-lodop.com/demolist/PrintSample7.html<br>
+<br>
+（图）<br>
+<br>
+14.<span style="color: blue; font-weight: bold;">（图）请问这里的注册会绑定域名吗</span><br>
+不会，绑定的是主板网卡等硬件信息<br>
+<br>
+这属于端桥指向AO服务器问题，和注册无关<br>
+<br>
+如果只有一个端桥有问题，在该端桥排查下，或安装最新版后重新指向下<br>
+<br>
+http或https的，根据您自己的网站<br>
+<br>
+指向这里不涉及http或https，指向某个ip或域名，指向哪个地址是哪个的<br>
+<br>
+15.<span style="color: blue; font-weight: bold;">是lodop更新到最新版本才有问题吗？如果我依然用旧版本会有问题吗</span><br>
+旧版本还可以，谷歌147之后会有问题<br>
+<br>
+关于谷歌Chrome浏览器访问本地打印设备问题的解决方案<br>
+(微软Edge浏览器也一样)<br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+旧版本，或一些360,qq等其他浏览器可以<br>
+<br>
+也有关系，之前谷歌有段时间可以支持ws，安装比较新的版本可以走ws，谷歌147之后不行了<br>
+建议更新到最新版，如果也有问题，修改谷歌设置<br>
+<br>
+谷歌可能之后还会更新，这个CORS报错可能还会有，建议后续变成https网站<br>
+<br>
+https网站不受cors影响，查看下浏览器的JS报错信息<br>
+<br>
+（图）<br>
+如果是这个设置，可以根据链接设置允许，再测试下<br>
+<br>
+16.<span style="color: blue; font-weight: bold;">最新版本谷歌浏览器打印，识别不出来</span><br>
+查看下浏览器的JS报错信息，如果是CORS阻挡了<br>
+关于谷歌Chrome浏览器访问本地打印设备问题的解决方案<br>
+(微软Edge浏览器也一样)<br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+修改浏览器设置<br>
+操作步骤：<br>
+让客户在 Chrome 地址栏输入：chrome://flags/#local-network-access-check<br>
+找到 “Local Network Access check” 这个选项。<br>
+将其从 Default 改为 Disabled。<br>
+点击右下角的 “Relaunch” 重启浏览器。<br>
+<br>
+也可以安装最新版6638，对这个问题有处理<br>
+<br>
+参考http://www.c-lodop.com/c-lodopsteprec.html<br>
+修正: 应对chrome147及上版本问题;<br>
+6638可以解决当前谷歌附近的版本该问题<br>
+<br>
+17.<span style="color: blue; font-weight: bold;">打印插件的js为何还会出现跨域？</span><br>
+查看下浏览器的JS报错信息，如果是CORS阻挡了<br>
+关于谷歌Chrome浏览器访问本地打印设备问题的解决方案<br>
+(微软Edge浏览器也一样)<br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+并安装最新版c-lodop，更新最新的lodopFuncs.js<br>
+http://www.c-lodop.com/download.html<br>
+<br>
+最新版lodopFuncs.js里判断是https的会走https地址的<br>
+<br>
+最新版lodopFuncs.js在下载中心发行包里<br>
+（图）<br>
+<br>
+18.<span style="color: blue; font-weight: bold;">lodop打印最近出现这个问题</span><br>
+查看下浏览器的JS报错信息，如果是CORS阻挡了<br>
+关于谷歌Chrome浏览器访问本地打印设备问题的解决方案<br>
+(微软Edge浏览器也一样)<br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+修改浏览器设置<br>
+操作步骤：<br>
+让客户在 Chrome 地址栏输入：chrome://flags/#local-network-access-check<br>
+找到 “Local Network Access check” 这个选项。<br>
+将其从 Default 改为 Disabled。<br>
+点击右下角的 “Relaunch” 重启浏览器。<br>
+<br>
+19.<span style="color: blue; font-weight: bold;"> iframe  里面加载的https 网页， lodop 打印一直报错， 通过 修改浏览器设置..</span><br>
+谷歌浏览器升级问题，谷歌147之后的版本会有阻挡<br>
+<br>
+(图）<br>
+<br>
+http://www.c-lodop.com/blogs/Blg027.html<br>
+也可以尝试修改这个，点允许<br>
+<br>
+查看下浏览器的JS报错信息 <br>
+<br>
+并安装最新版测试下，测试下样例22的例子，<br>
+也是内嵌iframe的https://www.lodop.net/demolist/PrintSample22.html<br>
+<br>
+测试下官网样例，最新版lodopFuncs.js判断https的，会走https地址的<br>
+<br>
+最新版lodopFuncs.js在下载中心发行包里<br>
+（图）<br>
+<br>
+20.<span style="color: blue; font-weight: bold;">表情符不打印 有什么方案</span><br>
+获取的是操作系统字体库的字体，切换不同的字体测试下<br>
+<br>
+需要实际测试下，该符号哪个字体可以显示，可以用哪个字体<br>
+<br>
+21.<span style="color: blue; font-weight: bold;">为啥没有打开，还是提示已经被打开了</span><br>
+查看下浏览器的JS报错信息，如果是CORS阻挡了<br>
+关于谷歌Chrome浏览器访问本地打印设备问题的解决方案<br>
+(微软Edge浏览器也一样)<br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+修改浏览器设置<br>
+操作步骤：<br>
+让客户在 Chrome 地址栏输入：chrome://flags/#local-network-access-check<br>
+找到 “Local Network Access check” 这个选项。<br>
+将其从 Default 改为 Disabled。<br>
+点击右下角的 “Relaunch” 重启浏览器。<br>
+<br>
+22.<span style="color: blue; font-weight: bold;">32位操作系统，是需要安装32位的插件，不能安装64的，是吗？</span><br>
+参考http://www.c-lodop.com/faq/pp21.html<br>
+如果是指c-lodop，和操作系统位数有关，32位操作系统只能安装32位c-lodop<br>
+<br>
+23.<span style="color: blue; font-weight: bold;">2人的电脑打印，提示Cannot read properties of undefined(reading SET_PRINTER_INDEX')，其他人没有，这个什么问题？用的版本6.6.3.5</span><br>
+选择打印机，测试样例5、7<br>
+http://www.c-lodop.com/demolist/PrintSample5.html<br>
+http://www.c-lodop.com/demolist/PrintSample7.html<br>
+如果样例也报错，查看下浏览器的JS报错信息，如果是CORS阻挡了，参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+24.<span style="color: blue; font-weight: bold;">谷歌设置，这个我不可能让 每一个 用户都去 设置 一下 </span><br>
+查看下浏览器的JS报错信息，如果是CORS阻挡了<br>
+关于谷歌Chrome浏览器访问本地打印设备问题的解决方案<br>
+(微软Edge浏览器也一样)<br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+并安装最新版6638测试下http://www.c-lodop.com/download.html<br>
+<br>
+25.<span style="color: blue; font-weight: bold;">前端正常发送了打印数据给到打印机，发现打印机并没有打印同时也没有触发打印成功和打印失败的方法。这是由于什么原因呢 </span><br>
+选择打印机，参考样例5、7<br>
+http://www.c-lodop.com/demolist/PrintSample5.html<br>
+http://www.c-lodop.com/demolist/PrintSample7.html<br>
+直接测试下样例5,7试试，选不同的打印机测试下<br>
+<br>
+26.<span style="color: blue; font-weight: bold;">请问端桥和AO打印预览 支持显示这个旋转按钮吗</span><br>
+不支持，横向打印时，远程预览窗口会按照原始的纵向显示<br>
+<br>
+27.<span style="color: blue; font-weight: bold;">早上莫名出现这个错误</span><br>
+http网站，还是https的<br>
+<br>
+测试下https的例子，https://www.lodop.net/demolist/PrintSample2.html<br>
+<br>
+以管理员权限安装最新版c-lodop测试下http://www.c-lodop.com/download.html<br>
+安装后启动成功左上角，查看下启动的https端口是否是8443<br>
+<br>
+28.<span style="color: blue; font-weight: bold;">打印前选择打印 打印时取对应打印机是哪个示例</span><br>
+选择打印机，参考样例5、7<br>
+http://www.c-lodop.com/demolist/PrintSample5.html<br>
+http://www.c-lodop.com/demolist/PrintSample7.html<br>
+打印机优先级，参考http://www.c-lodop.com/blogs/Blog002.html<br>
+<br>
+29.<span style="color: blue; font-weight: bold;">打印设计中  高度是300   在预览的时候 内容显示不全</span><br>
+以预览为准调整样式，<br>
+打印设计中是可视化编辑区域，和纸张无关，<br>
+<br>
+“可打区域”边缘与打印机本身有关，表现在预览里是虚线，可打区域的影响<br>
+http://www.c-lodop.com/faq/pp26.html<br>
+并控制内容在可打区域范围内，留出足够的边距<br>
+<br>
+30.<span style="color: blue; font-weight: bold;">用html打印一个表格，表格里有一列打印图片，为啥前两页和最后一页正常打印出了图片，中间的都没有打印出图片，我看数据里是有图片标签的，帮忙看看</span><br>
+（1）查看lodop内部解析的html信息，见http://www.c-lodop.com/faq/pp8.html<br>
+查看一下传入的图<br>
+（..大段.)<br>
+<br>
+打印图片，参考样例8 http://www.c-lodop.com/demolist/PrintSample8.html<br>
+单独输出有问题的图片测试下，排查是否和该图片有关<br>
+<br>
+如何输出清晰图片 参考http://www.c-lodop.com/faq/pp14.html<br>
+<br>
+如何输出清晰图片 参考http://www.c-lodop.com/faq/pp14.html<br>
+如果想提高图片清晰度，只能用链接里的方法单独输出图片，单独定位<br>
+非常抱歉，htm内部的没有其他提高清晰度的方法，尽量用高精度的打印机<br>
+<br>
+htm内部的img图片没有提高清晰度的方法，建议用链接里的方法单独输出图片<br>
+<br>
+非常抱歉，htm内部的img图片没有提高清晰度的方法，建议用链接里的方法输出比较清晰<br>
+<br>
+31.<span style="color: blue; font-weight: bold;">这个是什么问题</span><br>
+点确定，可以继续覆盖启动<br>
+<br>
+并以管理员权限安装最新版c-lodop测试下http://www.c-lodop.com/download.html<br>
+<br>
+http网站，还是https的<br>
+<br>
+http://www.c-lodop.com/demolist/PrintSample2.html<br>
+或者<br>
+https://www.lodop.net/demolist/PrintSample2.html<br>
+测试下样例，如果样例也有问题，查看下浏览器的JS报错信息<br>
+<br>
+测试下这个http的例子<br>
+http://www.c-lodop.com/demolist/PrintSample2.html<br>
+如果也报错，查看下浏览器的JS报错信息<br>
+<br>
+如果样例也报错，查看下浏览器的JS报错信息，如果是CORS阻挡了<br>
+关于谷歌Chrome浏览器访问本地打印设备问题的解决方案<br>
+(微软Edge浏览器也一样)<br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+修改浏览器设置<br>
+操作步骤：<br>
+让客户在 Chrome 地址栏输入：chrome://flags/#local-network-access-check<br>
+找到 “Local Network Access check” 这个选项。<br>
+将其从 Default 改为 Disabled。<br>
+点击右下角的 “Relaunch” 重启浏览器。<br>
+<br>
+32.<span style="color: blue; font-weight: bold;">提示“有窗口已打开，先关闭它（持续如此请刷新页面）！”</span><br>
+参考http://www.c-lodop.com/faq/pp27.html<br>
+<br>
+没有，参考链接的条目<br>
+<br>
+桌面上的c-lodop快捷方式，右键以管理员权限运行试试，以管理员权限重启本机c-lodop<br>
+重启c-lodop可以关闭之前的窗口，可以重启c-lodop后再测试下<br>
+<br>
+参考http://www.c-lodop.com/faq/pp27.html<br>
+除了有窗口打开，也可能是之前的语句还没执行完，或系统没有打印机，或有故障的共享打印机，排查下链接里的其他条目<br>
+<br>
+33.<span style="color: blue; font-weight: bold;">部分客户插件连接不上什么原因 官网也是</span><br>
+关于谷歌Chrome浏览器访问本地打印设备问题的解决方案<br>
+(微软Edge浏览器也一样)<br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+修改浏览器设置<br>
+操作步骤：<br>
+让客户在 Chrome 地址栏输入：chrome://flags/#local-network-access-check<br>
+找到 “Local Network Access check” 这个选项。<br>
+将其从 Default 改为 Disabled。<br>
+点击右下角的 “Relaunch” 重启浏览器。<br>
+<br>
+修改后，重启下谷歌浏览器，再测试下样例<br>
+<br>
+34.<span style="color: blue; font-weight: bold;">这个是什么错误</span><br>
+关于谷歌Chrome浏览器访问本地打印设备问题的解决方案<br>
+(微软Edge浏览器也一样)<br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+修改浏览器设置<br>
+操作步骤：<br>
+让客户在 Chrome 地址栏输入：chrome://flags/#local-network-access-check<br>
+找到 “Local Network Access check” 这个选项。<br>
+将其从 Default 改为 Disabled。<br>
+点击右下角的 “Relaunch” 重启浏览器。<br>
+<br>
+是的，cors报错<br>
+<br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+可以测试下<br>
+如果安装6638也有问题，可以修改谷歌的设置<br>
+<br>
+35.<span style="color: blue; font-weight: bold;">chrome最新版本，限制ws形式的本地webSocket，导致打印插件无法正常启动</span><br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+不支持，或换成https网站<br>
+<br>
+修改浏览器设置<br>
+操作步骤：<br>
+让客户在 Chrome 地址栏输入：chrome://flags/#local-network-access-check<br>
+找到 “Local Network Access check” 这个选项。<br>
+将其从 Default 改为 Disabled。<br>
+点击右下角的 “Relaunch” 重启浏览器。<br>
+<br>
+可以修改下设置，修改后重启下谷歌浏览器<br>
+<br>
+不支持wss协议，只能是链接里的方式<br>
+<br>
+36.<span style="color: blue; font-weight: bold;">谷歌打印版本升级了吗 之前可以打印 现在一直提示没安装</span><br>
+查看下浏览器的JS报错信息，如果是CORS阻挡了<br>
+关于谷歌Chrome浏览器访问本地打印设备问题的解决方案<br>
+(微软Edge浏览器也一样)<br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+修改浏览器设置<br>
+操作步骤：<br>
+让客户在 Chrome 地址栏输入：chrome://flags/#local-network-access-check<br>
+找到 “Local Network Access check” 这个选项。<br>
+将其从 Default 改为 Disabled。<br>
+点击右下角的 “Relaunch” 重启浏览器。<br>
+<br>
+37.<span style="color: blue; font-weight: bold;">谷歌下载已屏蔽危险的下载内容</span><br>
+已提交360和金山，是否是微软的一些安全的阻挡<br>
+<br>
+百度下这个提示，修改谷歌浏览器的一些设置试试<br>
+<br>
+38.<span style="color: blue; font-weight: bold;">在走流程之前检查启动的端口是正常的，然后流程走完去打印的时候程序死掉了，我们的页面就卡死了，有什么原因可能会导致程序会死掉吗</span><br>
+程序会死掉，是指c-lodop处于未启动状态吗，如果是启动出现问题：<br>
+参考http://www.c-lodop.com/faq/pp5.html<br>
+<br>
+出现问题时，可以查看下浏览器的JS报错信息，如果是clodoFuncs.js访问不到，可能是启动出现问题。<br>
+如果是CORS阻挡了，参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+39.<span style="color: blue; font-weight: bold;">刚才购买了新的 SET_LICENSES 设置直接打印还是会有 试用水印 下载的是 Lodop6.226_Clodop6.638</span><br>
+根据注册类型，参考逐条排查一下http://www.c-lodop.com/faq/ph01.html<br>
+<br>
+40.<span style="color: blue; font-weight: bold;">有电话联系方式吗？我们这边有个问题比较急</span><br>
+发一下问题<br>
+<br>
+如果是CORS阻挡问题，<br>
+查看下浏览器的JS报错信息，如果是CORS阻挡了<br>
+关于谷歌Chrome浏览器访问本地打印设备问题的解决方案<br>
+(微软Edge浏览器也一样)<br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+http://www.c-lodop.com/about.html<br>
+这个里面有联系方式，建议通过文字和截图描述问题<br>
+<br>
+41.<span style="color: blue; font-weight: bold;">为啥这几天大面积出现这个问题啊</span><br>
+查看下浏览器的JS报错信息，如果是CORS阻挡了<br>
+关于谷歌Chrome浏览器访问本地打印设备问题的解决方案<br>
+(微软Edge浏览器也一样)<br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+查看下浏览器的JS报错信息，如果是CORS阻挡了，参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+http://www.c-lodop.com/download.html<br>
+6638<br>
+<br>
+42.<span style="color: blue; font-weight: bold;">麻烦帮我们排查一下原因，c-lodop自动关闭问题</span><br>
+以管理器安装最新版测试下，并排查链接里的条目<br>
+参考http://www.c-lodop.com/faq/pp5.html<br>
+<br>
+先确认下是最新版，启动问题有很多版本优化过。<br>
+<br>
+如果是最新版，再排查链接里的条目，常见的是权限问题，安全软件防火墙，故障的共享打印机<br>
+<br>
+出问题时，查看下浏览器JS报错信息，如果clodopFuncs.js报错是访问不到，排查启动问题<br>
+<br>
+您先确认下是被阻挡了，还是c-lodop处于没启动状态<br>
+<br>
+参考http://www.c-lodop.com/faq/pp5.html<br>
+链接里的这些条目，最常见的是权限问题，和共享打印机问题<br>
+<br>
+参考http://www.c-lodop.com/faq/pp5.html<br>
+如果确认是没启动，排查链接里的条目<br>
+<br>
+在有问题的电脑上排查<br>
+<br>
+目前发现的问题都在里面，如果怀疑和某个打印机驱动有关，可以删除所有打印机，重装打印机驱动<br>
+<br>
+除了链接里的，还有就是操作系统和打印机驱动问题了<br>
+<br>
+先用最新版测试下<br>
+<br>
+http://www.c-lodop.com/download.html<br>
+最新版是6638<br>
+<br>
+43.<span style="color: blue; font-weight: bold;">如何实现这个标签打印</span><br>
+快递单，小票，标签，票据等，建议用ADD_PRINT_TEXT等纯文本和画线等进行设计，不受浏览器解析的影响。<br>
+参考http://www.c-lodop.com/demolist/PrintSample4.html<br>
+<br>
+http://www.c-lodop.com/demolist/PrintSample3.html<br>
+建议用ADD_PRINT_TEXT等纯文本和画线，矩形等进行设计<br>
+<br>
+不是，用lodop画线输出，或矩形输出，lodop语句输出，不受浏览器解析的影响<br>
+参考http://www.c-lodop.com/demolist/PrintSample4.html<br>
+参考http://www.lodop.net/demolist/PrintSample18.html<br>
+画线输出表格，参考http://www.c-lodop.com/demolist/PrintSampleA1.html<br>
+<br>
+条码和二维码，可参考样例11，也可以用lodop语句输出<br>
+<br>
+线宽=高是水平直线<br>
+线宽=宽是垂直直线<br>
+<br>
+（图）<br>
+<br>
+超文本表格，<br>
+参考样例15 http://www.c-lodop.com/demolist/PrintSample15.html<br>
+参考样例43 http://www.c-lodop.com/demolist/PrintSample43.html<br>
+参考样例10 http://www.c-lodop.com/demolist/PrintSample10.html<br>
+参考样例2 http://www.c-lodop.com/demolist/PrintSample2.html<br>
+参考样例31 http://www.c-lodop.com/demolist/PrintSample31.html<br>
+纯文本和画线输出表格，<br>
+参考http://www.c-lodop.com/demolist/PrintSampleA1.html<br>
+<br>
+也可以用超文本，如果用超文本表格，尽量用通用的样式。<br>
+标签等格式比较固定，建议用纯文本画线。<br>
+<br>
+可以用table里的合并行合并列等样式<br>
+<br>
+参考样例2，样例43等<br>
+<br>
+44.<span style="color: blue; font-weight: bold;">（cors报错图）</span><br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+45.<span style="color: blue; font-weight: bold;">用样例可以看到爱普生的打印机，但是打印时，就是看不到，</span><br>
+这个斜线的应该是共享打印机<br>
+测试下样例5的打印机列表，是否可以获取到<br>
+http://www.c-lodop.com/demolist/PrintSample5.html<br>
+<br>
+这个也没有xps虚拟打印机，是否是第一种角色，访问的是客户端本地的c-lodop<br>
+三种角色及使用方法：<br>
+参考http://www.c-lodop.com/demolist/t1.html<br>
+<br>
+选择打印机，参考样例5、7<br>
+http://www.c-lodop.com/demolist/PrintSample5.html<br>
+http://www.c-lodop.com/demolist/PrintSample7.html<br>
+打印机优先级，参考http://www.c-lodop.com/blogs/Blog002.html<br>
+测试下样例5，如果能获取到，可以用语句指定下，优先级高<br>
+<br>
+46.<span style="color: blue; font-weight: bold;">提示“网页还没下载完毕，请稍等一下再操作.”</span><br>
+http://www.c-lodop.com/faq/pp3.html<br>
+<br>
+参考http://www.c-lodop.com/faq/pp3.html 新版修改了该提示，是同一问题，参考链接里的方法。<br>
+如果是需要一进入页面就进行调用，可参考链接里的处理方法，加延迟或样例22等c-lodop准备好。<br>
+<br>
+如果一直提示这个，查看下浏览器的JS报错信息<br>
+<br>
+47.<span style="color: blue; font-weight: bold;">（cors报错图）在一台电脑上调用失败了，检查了lodop程序正常启动了，端口也没有被占用，防火墙也关了，</span><br>
+关于谷歌Chrome浏览器访问本地打印设备问题的解决方案<br>
+(微软Edge浏览器也一样)<br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+48.<span style="color: blue; font-weight: bold;">code5拒绝访问</span><br>
+重启电脑，再以管理员权限重新安装下最新版试试。http://www.c-lodop.com/download.html<br>
+<br>
+如果重启电脑后也有异常，<br>
+百度下这个提示，试试网上的解决方法<br>
+权限的问题，典型的是无权用户写 system32 目录 等等 。重新设置用户权限<br>
+<br>
+49.<span style="color: blue; font-weight: bold;">（图,cors）</span><br>
+关于谷歌Chrome浏览器访问本地打印设备问题的解决方案<br>
+(微软Edge浏览器也一样)<br>
+参考http://www.c-lodop.com/blogs/Blg027.html<br>
+<br>
+50.<span style="color: blue; font-weight: bold;">顶级注册分版本吗</span><br>
+控件注册号 注意事项 最新价格表、购买方式和使用方法见(官网)：<br>
+http://www.c-lodop.com/Lodop_Lic.html<br>
+域名顶级或公司名顶级<br>
+<br>
+调用PDF打印没有效果，是指弹出需要顶级注册的弹窗，还是打印出现了问题<br>
+<br>
+在有问题的客户端，以管理员权限安装最新版c-lodop测试下http://www.c-lodop.com/download.html<br>
+最新版对pdf优化较多<br>
+<br>
+在该客户端安装最新版测试下<br>
+<br>
+pdf是有异常，还是空白，或有其他现象<br>
+<br>
+打印程序退出后就不通了，是指c-lodop启动出现了问题吗，还是有其他现象<br>
+<br>
+http网站，还是https的<br>
+<br>
+在有问题的客户端，可以先测试下样例自带的pdf，再测试下您自己的pdf<br>
+<br>
+（图）<br>
+也可以选其他打印机测试下，如果用虚拟打印机测试<br>
+用xps或pdf虚拟打印机测试下，<br>
+win7以后系统自带Microsoft XPS Document Writer虚拟打印机或者 下载安装群文件里的Doro PDF Writer虚拟打印机<br>
+<br>
+51.<span style="color: blue; font-weight: bold;">断开并停用该端桥 有没有 相关函数或者事件 可以调用的， 设备多， 需要清理一批。</span><br>
+没有相关函数可以地调用，或让端桥端取消指向该AO服务器<br>
+<br>
+52.<span style="color: blue; font-weight: bold;">网页没下载，就是进入页面，然后他就这个提示。</span><br>
+如果是需要一进入页面就进行调用，可参考链接里的处理方法，加延迟或样例22等c-lodop准备好。<br>
+<br>
+如果您想点击后调用，参考样例的写法，在点击按钮里加载lodop对象<br>
+<br>
+53.<span style="color: blue; font-weight: bold;">（水印）</span><br>
+根据注册类型，参考逐条排查一下http://www.c-lodop.com/faq/ph01.html<br>
+<br>
+购买的是什么类型的注册号，是ip域名的，还是公司名的<br>
+<br>
+1.浏览器地址栏是否是注册的地址<br>
+2.LODOP.SET_LICENSES........<br>
+LODOP.PRINT();<br>
+直接放到PRINT()语句前面测试下。<br>
+3.清理下浏览器缓存，<br>
+先排查下这三个条目<br>
+<br>
+可以用写在每个打印方法里，每次打印的时候都要执行，也可以放在LodopFuncs.js标注处，每次调用LODOP的时候统一调用。<br>
+只要每次打印调用到该语句就行。<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+其他.<span style="color: blue; font-weight: bold;">更新网站</span><br>
+官网博文列表增加博文28，转群文《谷歌浏览器暴行（AI文）》：<br>
+http://www.c-lodop.com/bloglist.html<br>
+http://www.c-lodop.com/blogs/Blg028.html<br>
+<br>
+博文27，Chrome浏览器及其同伙的重要盈利点，增加链接到博文28https://www.lodop.net/blogs/Blg028.html：<br>
+https://www.lodop.net/blogs/Blg027.html<br>
+<br>
+其他2.<span style="color: blue; font-weight: bold;">淘宝旺旺不会违规的</span><br>
+（---自己在旺旺聊天记录找开票信息，发现销售领导在旺旺上让加群，没提示违规，语句如下,可以记录下--)<br>
+<br>
+qun号<br>
+http://www.lodop.cn/about.html<br>
+有问题在那边咨询一下技术客服<br>
+<br>
+
+
+
+
+
+
+
+<!--main_middle结束-->		
+
+										
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+
+
+</div><!--body结束-->
+ </body>
+</html>
