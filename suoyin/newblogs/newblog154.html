@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】火狐检测到局域网访问auto_deny(集中打印clodopFuncs.js报错）Firefox（newblog154）（文案，初)</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】火狐检测到局域网访问auto_deny(集中打印clodopFuncs.js报错）Firefox（newblog154）（文案，初)</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】火狐检测到局域网访问auto_deny(集中打印clodopFuncs.js报错）Firefox（newblog154）（文案，初)</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>火狐152.0.2测试，http网站里，用局域网集中打印角色的clodopFuncs.js时，会报错被阻挡。<br />（图）<br />（---具体出问题版本就不逐个测试了，自己是收到反馈后，从这个版本测试的， 问题是在该版本附近出现的---）</p>
+<p>这个是自己下载了火狐，并把火狐升级到最新版（视频发布时间附近）后的报错截图。<br />里面的这个内网地址是找同事要的，对方电脑的ip，做了一个ff.html页面放服务器上测试的（目前测试完成已删除）<br />（图）</p>
+<p>该问题在谷歌浏览器里是没问题的，自己先用谷歌测试，然后用的火狐浏览器测试。测试这个火狐最新版确实会被阻挡。auto_deny。</p>
+<p>谷歌据说也有问题，就是之前的CORS报错，但是谷歌有解决方法，可以修改谷歌设置，这边就不修改回去测试了。<br />【LODOP】谷歌108后 http的clodopFuncs.js报CORS跨域报错 https://v.ixigua.com/b9PmyqQnV0c/<br />【LODOP】CORS报错Web打印服务CLodop... https://v.douyin.com/gBGkXWEqGgU/<br />【LODOP】更新LodopFuncs.js谷歌跨域cors,142.. https://v.douyin.com/oAqjEKz9X_4/<br />【LODOP】谷歌147版本修改设置，CORS跨域...  https://v.douyin.com/M2eYc7T1lmU/<br />（---之前发的CORS相关的视频里，最新的时候这个谷歌147版本修改设置，这里就不多介绍了--）</p>
+<p>火狐遇到这个报错，他人反馈的方法，自己实测有效：<br />Firefox火狐浏览器：<br />在 about:config 中搜索 network.lna.enabled，双击将其改为 false<br />（图）<br />进入about:config，搜索框里输入 network.lna.enabled，改成false，并重启火狐浏览器。<br />这边测试有效，可以解决该问题。</p>
+</div>
+</div>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>

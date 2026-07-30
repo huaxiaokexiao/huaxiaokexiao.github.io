@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】背景图不显示（newblog157）（文案，初)</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】背景图不显示（newblog157）（文案，初)</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】背景图不显示（newblog157）（文案，初)</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>1.css背景图不显示<br />原因：lodop不打印这种css背景图。<br />解决方法：不用css背景图，用普通图片的输出方式。</p>
+<p>background:url()这是css背景图，http协议会按异步方式下载背景图，所以很容易等不到下载完毕就开始打印了，故lodop不打印背景图。至于普通图片参考样例37 http://www.c-lodop.com/demolist/PrintSample37.html<br />用普通图片的输出方式。</p>
+<p>css背景图不支持，但背景色是支持的：<br />写了个例子（和之前cnbolg里的例子差不多）：<br />（图）</p>
+<p>查看下效果：<br />可以看到，浏览器页面可以显示css背景图，lodop预览则会显示空白，不显示背景图。背景色是可以的。<br />（图）</p>
+<p>2.ADD_PRINT_SETUP_BKIMG的lodop背景图预览不显示，打印不显示<br />参考样例9，http://www.c-lodop.com/demolist/PrintSample9.html<br />4、打印(和预览)时包含背景图<br />默认情况下背景图是不打印的，可以用BKIMG_PRINT让打印或预览包含背景图。<br />（图）</p>
+<p>ADD_PRINT_SETUP_BKIMG默认是不预览，不打印的，主要用于套打定位，如果需要预览或打印显示，设置对应的语句，<br />设置预览包含LODOP背景图：LODOP.SET_SHOW_MODE("BKIMG_IN_PREVIEW",1);<br />设置打印包含LODOP背景图：LODOP.SET_SHOW_MODE("BKIMG_PRINT",1);</p>
+<p>3.想背景图只预览不打印，用普通图片输出方式怎么实现<br />样例8的方式LODOP.ADD_PRINT_IMAGE输出图片，可以设置仅预览不打印，先输出，后输出文本，先输出的打印项在下层。<br />LODOP.SET_PRINT_STYLEA(0,"PreviewOnly",1);<br />可以设置打印项仅预览不打印</p>
+<p>（如果想一个任务多个背景图，也可以用这个方法方法输出，多页可以设置不同的图片打印项，可以设置图片成仅预览不打印）</p>
+<p>如果是LODOP.ADD_PRINT_IMAGE输出图片显示空白，加延迟或排查是否有打印项覆盖，或默认截取等问题。可以单独输出该图片测试。属于普通图片输出的一些问题，此视频背景图不多做介绍。</p>
+<p>4.用样例37的背景图，为什么预览点打印后图片消失了<br />安装最新版c-lodop，http://www.c-lodop.com/download.html</p>
+<p>win11的24H2版本，之前旧版本存在图片莫名消失问题，安装新版本可解决。<br />6.6.2.3<br />修正：进一步完善Win11下图片莫名消失问题，包括超文本图片、背景图和ADD_PRINT_HTML(图形模式)几种情况;<br />需要该版本之后的版本，可以直接去官网下载最新版。</p>
+<p>其他htm中img图片空白可能，个别电脑出现问题等：<br />显示空白或者图片缺失等问题，加延迟试试：<br />LODOP.SET_PRINT_STYLEA(0,"HtmWaitMilSecs",1000)//设置上一项延迟超文本下载1000毫秒</p>
+<p><br />背景图不显示怎么办？<br />先确定背景图是怎样输出的。<br />1.background:url()这是css背景图，lodop不打印这种背景图，更换实现方式。<br />2.ADD_PRINT_SETUP_BKIMG的lodo语句输出，默认是背景图不预览不打印，如果想预览或打印显示，设置对应的语句<br />3.LODOP.ADD_PRINT_IMAGE输出，想预览不打印，设置只预览不打印<br />4.htm里的img图片预览点打印后图片消失了，安装最新版可解决该问题<br />其他：带img标签的图片属于超文本，显示空白或者图片缺失等问题，加延迟试试：<br />LODOP.SET_PRINT_STYLEA(0,"HtmWaitMilSecs",1000)//设置上一项延迟超文本下载1000毫秒<br />其他2：有其他白色背景的打印项在上层，覆盖了下层的图片或背景图；图片位置定位超出纸张；ADD_PRINT_IMAGE输出默认截取，截取该图片正好左上角是空白的等。</p>
+</div>
+</div>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>

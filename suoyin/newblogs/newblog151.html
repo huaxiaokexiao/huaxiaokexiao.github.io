@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="../../maychangecss/newblog_nomal.css" type="text/css" rel="stylesheet">
+  <title>【LODOP】纸张很窄时（腕带），旋转htm内容缺失问题（newblog151）（文案，初）</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+.blue{color:#95bfc7;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left; }
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>博文-【LODOP】纸张很窄时（腕带），旋转htm内容缺失问题（newblog151）（文案，初）</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 
+		   <a href="../../index.html"><div class="menuitem">花谢悦神的主页</div></a>	
+		   <a href="../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		   <a href="../phoneQA_dange.html"><div class="menuitem">问答主页（单个问答链接）</div></a> 
+		   <a href="../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		   <a href="../new_bloglist.html"><div class="menuitem"><span class="newblogfont">新博文newblogs</span></div></a>
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>【LODOP】纸张很窄时（腕带），旋转htm内容缺失问题（newblog151）（文案，初）</h1>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>ADD_PRINT_HTM输出超文本打印项时，如果纸张本身非常窄（打印腕带等），而内容旋转-90度，旋转角度角度，会出现内容确实的异常：</p>
+<p>测试代码：<br />LODOP.SET_PRINT_PAGESIZE(1,260,2220,"");<br />LODOP.ADD_PRINT_HTM(258,32,362,20,"出生日期:2000-07-28 00:00:00");<br />LODOP.SET_PRINT_STYLEA(0,"Angle",-90.0);</p>
+<p>进入打印设计查看下，可以看到是显示完全的<br />（旋转打印设计看不到效果，预览可以看到效果）<br />（图）</p>
+<p>再查看下预览效果：<br />可以看到只显示了部分，后面的内容出现了缺失<br />（图）</p>
+<p>解决方法：<br />换用ADD_PRINT_TEXT输出</p>
+<p>测试代码：增加TEXT方式<br />LODOP.SET_PRINT_PAGESIZE(1,260,2220,"");<br />LODOP.ADD_PRINT_TEXT(192,46,362,20,"出生日期:2000-07-28 00:00:00");<br />LODOP.SET_PRINT_STYLEA(0,"Angle",-90.0);<br />LODOP.ADD_PRINT_HTM(258,32,362,20,"出生日期:2000-07-28 00:00:00");<br />LODOP.SET_PRINT_STYLEA(0,"Angle",-90.0);</p>
+<p>预览效果：<br />可以看到TEXT纯文本打印项，在窄的纸张中，旋转负90度后，还可以显示完全<br />（图）</p>
+<p>TEXT纯文本可以设置下大小，设置成和需要的大小近似的值：<br />LODOP.ADD_PRINT_TEXT(192,46,362,20,"出生日期:2000-07-28 00:00:00");<br />LODOP.SET_PRINT_STYLEA(0,"FontSize",12);<br />LODOP.SET_PRINT_STYLEA(0,"Angle",-90.0);</p>
+<p>预览查看下效果：<br />由于腕带或标签一类的，内容都比较简单，换成纯文本效果更好，设置大小后，可以达到和自己需要的htm一样的效果。<br />图中可以看到TEXT在较窄的纸张中旋转后是可以显示完全的。<br />（图）</p>
+<p>不想换成TEXT方式，用ADD_PRINT_HTML(图形模式）可以吗？<br />试了下，ADD_PRINT_HTML(图形模式）能更好的还原样式，但很窄的纸张旋转-90度后还是会显示不全，且文字也会被切的效果。</p>
+<p>LODOP.ADD_PRINT_HTML(258,32,362,20,"出生日期:2000-07-28 00:00:00");<br />LODOP.SET_PRINT_STYLEA(0,"Angle",-90.0);</p>
+<p>预览查看下效果：<br />换成ADD_PRINT_HTML无法解决该问题。<br />（图）</p>
+<p>打印腕带等很窄的纸张旋转HTM打印项时，出现显示不全问题。<br />解决方法：<br />换成ADD_PRINT_TEXT输出。</p>
+</div>
+</div>
+<p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</div>
+</div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+</div><!--body结束-->
+ </body>
+</html>
