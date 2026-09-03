@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>ssl安全扫描不通过修改ini</title>
+ </head>
+ <body>
+ <style>
+ body{margin:0px;}
+.body {width:100%;}
+a{text-decoration:none;color:black;}
+h1{font-size:1.625em;}
+h2{font-size:1.375em;}
+/**.box{float:left;}**/
+.header_box {width:100%;}
+.header{padding:1%;
+background-color:#f1f1f1;}
+/**border:1px solid #e9e9e9;}**/
+
+.header_bottom{width:100%;}
+.menuitem {
+    margin-top:0;
+    margin-left:0;
+    margin-bottom:0;
+    padding:1%;
+    border-bottom:1px solid #e9e9e9;
+    cursor:pointer;
+}
+
+.main {padding:1%;}
+.main_middle { width:100%;}
+
+/**渐变等背景色**/
+.Jpink{background-image: linear-gradient(to bottom,#ccccff, #ffffff);border:#ccccff 1px solid;}
+
+
+.box_footer {width:100%;margin-bottom:0;}
+.footer {
+    padding:1%;
+    text-align:center;
+    background-color:#f1f1f1;
+    font-size:0.625em;
+}
+#small{background-image: linear-gradient(to bottom,#ccccff, #ffffff);border:#ccccff 1px solid; }
+#small hr{margin:10px;padding:0px;}
+
+@media only screen and (max-width: 500px) {
+    .menu_left{width:100%;}
+    .menuitem { margin:1%;padding:1%;}
+
+    .main_middle { width:100%;}
+    .main {padding:1%;}
+
+    .box_right {width:100%;}
+    .right { padding:1%;
+    }
+
+    .box { margin-right:0; float:left;}
+}
+
+</style>
+<div class="body"><!--body开始-->
+        <div class="box header_box"><!--header开始-->
+            <div class="header">
+                <h1>ssl安全扫描不通过修改ini</h1>
+            </div>
+        </div><!--header结束-->
+<div class="header_bottom"> 	
+		  <a href="../../phoneQA004.html"><div class="menuitem">lodop问答主页</div></a> 
+		  <a href="../../phoneQA_dange.html"><div class="menuitem"><span style="color:red;">问答主页（单个问答链接）</span></div></a>
+          <a href="../../mini_QAs.html"><div class="menuitem"><span style="color:#ff0099;">迷你一个问答</span></div></a> 
+		  <a href="../QA_singe45t.html"><div class="menuitem Jpink">各种小问答（其他）</span></a> 
+</div>
+        <div class="box main_middle"><!--main_middle开始-->
+            <div class="main">
+<h1>ssl安全扫描不通过修改ini</h1>
+<div id="small">
+<span style="color:blue">定制的就是默认勾选仅本机打印模式,但是这种模式依然支持https 1.0的协议,导致用户那边安全扫描不通过</span><br>
+注意C-Lodop针对SSL安全或web安全采用的是平衡策略，也就是在兼容性和安全性之间寻找一个最佳点，并不特别追求安全等级，原因之一是因为安全性是损坏通用性为代价的，设置太高的安全等级会让大量浏览器版本无法使用；原因之二是因为C-Lodop的功能是固化（功能主要是打印输出；弹出一个设计或预览窗口）的，很多所谓漏洞概念在固化功能面前毫无意义。<br>
+<br>
+<span style="color:blue">定制的就是默认勾选仅本机打印模式,但是这种模式依然支持https 1.0的协议,导致用户那边安全扫描不通过</span><br>
+SetupOption -> UserInfo.ini -> [all] -> options<br>
+options=MDAwMDE=<br>
+<br>
+<img src="./smallQA_images/sm333.png"><br>
+<hr>
+
+</div>
+
+<br>
+           </div>
+    </div><!--main_middle结束-->
+
+        <div class="box box_footer"><!--box_footer开始-->
+            <div class="footer">
+<p>lodop简短问答页面.</p>
+            </div>
+        </div><!--box_footer结束-->
+
+
+</div><!--body结束-->
+ </body>
+</html>
